@@ -5,24 +5,42 @@ using System.Collections;
 public class TitleScreen : MonoBehaviour {
 
 	public GameObject cloudSprite;	//Cloud prefab
+    public GameObject mainMenu;
+    public GameObject mainMenuButtons;
+    public GameObject optionsMenu;
+    public GameObject optionsMenuButtons;
     public Image screenFade;
     public Image blinkingButton;
     public Sprite blink1;
     public Sprite blink2;
     public Button startButton;
+    public Button optionsButton;
+    public Button backButton;
 	public Transform cloudSpawn;
 	public Transform top;
 	public Transform bottom;
     public int fadeTime = 45;
+    private int menu;
     private GameObject gameStartSound;
+    private GameObject buttonPressSound;
     private SpriteRenderer spriteRenderer;
+    private bool onMainMenu;
+    private bool onOptionsMenu;
 	private bool dayTime;
     private bool buttonClicked;
+    private float dMenuX = 35f;
+    private float menuDistance = 610f;
+    private const int MENU_MAIN = 0;
+    private const int MENU_OPTIONS = 1;
 
 	// Use this for initialization
 	void Start () {
+        menu = MENU_MAIN;
+        onMainMenu = true;
+        onOptionsMenu = false;
         blinkingButton.active = false;
         gameStartSound = transform.GetChild(0).gameObject;
+        buttonPressSound = transform.GetChild(1).gameObject;
         screenFade.color = new Color(1f, 1f, 1f, 0f);
 		StartCoroutine (Run ());
 		var time = System.DateTime.Now;
@@ -94,5 +112,69 @@ public class TitleScreen : MonoBehaviour {
             yield return 0;
         }
         Application.LoadLevel("Main");
+    }
+
+    IEnumerator MoveMenu()
+    {
+        //Set to main menu
+        if (menu == 0)
+        {
+            SetMenuActive(false, false);
+
+            while (mainMenu.transform.localPosition.x < 0f)
+            {
+                Vector3 newMainPosition = mainMenu.transform.localPosition;
+                Vector3 newOptionsPosition = optionsMenu.transform.localPosition;
+                newMainPosition.x += dMenuX;
+                newOptionsPosition.x += dMenuX;
+                newMainPosition.x = Mathf.Min(0f, newMainPosition.x);
+                newOptionsPosition.x = Mathf.Min(menuDistance, newOptionsPosition.x);
+                mainMenu.transform.localPosition = newMainPosition;
+                optionsMenu.transform.localPosition = newOptionsPosition;
+                yield return 0;
+            }
+            SetMenuActive(true, false);
+        }
+        //Menus move to left
+        //Set to options menu
+        else if (menu == 1)
+        {
+            SetMenuActive(false, false);
+
+            while (optionsMenu.transform.localPosition.x > 0f)
+            {
+                Vector3 newMainPosition = mainMenu.transform.localPosition;
+                Vector3 newOptionsPosition = optionsMenu.transform.localPosition;
+                newMainPosition.x -= dMenuX;
+                newOptionsPosition.x -= dMenuX;
+                newMainPosition.x = Mathf.Max(-menuDistance, newMainPosition.x);
+                newOptionsPosition.x = Mathf.Max(0f, newOptionsPosition.x);
+                mainMenu.transform.localPosition = newMainPosition;
+                optionsMenu.transform.localPosition = newOptionsPosition;
+                yield return 0;
+            }
+            SetMenuActive(false, true);
+        }
+    }
+
+    void SetMenuActive(bool mainMenuActive, bool optionsMenuActive)
+    {
+        Button[] mainButtons = mainMenuButtons.GetComponentsInChildren<Button>();
+        foreach (Button b in mainButtons)
+        {
+            b.enabled = mainMenuActive;
+        }
+
+        Button[] optionsButtons = optionsMenuButtons.GetComponentsInChildren<Button>();
+        foreach (Button b in optionsButtons){
+            b.enabled = optionsMenuActive;
+        }
+    }
+
+    public void ChangeMenu(int setMenu)
+    {
+        buttonPressSound.audio.Play();
+        menu = setMenu;
+        StartCoroutine(MoveMenu());
     }
 }
