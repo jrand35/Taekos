@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: c853c1679af624148a769c0a1d64712f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bonus_0
+    21300002: Bonus_1
+    21300004: Bonus_2
+    21300006: Bonus_3
+    21300008: Bonus_4
+    21300010: Bonus_5
+    21300012: Bonus_6
+    21300014: Bonus_7
+    21300016: Bonus_8
+    21300018: Bonus_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bonus_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 483
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 397
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 339
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 282
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 253
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bonus_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
