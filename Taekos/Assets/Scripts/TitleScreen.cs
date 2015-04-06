@@ -21,6 +21,7 @@ public class TitleScreen : MonoBehaviour {
 	public Transform cloudSpawn;
 	public Transform top;
 	public Transform bottom;
+    public int startingNumberOfLives;
     public int fadeTime = 45;
     private int menu;
     private GameObject gameStartSound;
@@ -37,7 +38,7 @@ public class TitleScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Settings.NumberOfLives = 2;
+        Settings.NumberOfLives = startingNumberOfLives;
         menu = MENU_MAIN;
         onMainMenu = true;
         onOptionsMenu = false;
