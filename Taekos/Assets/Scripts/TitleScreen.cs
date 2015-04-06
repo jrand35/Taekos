@@ -11,6 +11,8 @@ public class TitleScreen : MonoBehaviour {
     public GameObject optionsMenuButtons;
     public Image screenFade;
     public Image blinkingButton;
+    public Image lifeCounter;
+    public Sprite[] lifeNumbers;
     public Sprite blink1;
     public Sprite blink2;
     public Button startButton;
@@ -29,12 +31,13 @@ public class TitleScreen : MonoBehaviour {
 	private bool dayTime;
     private bool buttonClicked;
     private float dMenuX = 35f;
-    private float menuDistance = 610f;
+    private float menuDistance = 700;
     private const int MENU_MAIN = 0;
     private const int MENU_OPTIONS = 1;
 
 	// Use this for initialization
 	void Start () {
+        Settings.NumberOfLives = 2;
         menu = MENU_MAIN;
         onMainMenu = true;
         onOptionsMenu = false;
@@ -46,7 +49,20 @@ public class TitleScreen : MonoBehaviour {
 		var time = System.DateTime.Now;
 		dayTime = (time.Hour >= 6 && time.Hour < 18);
         buttonClicked = false;
+        UpdateLifeCounter(0, false);
 	}
+
+    void OnEnable()
+    {
+        LeftLifeButtonController.leftLifeButtonClicked += UpdateLifeCounter;
+        RightLifeButtonController.rightLifeButtonClicked += UpdateLifeCounter;
+    }
+
+    void OnDisable()
+    {
+        LeftLifeButtonController.leftLifeButtonClicked -= UpdateLifeCounter;
+        RightLifeButtonController.rightLifeButtonClicked -= UpdateLifeCounter;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -176,5 +192,40 @@ public class TitleScreen : MonoBehaviour {
         buttonPressSound.audio.Play();
         menu = setMenu;
         StartCoroutine(MoveMenu());
+    }
+
+    public void UpdateLifeCounter(int addLife, bool playSound)
+    {
+        Settings.NumberOfLives += addLife;
+        if (Settings.NumberOfLives < 0)
+        {
+            Settings.NumberOfLives = 0;
+        }
+        if (Settings.NumberOfLives > 9)
+        {
+            Settings.NumberOfLives = 9;
+        }
+
+    /*    if (Settings.NumberOfLives == 0)
+        {
+            leftLifeButton.enabled = false;
+        }
+        else
+        {
+            leftLifeButton.enabled = true;
+        }
+        if (Settings.NumberOfLives == 9)
+        {
+            rightLifeButton.enabled = false;
+        }
+        else
+        {
+            rightLifeButton.enabled = true;
+        }*/
+        lifeCounter.sprite = lifeNumbers[Settings.NumberOfLives];
+        if (playSound)
+        {
+            buttonPressSound.audio.Play();
+        }
     }
 }

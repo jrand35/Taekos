@@ -60,13 +60,16 @@
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\FadeTrail.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\LeftLifeButtonController.cs" />
     <Compile Include="Assets\Scripts\Lifebar.cs" />
     <Compile Include="Assets\Scripts\Pecking.cs" />
     <Compile Include="Assets\Scripts\PickUpPowerups.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\Scripts\PowerupPointValue.cs" />
+    <Compile Include="Assets\Scripts\RightLifeButtonController.cs" />
     <Compile Include="Assets\Scripts\RotatePlatform.cs" />
     <Compile Include="Assets\Scripts\ScoreTextController.cs" />
+    <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\TitleScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
