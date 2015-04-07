@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\FadeTrail.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\LeftLifeButtonController.cs" />
     <Compile Include="Assets\Scripts\Lifebar.cs" />
     <Compile Include="Assets\Scripts\Pecking.cs" />
