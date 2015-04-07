@@ -8,14 +8,14 @@ public class Pecking : MonoBehaviour {
     {
         enablePeck = false;
     }
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerStay2D(Collider2D other){
         if (enablePeck){
-            if (other.gameObject.tag == "Enemy")
+            if (other.gameObject.tag == "Enemies")
             {
-                EnemyController enemyController = other.GetComponent<EnemyController>();
+                EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
                 if (enemyController != null)
                 {
-                    enemyController.DamageEnemy(damageValue);
+                    enemyController.DamageEnemy(damageValue);   //Fix; Kills enemies instantly
                 }
             }
         }

@@ -7,6 +7,28 @@ public class GameController : MonoBehaviour {
 	public ScoreTextController scoreTextController;
     public Image screenFade;
     public int fadeTime = 45;
+    private int livesRemaining;
+    private bool isGameOver;
+
+    void Awake()
+    {
+        livesRemaining = Settings.NumberOfLives;
+        isGameOver = false;
+    }
+
+    void OnEnable()
+    {
+        Controller.getCurrentLives += getLives;
+        Controller.getGameOver += getGameOver;
+        Controller.AddLives += AddLives;
+    }
+
+    void OnDisable()
+    {
+        Controller.getCurrentLives += getLives;
+        Controller.getGameOver -= getGameOver;
+        Controller.AddLives -= AddLives;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +40,26 @@ public class GameController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    int getLives()
+    {
+        return livesRemaining;
+    }
+
+    bool getGameOver()
+    {
+        return isGameOver;
+    }
+
+    void AddLives(int add)
+    {
+        livesRemaining += add;
+        if (livesRemaining < 0)
+        {
+            livesRemaining = 0;
+            isGameOver = true;
+        }
+    }
 
     public IEnumerator ScreenFade()
     {

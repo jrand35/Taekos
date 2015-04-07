@@ -8,6 +8,14 @@ using System.Collections;
 public class Controller : MonoBehaviour {
 	
 //	public Text jumpText;
+    public delegate void ControllerEventHandler(bool followPlayer);
+    public static event ControllerEventHandler FollowPlayer;
+    public delegate int GetCurrentLivesHandler();
+    public static event GetCurrentLivesHandler getCurrentLives;
+    public delegate bool GetGameOverHandler();
+    public static event GetGameOverHandler getGameOver;
+    public delegate void AddLivesHandler(int add);
+    public static event AddLivesHandler AddLives;
 	public Transform groundCheck;
 	public Transform wallCheck;
 	public Transform backWallCheck;
@@ -20,6 +28,8 @@ public class Controller : MonoBehaviour {
 	public float maxHSpeed = 12f;
 	public float jumpHeightCoefficient = 0.3f;
 	public float peckingTime = 0.25f;
+    private float normalGravity = 1.5f;
+    private float fallingGravity = 1f;
 	private float glideSpeed;
 	private float hVelocity;
 	private float hAccel = 1f;
@@ -36,10 +46,11 @@ public class Controller : MonoBehaviour {
 	private float hurtJumpSpeed = 10f;
 	private float hurtBackSpeed = -5f;
 	private float hurtTime = 0.5f;
+    private float resurrectDelay = 2.5f;
 	private float killSpin = 5f;
-	private BoxCollider2D boxCollider;
+	private BoxCollider2D[] boxColliders;
 	private CircleCollider2D circleCollider;
-	private int maxPlayerLife = 1000;
+	private int maxPlayerLife = 4;
 	private int playerLife;
 	private int facing = 1;
 	private int invincibleFrames = 120;
@@ -55,10 +66,21 @@ public class Controller : MonoBehaviour {
 	private bool wallCling;
 	private bool pecking;
 	private bool kicking;
+    private Vector3 resurrectPos;
 	private Lifebar lifebar;
     private Pecking peckingScript;
 	private SpriteRenderer spriteRenderer;
 	private Animator anim;
+
+    void OnEnable()
+    {
+        TakeDamage.takeDamage += HurtPlayer;
+    }
+
+    void OnDisable()
+    {
+        TakeDamage.takeDamage -= HurtPlayer;
+    }
 
 	void Start () {
 		//jumpHeightCoefficient Needs to be set again?
@@ -80,24 +102,28 @@ public class Controller : MonoBehaviour {
 		wallCling = false;
 		pecking = false;
 		kicking = false;
-		boxCollider = GetComponent<BoxCollider2D> ();
+		boxColliders = GetComponentsInChildren<BoxCollider2D> ();
 		circleCollider = GetComponent<CircleCollider2D> ();
 		lifebar = GetComponent<Lifebar> ();
         peckingScript = peckBox.GetComponent<Pecking>();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
-		StartCoroutine (Trail ());
+        StartCoroutine(Trail());
+        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
 	}
 
-	void OnTriggerStay2D(Collider2D other){
-		if (other.gameObject.tag == "Enemies" && !isInvincible && !isDead) {
-			EnemyController damageValue = other.gameObject.GetComponent<EnemyController>();
-			hurtSound.audio.Play ();
-			if (damageValue != null){
-				HurtPlayer (damageValue.getPlayerDamageValue ());
-			}
-		}
-	}
+ /*   void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemies" && !isInvincible && !isDead)
+        {
+            EnemyController damageValue = other.gameObject.GetComponent<EnemyController>();
+            hurtSound.audio.Play();
+            if (damageValue != null)
+            {
+                HurtPlayer(damageValue.getPlayerDamageValue());
+            }
+        }
+    }*/
 
 	//Do not need to use Time.deltaTime
 	void FixedUpdate () {
@@ -206,7 +232,7 @@ public class Controller : MonoBehaviour {
 			}
 		}
 		else if (!isDead){
-			rigidbody2D.gravityScale = 1.5f;
+			rigidbody2D.gravityScale = normalGravity;
 		}
 
 		rigidbody2D.velocity = new Vector2 (hVelocity, rigidbody2D.velocity.y);
@@ -221,7 +247,7 @@ public class Controller : MonoBehaviour {
 
 	void Update(){
 		if (control && Input.GetKeyDown (KeyCode.Z)) {
-			HurtPlayer (250);
+			HurtPlayer (1);
 		}
 		if (control && Input.GetKeyDown (KeyCode.A)) {
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
@@ -319,24 +345,33 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
-	public void HurtPlayer(int damage){
-		if (!isInvincible) {
-			playerLife -= damage;
-			if (playerLife < 0) {
-				playerLife = 0;
-			}
-			lifebar.UpdateLifebar (playerLife, maxPlayerLife);
-			if (playerLife > 0){
-				hVelocity = hurtBackSpeed * facing;
-				Vector2 vel = new Vector2 (hVelocity, hurtJumpSpeed);
-				rigidbody2D.velocity = vel;
-				StartCoroutine (HurtAnimation ());
-				StartCoroutine (Invincible ());
-			}
-		}
-	}
+    public void HurtPlayer(int damage)
+    {
+        if (isInvincible || isDead)
+        {
+            return;
+        }
+        hurtSound.audio.Play();
+        playerLife -= damage;
+        if (playerLife < 0)
+        {
+            playerLife = 0;
+        }
+        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        if (playerLife > 0)
+        {
+            hVelocity = hurtBackSpeed * facing;
+            Vector2 vel = new Vector2(hVelocity, hurtJumpSpeed);
+            rigidbody2D.velocity = vel;
+            StartCoroutine(HurtAnimation());
+            StartCoroutine(Invincible());
+        }
+    }
 
 	void KillPlayer(){
+        AddLives(-1);
+        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        resurrectPos = transform.position;
 		isDead = true;
 		control = false;
 		grounded = false;
@@ -346,12 +381,43 @@ public class Controller : MonoBehaviour {
 		wallCling = false;
 		pecking = false;
 		kicking = false;
-		boxCollider.enabled = false;
-		rigidbody2D.gravityScale = 0.5f;
+        foreach (BoxCollider2D b in boxColliders)
+        {
+            b.enabled = false;
+        }
+		rigidbody2D.gravityScale = fallingGravity;
 		hVelocity = hurtBackSpeed * facing;
 		Vector2 vel = new Vector2 (hVelocity, hurtJumpSpeed);
 		rigidbody2D.velocity = vel;
+        FollowPlayer(false);
+        if (!getGameOver())
+        {
+            StartCoroutine(WaitToResurrectPlayer());
+        }
 	}
+
+    void ResurrectCharacter()
+    {
+        playerKilled = false;
+        playerLife = maxPlayerLife;
+        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        StartCoroutine(Invincible());
+        transform.position = resurrectPos;
+        isDead = false;
+        control = true;
+        foreach (BoxCollider2D b in boxColliders)
+        {
+            b.enabled = true;
+        }
+        rigidbody2D.gravityScale = normalGravity;
+        FollowPlayer(true);
+    }
+
+    IEnumerator WaitToResurrectPlayer()
+    {
+        yield return new WaitForSeconds(resurrectDelay);
+        ResurrectCharacter();
+    }
 
 	public IEnumerator MultiplyJumpSpeed(float scale, float duration){
 		jumpSpeed *= scale;

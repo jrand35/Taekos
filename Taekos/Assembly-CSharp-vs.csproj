@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\RotatePlatform.cs" />
      <Compile Include="Assets\Scripts\ScoreTextController.cs" />
      <Compile Include="Assets\Scripts\Settings.cs" />
+     <Compile Include="Assets\Scripts\TakeDamage.cs" />
      <Compile Include="Assets\Scripts\TitleScreen.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
