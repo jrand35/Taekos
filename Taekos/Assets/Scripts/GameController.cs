@@ -58,7 +58,23 @@ public class GameController : MonoBehaviour {
         {
             livesRemaining = 0;
             isGameOver = true;
+            StartCoroutine(GameOver());
         }
+    }
+
+    IEnumerator GameOver()
+    {
+        screenFade.active = true;
+        float alpha = 0f;
+        float dAlpha = 1f / (float)fadeTime;
+        for (int i = 0; i < fadeTime; i++)
+        {
+            alpha += dAlpha;
+            screenFade.color = new Color(1f, 1f, 1f, alpha);
+            yield return 0;
+        }
+        Application.LoadLevel("GameOver");
+        Debug.Log("Game Over");
     }
 
     public IEnumerator ScreenFade()
@@ -68,10 +84,15 @@ public class GameController : MonoBehaviour {
         float dAlpha = 1f / (float)fadeTime;
         for (int i = 0; i < fadeTime; i++)
         {
+            if (isGameOver)
+            {
+                break;
+            }
             alpha -= dAlpha;
             screenFade.color = new Color(1f, 1f, 1f, alpha);
             yield return 0;
         }
+        if (!isGameOver)
         screenFade.active = false;
     }
 }

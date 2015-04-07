@@ -247,7 +247,7 @@ public class Controller : MonoBehaviour {
 
 	void Update(){
 		if (control && Input.GetKeyDown (KeyCode.Z)) {
-			HurtPlayer (1);
+			HurtPlayer (4);
 		}
 		if (control && Input.GetKeyDown (KeyCode.A)) {
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
