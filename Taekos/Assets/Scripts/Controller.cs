@@ -76,27 +76,35 @@ public class Controller : MonoBehaviour {
 
     void Awake()
     {
+        AddLives(4);    //Temporary
+
+        resurrectPos = transform.position;
         peckingLocalPos = new Vector3(0.35f, 0.8f, 0f);
     }
 
     void OnEnable()
     {
         TakeDamage.takeDamage += HurtPlayer;
+        TakeDamage.getCheckpoint += UpdateCheckpoint;
+        PickUpPowerups.addHealth += AddHealth;
     }
 
     void OnDisable()
     {
         TakeDamage.takeDamage -= HurtPlayer;
+        TakeDamage.getCheckpoint -= UpdateCheckpoint;
+        PickUpPowerups.addHealth -= AddHealth;
     }
 
 	void Start () {
+
 		//jumpHeightCoefficient Needs to be set again?
 		jumpHeightCoefficient = 0.5f;
 		characterHeight = 1.25f;
 		hVelocity = 0f;
 		jumpSpeed = startingJumpSpeed;
 		glideSpeed = startingGlideSpeed;
-		playerLife = maxPlayerLife;
+        playerLife = maxPlayerLife;
 		isDead = false;
 		playerKilled = false;
 		isHurt = false;
@@ -349,6 +357,25 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
+    void UpdateCheckpoint(Vector3 checkpointPos)
+    {
+        resurrectPos = checkpointPos;
+    }
+
+    void AddHealth(int addHealth)
+    {
+        playerLife += addHealth;
+        if (playerLife > maxPlayerLife)
+        {
+            playerLife = maxPlayerLife;
+        }
+        if (playerLife < 0)
+        {
+            playerLife = 0;
+        }
+        UpdateLifebar(playerLife, getCurrentLives());
+    }
+
     public void HurtPlayer(int damage)
     {
         if (isInvincible || isDead)
@@ -375,7 +402,7 @@ public class Controller : MonoBehaviour {
 	void KillPlayer(){
         AddLives(-1);
         UpdateLifebar(playerLife, getCurrentLives());
-        resurrectPos = transform.position;
+        //resurrectPos = transform.position;
 		isDead = true;
 		control = false;
 		grounded = false;

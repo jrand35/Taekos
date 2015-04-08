@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Pecking.cs" />
      <Compile Include="Assets\Scripts\PickUpPowerups.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
+     <Compile Include="Assets\Scripts\PowerupGlow.cs" />
      <Compile Include="Assets\Scripts\PowerupPointValue.cs" />
      <Compile Include="Assets\Scripts\RightLifeButtonController.cs" />
      <Compile Include="Assets\Scripts\RotatePlatform.cs" />
