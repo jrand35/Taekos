@@ -10,6 +10,7 @@ public class ScoreTextController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //score not setting to this value
 		score = 6457842201;
 		for (int i = 0; i < 10; i++) {
 			Vector3 digitPosition = new Vector3(-250f + (i * 25), 0f, 0f);

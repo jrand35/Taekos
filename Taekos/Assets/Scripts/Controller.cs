@@ -16,6 +16,8 @@ public class Controller : MonoBehaviour {
     public static event GetGameOverHandler getGameOver;
     public delegate void AddLivesHandler(int add);
     public static event AddLivesHandler AddLives;
+    public delegate void LifebarHandler(int health, int lives);
+    public static event LifebarHandler UpdateLifebar;
 	public Transform groundCheck;
 	public Transform wallCheck;
 	public Transform backWallCheck;
@@ -67,7 +69,6 @@ public class Controller : MonoBehaviour {
 	private bool pecking;
 	private bool kicking;
     private Vector3 resurrectPos;
-	private Lifebar lifebar;
     private Pecking peckingScript;
 	private SpriteRenderer spriteRenderer;
 	private Animator anim;
@@ -104,13 +105,11 @@ public class Controller : MonoBehaviour {
 		kicking = false;
 		boxColliders = GetComponentsInChildren<BoxCollider2D> ();
 		circleCollider = GetComponent<CircleCollider2D> ();
-		lifebar = GetComponent<Lifebar> ();
         peckingScript = peckBox.GetComponent<Pecking>();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
         StartCoroutine(Trail());
-        //Change to delegate functions
-        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives());
 	}
 
  /*   void OnTriggerStay2D(Collider2D other)
@@ -358,7 +357,7 @@ public class Controller : MonoBehaviour {
         {
             playerLife = 0;
         }
-        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives());
         if (playerLife > 0)
         {
             hVelocity = hurtBackSpeed * facing;
@@ -371,7 +370,7 @@ public class Controller : MonoBehaviour {
 
 	void KillPlayer(){
         AddLives(-1);
-        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives());
         resurrectPos = transform.position;
 		isDead = true;
 		control = false;
@@ -401,7 +400,7 @@ public class Controller : MonoBehaviour {
     {
         playerKilled = false;
         playerLife = maxPlayerLife;
-        lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives());
         StartCoroutine(Invincible());
         transform.position = resurrectPos;
         isDead = false;
