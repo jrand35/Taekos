@@ -51,6 +51,10 @@ TagManager:
     userID: 4
     uniqueID: 1779812875
     locked: 0
+  - name: Foreground
+    userID: 5
+    uniqueID: 394786451
+    locked: 0
   - name: Points
     userID: 2
     uniqueID: 332085291

@@ -6,9 +6,10 @@ public class Pecking : MonoBehaviour {
     private bool enablePeck;
     void Start()
     {
-        enablePeck = false;
+        Debug.Log(transform.localPosition);
+        enablePeck = true;
     }
-	void OnTriggerStay2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
         if (enablePeck){
             if (other.gameObject.tag == "Enemies")
             {
@@ -21,7 +22,7 @@ public class Pecking : MonoBehaviour {
         }
     }
 
-    public void EnablePeck(bool peck){
-        enablePeck = peck;
-    }
+    //public void EnablePeck(bool peck){
+        //enablePeck = peck;
+    //}
 }

@@ -23,13 +23,14 @@ public class Controller : MonoBehaviour {
 	public Transform backWallCheck;
 	public GameObject jumpSound;
 	public GameObject hurtSound;
-	public GameObject peckBox;
+	public GameObject peckBoxPrefab;
 	public GameObject trail;
 	public LayerMask whatIsGround;
 	public float characterHeight;
 	public float maxHSpeed = 12f;
 	public float jumpHeightCoefficient = 0.3f;
 	public float peckingTime = 0.25f;
+    private GameObject peckBox;
     private float normalGravity = 1.5f;
     private float fallingGravity = 1f;
 	private float glideSpeed;
@@ -50,7 +51,7 @@ public class Controller : MonoBehaviour {
 	private float hurtTime = 0.5f;
     private float resurrectDelay = 2.5f;
 	private float killSpin = 5f;
-	private BoxCollider2D[] boxColliders;
+	private Collider2D[] colliders;
 	private CircleCollider2D circleCollider;
 	private int maxPlayerLife = 4;
 	private int playerLife;
@@ -69,9 +70,14 @@ public class Controller : MonoBehaviour {
 	private bool pecking;
 	private bool kicking;
     private Vector3 resurrectPos;
-    private Pecking peckingScript;
+    private Vector3 peckingLocalPos;
 	private SpriteRenderer spriteRenderer;
 	private Animator anim;
+
+    void Awake()
+    {
+        peckingLocalPos = new Vector3(0.35f, 0.8f, 0f);
+    }
 
     void OnEnable()
     {
@@ -103,9 +109,8 @@ public class Controller : MonoBehaviour {
 		wallCling = false;
 		pecking = false;
 		kicking = false;
-		boxColliders = GetComponentsInChildren<BoxCollider2D> ();
+		colliders = GetComponentsInChildren<Collider2D> ();
 		circleCollider = GetComponent<CircleCollider2D> ();
-        peckingScript = peckBox.GetComponent<Pecking>();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
         StartCoroutine(Trail());
@@ -148,8 +153,7 @@ public class Controller : MonoBehaviour {
 				//Do not cling to wall if grounded
 				if (control && Input.GetKey (KeyCode.RightArrow) && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
 					wallCling = true;
-                    pecking = false;
-                    peckingScript.EnablePeck(false);
+                    StopPeck();
 				} else {
 					wallCling = false;
 				}
@@ -162,8 +166,7 @@ public class Controller : MonoBehaviour {
 				//Do not cling to wall if grounded
 				if (control && Input.GetKey (KeyCode.LeftArrow) && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
 					wallCling = true;
-                    pecking = false;
-                    peckingScript.EnablePeck(false);
+                    StopPeck();
 				} else {
 					wallCling = false;
 				}
@@ -242,7 +245,7 @@ public class Controller : MonoBehaviour {
 		else if (hVelocity <= 0 && facing == 1 && Input.GetKey (KeyCode.LeftArrow) && control) {
 			Flip ();
 		}
-		Debug.Log ("Grounded:" + grounded + " Wall cling: " + wallCling + " Touching wall: " + touchingWall + " Facing: " + facing + " Hurt: " + isHurt + " Dead: " + isDead + " Pecking: " + pecking);
+		Debug.Log ("Grounded:" + grounded + " Wall cling: " + wallCling + " Touching wall: " + touchingWall + " Facing: " + facing + " Hurt: " + isHurt + " Dead: " + isDead + " Pecking: " + pecking + " hVelocity: " + hVelocity);
 	}
 
 	void Update(){
@@ -250,6 +253,7 @@ public class Controller : MonoBehaviour {
 			HurtPlayer (4);
 		}
 		if (control && Input.GetKeyDown (KeyCode.A)) {
+            if (!pecking)
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
 		}
 		if (playerLife <= 0 && !playerKilled) {
@@ -381,7 +385,7 @@ public class Controller : MonoBehaviour {
 		wallCling = false;
 		pecking = false;
 		kicking = false;
-        foreach (BoxCollider2D b in boxColliders)
+        foreach (Collider2D b in colliders)
         {
             b.enabled = false;
         }
@@ -402,10 +406,11 @@ public class Controller : MonoBehaviour {
         playerLife = maxPlayerLife;
         UpdateLifebar(playerLife, getCurrentLives());
         StartCoroutine(Invincible());
+        rigidbody2D.velocity = new Vector2(0f, 0f);
         transform.position = resurrectPos;
         isDead = false;
         control = true;
-        foreach (BoxCollider2D b in boxColliders)
+        foreach (Collider2D b in colliders)
         {
             b.enabled = true;
         }
@@ -442,12 +447,29 @@ public class Controller : MonoBehaviour {
 
     //Pecking stops when clinging to a wall
 	IEnumerator Peck(){
-        pecking = true;
-        peckingScript.EnablePeck(true);
+        StartPeck();
         yield return new WaitForSeconds(peckingTime);
-        pecking = false;
-        peckingScript.EnablePeck(false);
+        StopPeck();
 	}
+
+    void StartPeck()
+    {
+        pecking = true;
+        peckBox = Instantiate(peckBoxPrefab) as GameObject;
+        peckBox.transform.localScale = new Vector3(transform.localScale.x, peckBox.transform.localScale.y, 1f);
+        peckBox.transform.parent = transform;
+        peckBox.transform.localPosition = peckingLocalPos;
+    }
+
+    void StopPeck()
+    {
+        pecking = false;
+        if (peckBox != null)
+        {
+            Destroy(peckBox);
+            peckBox = null;
+        }
+    }
 
 	IEnumerator HurtAnimation(){
 		isHurt = true;
