@@ -109,6 +109,7 @@ public class Controller : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
         StartCoroutine(Trail());
+        //Change to delegate functions
         lifebar.UpdateLifebar(playerLife, maxPlayerLife, getCurrentLives());
 	}
 
