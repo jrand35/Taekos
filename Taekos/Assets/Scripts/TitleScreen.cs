@@ -22,6 +22,7 @@ public class TitleScreen : MonoBehaviour {
 	public Transform top;
 	public Transform bottom;
     public int startingNumberOfLives;
+    public int startingNumberOfContinues;
     public int fadeTime = 45;
     private int menu;
     private GameObject gameStartSound;
@@ -36,9 +37,14 @@ public class TitleScreen : MonoBehaviour {
     private const int MENU_MAIN = 0;
     private const int MENU_OPTIONS = 1;
 
+    void Awake()
+    {
+        Settings.NumberOfLives = startingNumberOfLives;
+        Settings.NumberOfContinues = startingNumberOfContinues;
+    }
+
 	// Use this for initialization
 	void Start () {
-        Settings.NumberOfLives = startingNumberOfLives;
         menu = MENU_MAIN;
         onMainMenu = true;
         onOptionsMenu = false;

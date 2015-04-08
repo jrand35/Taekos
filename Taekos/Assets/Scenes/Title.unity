@@ -853,6 +853,7 @@ MonoBehaviour:
   top: {fileID: 467108643}
   bottom: {fileID: 1270987770}
   startingNumberOfLives: 2
+  startingNumberOfContinues: 2
   fadeTime: 45
 --- !u!4 &927465224
 Transform:
