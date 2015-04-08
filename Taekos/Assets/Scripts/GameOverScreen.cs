@@ -8,12 +8,12 @@ public class GameOverScreen : MonoBehaviour {
 	public Image gameOverImage;
     public Image fadeImage;
     public Text remainingText;
-    private float delay = 3f;
+    private float delay = 4f;
 
 	// Use this for initialization
     void Start()
     {
-        Settings.NumberOfContinues = 1;
+        //Settings.NumberOfContinues = 1;
         foreach (Graphic g in fadingObjects)
         {
             g.enabled = false;
@@ -49,6 +49,7 @@ public class GameOverScreen : MonoBehaviour {
         else
         {
             yield return new WaitForSeconds(delay);
+            Quit();
         }
 	}
 
@@ -62,6 +63,7 @@ public class GameOverScreen : MonoBehaviour {
         }
     }
 
+    //Finish, create fade effect
     public void Continue()
     {
         Application.LoadLevel("Main");
@@ -72,5 +74,11 @@ public class GameOverScreen : MonoBehaviour {
         Settings.NumberOfContinues--;
         remainingText.text = "Remaining: " + Settings.NumberOfContinues;
         StartCoroutine(FadeOut());
+    }
+
+    //Finish, create fade effect
+    public void Quit()
+    {
+        Application.LoadLevel("Title");
     }
 }
