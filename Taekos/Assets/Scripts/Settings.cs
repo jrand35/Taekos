@@ -3,8 +3,10 @@ using System.Collections;
 
 //Need to use static?
 public class Settings : MonoBehaviour {
-    private static int numberOfLives;
-    private static int numberOfContinues;
+    private static int numberOfLives = 2;
+    private static int numberOfContinues = 2;
+    private static int musicVolume = 100;
+    private static int soundVolume = 100;
 
     public static int NumberOfLives
     {
@@ -27,6 +29,30 @@ public class Settings : MonoBehaviour {
         set
         {
             numberOfContinues = value;
+        }
+    }
+
+    public static int MusicVolume
+    {
+        get
+        {
+            return musicVolume;
+        }
+        set
+        {
+            musicVolume = value;
+        }
+    }
+
+    public static int SoundVolume
+    {
+        get
+        {
+            return soundVolume;
+        }
+        set
+        {
+            soundVolume = value;
         }
     }
 }

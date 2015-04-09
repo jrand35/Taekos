@@ -4,6 +4,8 @@ using System.Collections;
 public class TakeDamage : MonoBehaviour {
     public delegate void TakeDamageHandler(int damage);
     public static event TakeDamageHandler takeDamage;
+    public delegate void KillPlayerHandler();
+    public static event KillPlayerHandler killPlayer;
     public delegate void CheckpointHandler(Vector3 position);
     public static event CheckpointHandler getCheckpoint;
 
@@ -21,7 +23,7 @@ public class TakeDamage : MonoBehaviour {
         //Kill the player instantly when they fall off the screen
         if (other.gameObject.tag == "KillPlayer")
         {
-            takeDamage(4);
+            killPlayer();
         }
     }
 

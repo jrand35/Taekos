@@ -18,6 +18,9 @@ public class Controller : MonoBehaviour {
     public static event AddLivesHandler AddLives;
     public delegate void LifebarHandler(int health, int lives, int effect);
     public static event LifebarHandler UpdateLifebar;
+    public Transform top;
+    public Transform front;
+    public Transform back;
 	public Transform groundCheck;
 	public Transform wallCheck;
 	public Transform backWallCheck;
@@ -83,6 +86,7 @@ public class Controller : MonoBehaviour {
     void OnEnable()
     {
         TakeDamage.takeDamage += HurtPlayer;
+        TakeDamage.killPlayer += KillPlayer;
         TakeDamage.getCheckpoint += UpdateCheckpoint;
         PickUpPowerups.addHealth += AddHealth;
     }
@@ -90,6 +94,7 @@ public class Controller : MonoBehaviour {
     void OnDisable()
     {
         TakeDamage.takeDamage -= HurtPlayer;
+        TakeDamage.killPlayer -= KillPlayer;
         TakeDamage.getCheckpoint -= UpdateCheckpoint;
         PickUpPowerups.addHealth -= AddHealth;
     }
@@ -140,14 +145,14 @@ public class Controller : MonoBehaviour {
 	void FixedUpdate () {
 		if (rigidbody2D.velocity.y < maxFallSpeed) {
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxFallSpeed);
-		}
-		//float move = Input.GetAxis ("Horizontal");
-		//Vector2 wallCheck1 = new Vector2 (wallCheck.position.x - 0.08f, wallCheck.position.y - (characterHeight / 2));
-		//Vector2 wallCheck2 = new Vector2 (wallCheck.position.x + 0.08f, wallCheck.position.y + (characterHeight / 2));
-		//touchingWall = Physics2D.OverlapArea (wallCheck1, wallCheck2, whatIsGround);
+        }
+
+        //touchingWall = (Physics2D.OverlapCircle (wallCheck.position, wallRadius, whatIsGround) && !isDead);
+        //backTouchingWall = (Physics2D.OverlapCircle(backWallCheck.position, wallRadius, whatIsGround) && !isDead);
+
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
-		touchingWall = (Physics2D.OverlapCircle (wallCheck.position, wallRadius, whatIsGround) && !isDead);
-		backTouchingWall = (Physics2D.OverlapCircle (backWallCheck.position, wallRadius, whatIsGround) && !isDead);
+        touchingWall = (Physics2D.OverlapArea(top.position, front.position, whatIsGround) && !isDead);
+        backTouchingWall = (Physics2D.OverlapArea(top.position, back.position, whatIsGround) && !isDead);
 		UpdateMovement ();
 		//If character's front is touching wall
 		if (touchingWall) {
@@ -203,7 +208,8 @@ public class Controller : MonoBehaviour {
 			if (glideSpeed < maxFallSpeed){
 				glideSpeed = maxFallSpeed;
 			}
-			gliding = true;	//Necessary?
+            gliding = true;	//Necessary?
+            StopPeck();
 			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, glideSpeed);
 		}
 		//Not gliding
@@ -255,16 +261,17 @@ public class Controller : MonoBehaviour {
 	}
 
 	void Update(){
-		if (control && Input.GetKeyDown (KeyCode.Z)) {
-			HurtPlayer (4);
+		if (control && Input.GetKeyDown (KeyCode.K)) {
+			//HurtPlayer (4);
+            KillPlayer();
 		}
-		if (control && Input.GetKeyDown (KeyCode.A)) {
-            if (!pecking)
+		if (control && Input.GetKeyDown (KeyCode.X)) {
+            //Cannot peck while gliding or clinging to a wall
+            if (!pecking && !gliding && !wallCling)
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
 		}
 		if (playerLife <= 0 && !playerKilled) {
-			playerKilled = true;
-			KillPlayer ();
+			KillPlayer ();  //Sets playerKilled to true
 		}
 		//Jumping and wall jumping
 		if (control && Input.GetKeyDown (KeyCode.Space)) {
@@ -381,11 +388,14 @@ public class Controller : MonoBehaviour {
         {
             return;
         }
-        hurtSound.audio.Play();
         playerLife -= damage;
         if (playerLife < 0)
         {
             playerLife = 0;
+        }
+        if (playerLife > 0)
+        {
+            hurtSound.audio.Play();
         }
         UpdateLifebar(playerLife, getCurrentLives(), 1);
         if (playerLife > 0)
@@ -399,6 +409,9 @@ public class Controller : MonoBehaviour {
     }
 
 	void KillPlayer(){
+        hurtSound.audio.Play();
+        playerKilled = true;
+        playerLife = 0;
         AddLives(-1);
         UpdateLifebar(playerLife, getCurrentLives(), 0);
         //resurrectPos = transform.position;

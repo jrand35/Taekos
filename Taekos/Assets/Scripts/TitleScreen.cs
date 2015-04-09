@@ -9,6 +9,7 @@ public class TitleScreen : MonoBehaviour {
     public GameObject mainMenuButtons;
     public GameObject optionsMenu;
     public GameObject optionsMenuButtons;
+    public RectTransform InstructionsMenu;
     public Image screenFade;
     public Image blinkingButton;
     public Image lifeCounter;
@@ -18,12 +19,15 @@ public class TitleScreen : MonoBehaviour {
     public Button startButton;
     public Button optionsButton;
     public Button backButton;
+    public Button InstructionsBackButton;
 	public Transform cloudSpawn;
 	public Transform top;
 	public Transform bottom;
-    public int startingNumberOfLives;
-    public int startingNumberOfContinues;
     public int fadeTime = 45;
+    private int startingNumberOfLives;
+    private int startingNumberOfContinues;
+    private int musicVolume;
+    private int soundVolume;
     private int menu;
     private GameObject gameStartSound;
     private GameObject buttonPressSound;
@@ -36,11 +40,14 @@ public class TitleScreen : MonoBehaviour {
     private float menuDistance = 700;
     private const int MENU_MAIN = 0;
     private const int MENU_OPTIONS = 1;
+    private Vector3 instructionsPos;
 
     void Awake()
     {
-        Settings.NumberOfLives = startingNumberOfLives;
-        Settings.NumberOfContinues = startingNumberOfContinues;
+        musicVolume = Settings.MusicVolume;
+        soundVolume = Settings.SoundVolume;
+        startingNumberOfLives = Settings.NumberOfLives;
+        startingNumberOfContinues = Settings.NumberOfContinues;
     }
 
 	// Use this for initialization
@@ -57,6 +64,8 @@ public class TitleScreen : MonoBehaviour {
 		dayTime = (time.Hour >= 6 && time.Hour < 18);
         buttonClicked = false;
         UpdateLifeCounter(0, false);
+        instructionsPos = InstructionsMenu.localPosition;
+        InstructionsBackButton.enabled = false;
 	}
 
     void OnEnable()
@@ -104,6 +113,32 @@ public class TitleScreen : MonoBehaviour {
 			Destroy (newCloud, 12f);
 		}
 	}
+
+    public void goToInstructions()
+    {
+        buttonPressSound.audio.Play();
+        InstructionsBackButton.enabled = true;
+        SetMenuActive(false, false);
+        mainMenu.transform.position = new Vector3(
+            mainMenu.transform.position.x,
+            mainMenu.transform.position.y - 2000f,
+            0f);
+
+        InstructionsMenu.localPosition = new Vector3(0f, 0f, 0f);
+    }
+
+    public void returnFromInstructions()
+    {
+        buttonPressSound.audio.Play();
+        InstructionsBackButton.enabled = false;
+        SetMenuActive(true, false);
+        mainMenu.transform.position = new Vector3(
+            mainMenu.transform.position.x,
+            mainMenu.transform.position.y + 2000f,
+            0f);
+
+        InstructionsMenu.localPosition = instructionsPos;
+    }
 
     public IEnumerator LoadFirstLevel()
     {

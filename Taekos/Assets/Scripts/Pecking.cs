@@ -6,7 +6,7 @@ public class Pecking : MonoBehaviour {
     private bool enablePeck;
     void Start()
     {
-        Debug.Log(transform.localPosition);
+        //Debug.Log(transform.localPosition);
         enablePeck = true;
     }
 	void OnTriggerEnter2D(Collider2D other){
