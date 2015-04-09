@@ -1,0 +1,172 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.0]
+    Renderer: NVIDIA GeForce GTS 240 (ID=0x607)
+    Vendor:   NVIDIA
+    VRAM:     1007 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: K:\2D Game Development\Taekos\Taekos_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading K:\2D Game Development\Taekos\Taekos_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: K:\2D Game Development\Taekos\Taekos_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading K:\2D Game Development\Taekos\Taekos_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: K:\2D Game Development\Taekos\Taekos_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading K:\2D Game Development\Taekos\Taekos_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.334 seconds
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: K:\2D Game Development\Taekos\Taekos_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: K:\2D Game Development\Taekos\Taekos_Data\Managed\System.dll (this message is harmless)
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:False Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Grounded:True Wall cling: False Touching wall: False Facing: 1 Hurt: False Dead: False Pecking: False hVelocity: 0
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+

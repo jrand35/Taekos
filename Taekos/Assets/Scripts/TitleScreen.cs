@@ -36,8 +36,8 @@ public class TitleScreen : MonoBehaviour {
     private bool onOptionsMenu;
 	private bool dayTime;
     private bool buttonClicked;
-    private float dMenuX = 35f;
-    private float menuDistance = 700;
+    private float dMenuX = 53f;
+    private float menuDistance = 800;
     private const int MENU_MAIN = 0;
     private const int MENU_OPTIONS = 1;
     private Vector3 instructionsPos;
