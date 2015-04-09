@@ -295,6 +295,7 @@ public class Controller : MonoBehaviour {
 		anim.SetBool ("isPecking", pecking);
 		anim.SetFloat ("absHSpeed", Mathf.Abs (hVelocity));
 		anim.SetBool ("wallCling", wallCling);
+        anim.SetBool("gliding", gliding);
 		if (isDead) {
 			//Kill spin
 		}
