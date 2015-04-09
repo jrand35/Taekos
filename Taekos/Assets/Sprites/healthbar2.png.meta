@@ -1,12 +1,17 @@
 fileFormatVersion: 2
-guid: 47b93c9c7638a7149a33e4a8270e77aa
+guid: 0a0b1595a0cf68b43b3044a2ec1deff8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: healthbar2_0
-    21300002: healthbar2_1
-    21300004: healthbar2_2
-    21300006: healthbar2_3
-    21300008: healthbar2_4
+    21300000: healthbar_100
+    21300002: healthbar_75
+    21300004: healthbar2_50
+    21300006: healthbar2_25
+    21300008: healthbar2_0
+    21300010: healthbar_100_fade
+    21300012: healthbar_75_fade
+    21300014: healthbar_50_fade
+    21300016: healthbar_25_fade
+    21300018: healthbar_0_fade
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,55 +53,105 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
+    - name: healthbar_100
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1222
+        width: 293
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: healthbar_75
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1222
+        width: 294
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: healthbar2_50
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1034
+        width: 293
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: healthbar2_25
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1032
+        width: 293
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: healthbar2_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 523
-        width: 291
-        height: 177
-      alignment: 4
-      pivot: {x: 0, y: 0}
+        x: 16
+        y: 846
+        width: 293
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthbar2_1
+    - name: healthbar_100_fade
       rect:
         serializedVersion: 2
-        x: 346
-        y: 523
-        width: 291
-        height: 177
-      alignment: 4
-      pivot: {x: 0, y: 0}
+        x: 15
+        y: 522
+        width: 293
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthbar2_2
+    - name: healthbar_75_fade
       rect:
         serializedVersion: 2
-        x: 37
-        y: 335
-        width: 291
-        height: 177
-      alignment: 4
-      pivot: {x: 0, y: 0}
+        x: 345
+        y: 521
+        width: 294
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthbar2_3
+    - name: healthbar_50_fade
       rect:
         serializedVersion: 2
-        x: 358
-        y: 333
-        width: 291
-        height: 177
-      alignment: 4
-      pivot: {x: 0, y: 0}
+        x: 35
+        y: 334
+        width: 294
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthbar2_4
+    - name: healthbar_25_fade
       rect:
         serializedVersion: 2
-        x: 17
-        y: 147
-        width: 291
-        height: 177
-      alignment: 4
-      pivot: {x: 0, y: 0}
+        x: 357
+        y: 331
+        width: 293
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: healthbar_0_fade
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 145
+        width: 293
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

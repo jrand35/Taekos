@@ -206,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.46999979, y: -5.01999998, z: 0}
+  m_LocalPosition: {x: -3.97000003, y: -1.38999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 487070}
@@ -575,12 +575,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifebar: {fileID: 0}
+  lifebarMask: {fileID: 0}
   sprites:
-  - {fileID: 21300000, guid: 47b93c9c7638a7149a33e4a8270e77aa, type: 3}
-  - {fileID: 21300002, guid: 47b93c9c7638a7149a33e4a8270e77aa, type: 3}
-  - {fileID: 21300004, guid: 47b93c9c7638a7149a33e4a8270e77aa, type: 3}
-  - {fileID: 21300006, guid: 47b93c9c7638a7149a33e4a8270e77aa, type: 3}
-  - {fileID: 21300008, guid: 47b93c9c7638a7149a33e4a8270e77aa, type: 3}
+  - {fileID: 21300000, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300002, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300004, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300006, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300008, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  maskSprites:
+  - {fileID: 21300010, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300012, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300014, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300016, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
+  - {fileID: 21300018, guid: 0a0b1595a0cf68b43b3044a2ec1deff8, type: 3}
   livesRemaining: {fileID: 0}
 --- !u!114 &11487058
 MonoBehaviour:

@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour {
     public static event GetGameOverHandler getGameOver;
     public delegate void AddLivesHandler(int add);
     public static event AddLivesHandler AddLives;
-    public delegate void LifebarHandler(int health, int lives);
+    public delegate void LifebarHandler(int health, int lives, int effect);
     public static event LifebarHandler UpdateLifebar;
 	public Transform groundCheck;
 	public Transform wallCheck;
@@ -76,8 +76,6 @@ public class Controller : MonoBehaviour {
 
     void Awake()
     {
-        AddLives(4);    //Temporary
-
         resurrectPos = transform.position;
         peckingLocalPos = new Vector3(0.35f, 0.8f, 0f);
     }
@@ -122,7 +120,7 @@ public class Controller : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
         StartCoroutine(Trail());
-        UpdateLifebar(playerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives(), 0);
 	}
 
  /*   void OnTriggerStay2D(Collider2D other)
@@ -373,7 +371,7 @@ public class Controller : MonoBehaviour {
         {
             playerLife = 0;
         }
-        UpdateLifebar(playerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives(), 2);
     }
 
     public void HurtPlayer(int damage)
@@ -388,7 +386,7 @@ public class Controller : MonoBehaviour {
         {
             playerLife = 0;
         }
-        UpdateLifebar(playerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives(), 1);
         if (playerLife > 0)
         {
             hVelocity = hurtBackSpeed * facing;
@@ -401,7 +399,7 @@ public class Controller : MonoBehaviour {
 
 	void KillPlayer(){
         AddLives(-1);
-        UpdateLifebar(playerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives(), 0);
         //resurrectPos = transform.position;
 		isDead = true;
 		control = false;
@@ -431,7 +429,7 @@ public class Controller : MonoBehaviour {
     {
         playerKilled = false;
         playerLife = maxPlayerLife;
-        UpdateLifebar(playerLife, getCurrentLives());
+        UpdateLifebar(playerLife, getCurrentLives(), 0);
         StartCoroutine(Invincible());
         rigidbody2D.velocity = new Vector2(0f, 0f);
         transform.position = resurrectPos;

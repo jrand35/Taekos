@@ -22,7 +22,6 @@ public class TakeDamage : MonoBehaviour {
         if (other.gameObject.tag == "KillPlayer")
         {
             takeDamage(4);
-            Destroy(other.gameObject);
         }
     }
 
