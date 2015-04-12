@@ -12,19 +12,21 @@ public class Python : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+        if (facing == -1)
+            ReverseDirection();
 	}
 
     void Update()
     {
         if (!Physics2D.OverlapPoint(edge.position, whatIsGround) || Physics2D.OverlapPoint(front.position, whatIsGround))
         {
+            facing = -facing;
             ReverseDirection();
         }
     }
 
     void ReverseDirection()
     {
-        facing = -facing;
         rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;

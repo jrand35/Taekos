@@ -15,13 +15,13 @@ public class ScoreTextController : MonoBehaviour {
 
     void OnEnable()
     {
-        PickUpPowerups.addScore += UpdateScore;
+        CollectItems.addScore += UpdateScore;
         EnemyController.addScore += UpdateScore;
     }
 
     void OnDisable()
     {
-        PickUpPowerups.addScore -= UpdateScore;
+        CollectItems.addScore -= UpdateScore;
         EnemyController.addScore -= UpdateScore;
     }
 

@@ -4,14 +4,19 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+    public delegate void FeatherHandler(int numFeathers, int maxFeathers);
+    public static event FeatherHandler UpdateFeatherCounter;
 	public ScoreTextController scoreTextController;
     public Image screenFade;
     public int fadeTime = 45;
+    public int totalFeathers = 20;
+    private int numFeathers;
     private int livesRemaining;
     private bool isGameOver;
 
     void Awake()
     {
+        numFeathers = 0;
         livesRemaining = Settings.NumberOfLives;
         isGameOver = false;
     }
@@ -21,6 +26,7 @@ public class GameController : MonoBehaviour {
         Controller.getCurrentLives += getLives;
         Controller.getGameOver += getGameOver;
         Controller.AddLives += AddLives;
+        CollectItems.addFeathers += AddFeathers;
     }
 
     void OnDisable()
@@ -28,12 +34,14 @@ public class GameController : MonoBehaviour {
         Controller.getCurrentLives += getLives;
         Controller.getGameOver -= getGameOver;
         Controller.AddLives -= AddLives;
+        CollectItems.addFeathers -= AddFeathers;
     }
 
 	// Use this for initialization
 	void Start () {
         StartCoroutine(ScreenFade());
 		scoreTextController.UpdateScore (0);
+        UpdateFeatherCounter(numFeathers, totalFeathers);
 	}
 	
 	// Update is called once per frame
@@ -49,6 +57,12 @@ public class GameController : MonoBehaviour {
     bool getGameOver()
     {
         return isGameOver;
+    }
+
+    void AddFeathers(int add)
+    {
+        numFeathers += add;
+        UpdateFeatherCounter(numFeathers, totalFeathers);
     }
 
     void AddLives(int add)

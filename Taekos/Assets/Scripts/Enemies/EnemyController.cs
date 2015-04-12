@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour {
 		return playerDamageValue;
 	}
 
-    public void DamageEnemy(int damage){
+    public void DamageEnemy(int damage, int direction){
         if (invincible)
             return;
         enemyLife -= damage;
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour {
         {
             if (!enemyHurt)
             {
-                StartCoroutine(HurtEnemy());
+                StartCoroutine(HurtEnemy(direction));
             }
         }
     }
@@ -42,11 +42,11 @@ public class EnemyController : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    IEnumerator HurtEnemy()
+    IEnumerator HurtEnemy(int direction)
     {
         enemyHurt = true;
         Vector2 startVelocity = rigidbody2D.velocity;
-        rigidbody2D.velocity = new Vector2(-4, 0f);
+        rigidbody2D.velocity = new Vector2(direction * 4f, 0f);
         for (int i = 0; i < enemyHurtFrames; i++)
         {
             yield return 0;

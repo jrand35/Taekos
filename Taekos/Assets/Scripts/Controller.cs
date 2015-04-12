@@ -91,7 +91,7 @@ public class Controller : MonoBehaviour {
         HitBox.takeDamage += HurtPlayer;
         HitBox.killPlayer += KillPlayer;
         HitBox.getCheckpoint += UpdateCheckpoint;
-        PickUpPowerups.addHealth += AddHealth;
+        CollectItems.addHealth += AddHealth;
     }
 
     void OnDisable()
@@ -99,7 +99,7 @@ public class Controller : MonoBehaviour {
         HitBox.takeDamage -= HurtPlayer;
         HitBox.killPlayer -= KillPlayer;
         HitBox.getCheckpoint -= UpdateCheckpoint;
-        PickUpPowerups.addHealth -= AddHealth;
+        CollectItems.addHealth -= AddHealth;
     }
 
 	void Start () {
@@ -130,19 +130,6 @@ public class Controller : MonoBehaviour {
         StartCoroutine(Trail());
         UpdateLifebar(playerLife, getCurrentLives(), 0);
 	}
-
- /*   void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Enemies" && !isInvincible && !isDead)
-        {
-            EnemyController damageValue = other.gameObject.GetComponent<EnemyController>();
-            hurtSound.audio.Play();
-            if (damageValue != null)
-            {
-                HurtPlayer(damageValue.getPlayerDamageValue());
-            }
-        }
-    }*/
 
 	//Do not need to use Time.deltaTime
 	void FixedUpdate () {
@@ -310,6 +297,11 @@ public class Controller : MonoBehaviour {
 			//Kill spin
 		}
 	}
+
+    public int getFacing()
+    {
+        return facing;
+    }
 
 	void Flip(){
 		if (facing == 1) {

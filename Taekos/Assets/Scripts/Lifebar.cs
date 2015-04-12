@@ -8,6 +8,7 @@ public class Lifebar : MonoBehaviour {
 	public Sprite[] sprites;
     public Sprite[] maskSprites;
     public Text livesRemaining;
+    public Text featherCounter;
     private float blinkTime = 0.1f;
     private Color normalColor;
     private Color redColor;     //When taking damage
@@ -24,11 +25,13 @@ public class Lifebar : MonoBehaviour {
     void OnEnable()
     {
         Controller.UpdateLifebar += UpdateLifebar;
+        GameController.UpdateFeatherCounter += UpdateFeatherCounter;
     }
 
     void OnDisable()
     {
         Controller.UpdateLifebar -= UpdateLifebar;
+        GameController.UpdateFeatherCounter -= UpdateFeatherCounter;
     }
 
 	void Start(){
@@ -79,6 +82,11 @@ public class Lifebar : MonoBehaviour {
 
         livesRemaining.text = "x " + lives;
 	}
+
+    void UpdateFeatherCounter(int featherCount, int maxFeathers)
+    {
+        featherCounter.text = "x " + featherCount + " / " + maxFeathers;
+    }
 
     //col
     //1: Red

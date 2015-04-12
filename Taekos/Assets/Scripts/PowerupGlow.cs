@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PowerupGlow : MonoBehaviour {
 
+    private float dRad = 0.1f;
     private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
@@ -14,7 +15,6 @@ public class PowerupGlow : MonoBehaviour {
     IEnumerator Glow()
     {
         float rad = 0f;
-        float dRad = 0.05f;
         while (gameObject != null) {
             rad += dRad;
             if (rad > (2f * Mathf.PI))

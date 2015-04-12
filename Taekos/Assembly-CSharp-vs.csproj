@@ -49,6 +49,7 @@
      <Compile Include="Assets\Old\Controller_Backup.cs" />
      <Compile Include="Assets\Scripts\BonusPoints.cs" />
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
+     <Compile Include="Assets\Scripts\CollectItems.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Piranha.cs" />
@@ -60,7 +61,6 @@
      <Compile Include="Assets\Scripts\LeftLifeButtonController.cs" />
      <Compile Include="Assets\Scripts\Lifebar.cs" />
      <Compile Include="Assets\Scripts\Pecking.cs" />
-     <Compile Include="Assets\Scripts\PickUpPowerups.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\PowerupGlow.cs" />
      <Compile Include="Assets\Scripts\PowerupPointValue.cs" />

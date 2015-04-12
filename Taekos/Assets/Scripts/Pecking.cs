@@ -4,9 +4,10 @@ using System.Collections;
 public class Pecking : MonoBehaviour {
     public int damageValue = 1;
     private bool enablePeck;
+    private Controller controller;
     void Start()
     {
-        //Debug.Log(transform.localPosition);
+        controller = GetComponentInParent<Controller>();
         enablePeck = true;
     }
 	void OnTriggerEnter2D(Collider2D other){
@@ -16,7 +17,7 @@ public class Pecking : MonoBehaviour {
                 EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
                 if (enemyController != null)
                 {
-                    enemyController.DamageEnemy(damageValue);   //Fix; Kills enemies instantly
+                    enemyController.DamageEnemy(damageValue, controller.getFacing());
                 }
             }
         }
