@@ -3,9 +3,10 @@ using System.Collections;
 
 public class PickUpPowerups : MonoBehaviour {
 
+    public delegate void ScoreHandler(long score);
+    public static event ScoreHandler addScore;
     public delegate void HealthHandler(int health);
     public static event HealthHandler addHealth;
-	public ScoreTextController scoreTextController;
 	public GameObject bonusPoints;
 	private float height = 1f;
 	private Controller controller;
@@ -27,7 +28,7 @@ public class PickUpPowerups : MonoBehaviour {
 				GameObject points = (GameObject)Instantiate (bonusPoints, pos, rot);
 				BonusPoints bonusPointsScript = points.GetComponent<BonusPoints>();
 				bonusPointsScript.SetPoints(pointValue.getPoints ());
-				scoreTextController.UpdateScore (pointValue.getPoints ());
+                addScore(pointValue.getPoints());
 				controller.StartCoroutine (controller.MultiplyJumpSpeed(1.3f, 10f));
 			}
 		}

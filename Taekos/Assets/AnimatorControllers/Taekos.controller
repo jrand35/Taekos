@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: AnimatorController
+  m_Name: Taekos
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: grounded
@@ -74,6 +74,19 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!206 &20647916
+BlendTree:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Blend Tree
+  m_Childs: []
+  m_BlendParameter: vSpeed
+  m_BlendParameterY: vSpeed
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_BlendType: 0
 --- !u!206 &20683718
 BlendTree:
   m_ObjectHideFlags: 3
@@ -458,7 +471,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110248720}
   m_DstState: {fileID: 110254954}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .078048721
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
@@ -598,7 +611,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110248720}
   m_DstState: {fileID: 110283718}
-  m_TransitionDuration: 0
+  m_TransitionDuration: .128735587
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
@@ -882,13 +895,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110286000}
-      second:
-      - {fileID: 110197160}
-      - {fileID: 110131492}
-      - {fileID: 110107548}
-      - {fileID: 110118198}
-    data:
       first: {fileID: 0}
       second:
       - {fileID: 110181298}
@@ -934,6 +940,13 @@ StateMachine:
       first: {fileID: 110201272}
       second:
       - {fileID: 110118488}
+    data:
+      first: {fileID: 110286000}
+      second:
+      - {fileID: 110197160}
+      - {fileID: 110131492}
+      - {fileID: 110107548}
+      - {fileID: 110118198}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -60, y: -144, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

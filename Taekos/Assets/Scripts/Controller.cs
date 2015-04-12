@@ -28,11 +28,11 @@ public class Controller : MonoBehaviour {
 	public GameObject hurtSound;
 	public GameObject peckBoxPrefab;
 	public GameObject trail;
+    public AudioSource checkpointSound;
 	public LayerMask whatIsGround;
 	public float characterHeight;
 	public float maxHSpeed = 12f;
 	public float jumpHeightCoefficient = 0.3f;
-	public float peckingTime = 0.25f;
     private GameObject peckBox;
     private float normalGravity = 1.5f;
     private float fallingGravity = 1f;
@@ -56,10 +56,12 @@ public class Controller : MonoBehaviour {
 	private float killSpin = 5f;
 	private Collider2D[] colliders;
 	private CircleCollider2D circleCollider;
+    private int peckFrames = 3;
 	private int maxPlayerLife = 4;
 	private int playerLife;
 	private int facing = 1;
 	private int invincibleFrames = 120;
+    private int checkpointIndex;
 	private bool isDead;
 	private bool playerKilled; //So that KillPlayer() is called only once
 	private bool isHurt;
@@ -81,21 +83,22 @@ public class Controller : MonoBehaviour {
     {
         resurrectPos = transform.position;
         peckingLocalPos = new Vector3(0.35f, 0.8f, 0f);
+        checkpointIndex = 0;
     }
 
     void OnEnable()
     {
-        TakeDamage.takeDamage += HurtPlayer;
-        TakeDamage.killPlayer += KillPlayer;
-        TakeDamage.getCheckpoint += UpdateCheckpoint;
+        HitBox.takeDamage += HurtPlayer;
+        HitBox.killPlayer += KillPlayer;
+        HitBox.getCheckpoint += UpdateCheckpoint;
         PickUpPowerups.addHealth += AddHealth;
     }
 
     void OnDisable()
     {
-        TakeDamage.takeDamage -= HurtPlayer;
-        TakeDamage.killPlayer -= KillPlayer;
-        TakeDamage.getCheckpoint -= UpdateCheckpoint;
+        HitBox.takeDamage -= HurtPlayer;
+        HitBox.killPlayer -= KillPlayer;
+        HitBox.getCheckpoint -= UpdateCheckpoint;
         PickUpPowerups.addHealth -= AddHealth;
     }
 
@@ -363,9 +366,14 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
-    void UpdateCheckpoint(Vector3 checkpointPos)
+    void UpdateCheckpoint(Vector3 checkpointPos, int index)
     {
-        resurrectPos = checkpointPos;
+        if (checkpointIndex < index)
+        {
+            checkpointIndex = index;
+            checkpointSound.Play();
+            resurrectPos = checkpointPos;
+        }
     }
 
     void AddHealth(int addHealth)
@@ -487,7 +495,10 @@ public class Controller : MonoBehaviour {
     //Pecking stops when clinging to a wall
 	IEnumerator Peck(){
         StartPeck();
-        yield return new WaitForSeconds(peckingTime);
+        for (int i = 0; i < peckFrames; i++)
+        {
+            yield return 0;
+        }
         StopPeck();
 	}
 

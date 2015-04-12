@@ -13,6 +13,18 @@ public class ScoreTextController : MonoBehaviour {
         score = 0;
     }
 
+    void OnEnable()
+    {
+        PickUpPowerups.addScore += UpdateScore;
+        EnemyController.addScore += UpdateScore;
+    }
+
+    void OnDisable()
+    {
+        PickUpPowerups.addScore -= UpdateScore;
+        EnemyController.addScore -= UpdateScore;
+    }
+
 	// Use this for initialization
 	void Start () {
         //score not setting to this value

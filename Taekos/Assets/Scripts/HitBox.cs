@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TakeDamage : MonoBehaviour {
+public class HitBox : MonoBehaviour {
     public delegate void TakeDamageHandler(int damage);
     public static event TakeDamageHandler takeDamage;
     public delegate void KillPlayerHandler();
     public static event KillPlayerHandler killPlayer;
-    public delegate void CheckpointHandler(Vector3 position);
+    public delegate void CheckpointHandler(Vector3 position, int checkpointIndex);
     public static event CheckpointHandler getCheckpoint;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -14,7 +14,10 @@ public class TakeDamage : MonoBehaviour {
         if (other.gameObject.tag == "Checkpoint")
         {
             Vector3 checkpointPos = other.gameObject.transform.position;
-            getCheckpoint(checkpointPos);
+            Checkpoint script = other.GetComponent<Checkpoint>();
+            int checkpointIndex = script.getCheckpointIndex();
+            script.getCheckpoint();
+            getCheckpoint(checkpointPos, checkpointIndex);
         }
     }
 

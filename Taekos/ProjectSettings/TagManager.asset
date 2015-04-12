@@ -19,7 +19,7 @@ TagManager:
   Builtin Layer 7: 
   User Layer 8: Player
   User Layer 9: WallFloor
-  User Layer 10: 
+  User Layer 10: Enemies
   User Layer 11: 
   User Layer 12: 
   User Layer 13: 
@@ -53,6 +53,10 @@ TagManager:
   - name: Walls and floors
     userID: 4
     uniqueID: 1779812875
+    locked: 0
+  - name: Enemies
+    userID: 6
+    uniqueID: 3657821645
     locked: 0
   - name: Foreground
     userID: 5
