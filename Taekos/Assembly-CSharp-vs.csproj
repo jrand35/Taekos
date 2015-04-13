@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\CollectItems.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Coconut.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemies\Piranha.cs" />
      <Compile Include="Assets\Scripts\Enemies\Python.cs" />

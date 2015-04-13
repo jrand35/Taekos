@@ -198,6 +198,57 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 24cd631a9d88d7543a04b210768e4dfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &30710491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 30710493}
+  - 61: {fileID: 30710492}
+  - 114: {fileID: 30710494}
+  m_Layer: 10
+  m_Name: Player detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &30710492
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30710491}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.73000002, y: 60.3800011}
+  m_Center: {x: 0, y: 0}
+--- !u!4 &30710493
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30710491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1680715141}
+  m_RootOrder: 0
+--- !u!114 &30710494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30710491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06b6cef7b860534bbb10f3e07afb43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81260532
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +321,7 @@ GameObject:
   - 4: {fileID: 98181548}
   m_Layer: 8
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1091,7 +1142,7 @@ GameObject:
   - 82: {fileID: 288214746}
   m_Layer: 8
   m_Name: CheckpointSound
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1548,6 +1599,58 @@ Prefab:
       propertyPath: featherCounter
       value: 
       objectReference: {fileID: 1108678815}
+    - target: {fileID: 187060, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187060, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 172996, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 139888, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187066, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187070, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 117782, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187056, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187062, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187064, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187054, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 154662, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 187058, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
   m_RootGameObject: {fileID: 1009352894}
@@ -2119,7 +2222,7 @@ GameObject:
   - 82: {fileID: 494865796}
   m_Layer: 8
   m_Name: HurtSound
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3216,7 +3319,7 @@ GameObject:
   - 114: {fileID: 771137233}
   m_Layer: 8
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4217,7 +4320,7 @@ GameObject:
   - 4: {fileID: 951305059}
   m_Layer: 8
   m_Name: BackWallCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4745,9 +4848,9 @@ GameObject:
   - 114: {fileID: 1009352898}
   - 95: {fileID: 1009352897}
   - 114: {fileID: 1009352896}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5336,7 +5439,7 @@ GameObject:
   - 4: {fileID: 1134134946}
   m_Layer: 8
   m_Name: Back
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5828,7 +5931,7 @@ GameObject:
   - 61: {fileID: 1215272611}
   m_Layer: 8
   m_Name: CollectItems
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5874,6 +5977,33 @@ MonoBehaviour:
   bonusPoints: {fileID: 180584, guid: 24f5c3e55ab5ca843a8f6984a434ea88, type: 2}
   audio1: {fileID: 856526194}
   audio2: {fileID: 1755881527}
+--- !u!1 &1218268972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1218268973}
+  m_Layer: 0
+  m_Name: Coconut generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218268973
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218268972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.3700008, y: 4.19999981, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
 --- !u!1 &1250777386
 GameObject:
   m_ObjectHideFlags: 0
@@ -7904,7 +8034,7 @@ GameObject:
   - 82: {fileID: 1650911339}
   m_Layer: 8
   m_Name: JumpSound
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8042,6 +8172,100 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 920c363824486b94191c4fd3d123e4d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1680715140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1680715141}
+  - 212: {fileID: 1680715144}
+  - 50: {fileID: 1680715143}
+  - 58: {fileID: 1680715142}
+  - 114: {fileID: 1680715145}
+  m_Layer: 10
+  m_Name: Coconut
+  m_TagString: Enemies
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1680715141
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680715140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.3700008, y: 4.19999981, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 30710493}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+--- !u!58 &1680715142
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680715140}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .709999979
+  m_Center: {x: 0, y: 0}
+--- !u!50 &1680715143
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680715140}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!212 &1680715144
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680715140}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 3657821645
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4e640761f810fe4db2ad6b303352ca9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1680715145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680715140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0894603da1d1c459b50e3876311ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincible: 1
+  enemyLife: 1
+  enemyScore: 0
 --- !u!1 &1683817537
 GameObject:
   m_ObjectHideFlags: 0
@@ -8257,7 +8481,7 @@ GameObject:
   - 4: {fileID: 1707449254}
   m_Layer: 8
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8722,7 +8946,7 @@ GameObject:
   - 4: {fileID: 1775831117}
   m_Layer: 8
   m_Name: WallCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8811,7 +9035,7 @@ GameObject:
   - 4: {fileID: 1782241968}
   m_Layer: 8
   m_Name: Front
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
