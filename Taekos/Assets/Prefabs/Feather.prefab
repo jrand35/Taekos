@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 401722}
   - 212: {fileID: 21201722}
-  - 114: {fileID: 11401722}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
@@ -27,6 +26,7 @@ GameObject:
   - 4: {fileID: 401724}
   - 212: {fileID: 21201724}
   - 61: {fileID: 6101722}
+  - 114: {fileID: 11468180}
   m_Layer: 0
   m_Name: Feather
   m_TagString: Feathers
@@ -70,15 +70,15 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .745000005, y: .959999979}
   m_Center: {x: 0, y: 0}
---- !u!114 &11401722
+--- !u!114 &11468180
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101722}
+  m_GameObject: {fileID: 101724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f5361cfe43b79469cce0be08fba634, type: 3}
+  m_Script: {fileID: 11500000, guid: cc85a183caed8ab4ca13111d1b1faebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21201722

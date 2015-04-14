@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Enemies\Piranha.cs" />
     <Compile Include="Assets\Scripts\Enemies\Python.cs" />
     <Compile Include="Assets\Scripts\FadeTrail.cs" />
+    <Compile Include="Assets\Scripts\FeatherRotate.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\HitBox.cs" />
