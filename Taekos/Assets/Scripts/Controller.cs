@@ -31,19 +31,20 @@ public class Controller : MonoBehaviour {
     public AudioSource checkpointSound;
 	public LayerMask whatIsGround;
 	public float characterHeight;
-	public float maxHSpeed = 12f;
 	public float jumpHeightCoefficient = 0.3f;
     private GameObject peckBox;
-    private float normalGravity = 1.5f;
+    private float maxHSpeed = 11f;
+    private float normalGravity = 2f;                 //1.5f
     private float fallingGravity = 1f;
 	private float glideSpeed;
 	private float hVelocity;
 	private float hAccel = 1f;
-	private float startingGlideSpeed = -1;				//-1.5f
-	private float startingJumpSpeed = 20f;
+    private float startingGlideSpeed = -1.5f;			//-1.5f
+    private float descendAcceleration = 0.05f;			//0.02f, 0.013f
+	private float startingJumpSpeed = 25f;              //20f
 	private float jumpSpeed;							//15f, 22.5f
 	private float wallJumpSpeed = 7;
-	private float descendAcceleration = 0.02f;			//0.02f, 0.013f
+    private float wallClingDescend = 2.2f;
 	private float groundRadius = 0.2f;
 	private float wallRadius = 0.3f;
 	private float minWallClingSpeed = 8f;
@@ -233,7 +234,7 @@ public class Controller : MonoBehaviour {
 			}
 			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, vVelocity);
 			if (vVelocity == 0){
-				rigidbody2D.gravityScale = 0f;
+				rigidbody2D.gravityScale = wallClingDescend;
 			}
 		}
 		else if (!isDead){

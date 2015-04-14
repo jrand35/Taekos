@@ -398,7 +398,7 @@ Transform:
   m_PrefabInternal: {fileID: 350567884}
   m_GameObject: {fileID: 98181547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .219999999, y: 2.06999993, z: 0}
+  m_LocalPosition: {x: .219999999, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1009352895}
@@ -1839,6 +1839,10 @@ Prefab:
     - target: {fileID: 187058, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 472996, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
@@ -5710,7 +5714,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294965960
   characterHeight: 0
-  maxHSpeed: 8
   jumpHeightCoefficient: .200000003
 --- !u!50 &1009352899
 Rigidbody2D:
