@@ -2018,11 +2018,11 @@ MonoBehaviour:
 
     Controls
 
-    Left/Right Arrow keys - Run
+    Left/Right Arrow keys - Run, cling to walls
 
     Space - Jump, Hold in midair to glide
 
-    Z - Kick
+    Z - Throw a banana
 
     X - Peck'
 --- !u!222 &1972455754
