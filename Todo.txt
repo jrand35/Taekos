@@ -1,11 +1,12 @@
 Finish level
 Bananas
-Increase pacing speed*
-Make lava blocks glow
-Dashing peck attack
 Feedback / sound for hurting enemies
-Fix corner glitch* if possible
 Timer
 Goal, unlocks with golden feathers
+Add WASD movement
+Dashing peck attack*
+Increase pacing speed*
+Fix corner glitch* if possible
 - Instructions for feathers, fruit and wall jumping
-Instructions menu button
+- Instructions menu button
+- Make lava blocks glow
