@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PowerupGlow : MonoBehaviour {
 
-    private float dRad = 0.1f;
+    public float dRad = 0.1f;
     private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
