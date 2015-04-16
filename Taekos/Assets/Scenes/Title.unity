@@ -830,7 +830,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: 240, y: -96}
   m_SizeDelta: {x: 220, y: 70}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &864332762
@@ -1411,6 +1411,67 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &1216232588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1216232589}
+  - 222: {fileID: 1216232591}
+  - 114: {fileID: 1216232590}
+  m_Layer: 5
+  m_Name: Mango
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1216232589
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216232588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793613681}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -84, y: -213}
+  m_SizeDelta: {x: 127.5, y: 104}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1216232590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216232588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ce26d1d9c2b652d42971fbf91520ebfd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1216232591
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216232588}
 --- !u!1 &1270987769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,6 +1745,67 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1588265015}
+--- !u!1 &1683279356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1683279357}
+  - 222: {fileID: 1683279359}
+  - 114: {fileID: 1683279358}
+  m_Layer: 5
+  m_Name: Feather
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1683279357
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683279356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793613681}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 236, y: -171}
+  m_SizeDelta: {x: 99.3333359, y: 128}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1683279358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683279356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 887722fc1c2006247a4561580d8fb67e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1683279359
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1683279356}
 --- !u!1 &1692897009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1949,8 @@ RectTransform:
   m_Children:
   - {fileID: 1972455752}
   - {fileID: 864332761}
+  - {fileID: 1216232589}
+  - {fileID: 1683279357}
   m_Father: {fileID: 1985796918}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
@@ -1981,7 +2105,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1972455753
@@ -1999,7 +2123,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: .498039186, b: .498039186, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -2018,13 +2142,38 @@ MonoBehaviour:
 
     Controls
 
-    Left/Right Arrow keys - Run, cling to walls
+    Left/Right Arrow keys
 
-    Space - Jump, Hold in midair to glide
+    - Run
 
-    Z - Throw a banana
+    - Cling to walls (by holding button)
 
-    X - Peck'
+    Space
+
+    - Jump
+
+    - Wall jump (when clinging to a wall)
+
+    - Glide (hold in midair)
+
+    Z
+
+    - Throw a banana
+
+    X
+
+    - Peck (Only works on pythons)
+
+
+    Goal
+
+    - Collect all of Carmen''s golden feathers to unlock the goal
+
+    Items
+
+    - Mangos restore health
+
+    - Throw bananas to attack mechanical piranhas and pythons'
 --- !u!222 &1972455754
 CanvasRenderer:
   m_ObjectHideFlags: 0
