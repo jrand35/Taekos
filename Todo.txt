@@ -1,0 +1,11 @@
+Finish level
+Bananas
+Increase pacing speed*
+Make lava blocks glow
+Dashing peck attack
+Feedback / sound for hurting enemies
+Fix corner glitch* if possible
+Timer
+Goal, unlocks with golden feathers
+- Instructions for feathers, fruit and wall jumping
+Instructions menu button
