@@ -852,7 +852,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 281, y: -230}
+  m_AnchoredPosition: {x: 60, y: -230}
   m_SizeDelta: {x: 87.75, y: 65.25}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &684085651
@@ -2136,13 +2136,13 @@ MonoBehaviour:
 
     Controls
 
-    Left/Right Arrow keys
+    Left/Right, A/D
 
     - Run
 
     - Cling to walls (by holding button)
 
-    Space
+    Space, W
 
     - Jump
 
@@ -2150,11 +2150,11 @@ MonoBehaviour:
 
     - Glide (hold in midair)
 
-    Z
+    Z, E
 
     - Throw a banana
 
-    X
+    X, Q
 
     - Peck (Only works on pythons)
 
@@ -2167,7 +2167,7 @@ MonoBehaviour:
 
     - Mangos restore health
 
-    - Throw bananas to attack mechanical piranhas and pythons'
+    - Throw bananas to attack any enemy'
 --- !u!222 &1972455754
 CanvasRenderer:
   m_ObjectHideFlags: 0

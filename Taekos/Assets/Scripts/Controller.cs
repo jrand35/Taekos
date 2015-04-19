@@ -80,6 +80,31 @@ public class Controller : MonoBehaviour {
 	private SpriteRenderer spriteRenderer;
 	private Animator anim;
 
+    bool HoldingLeft()
+    {
+        return (Input.GetAxisRaw("Horizontal") == -1);
+    }
+
+    bool HoldingRight()
+    {
+        return (Input.GetAxisRaw("Horizontal") == 1);
+    }
+
+    bool PressJump()
+    {
+        return (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space));
+    }
+
+    bool HoldJump()
+    {
+        return (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space));
+    }
+
+    bool PressPeck()
+    {
+        return (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Q));
+    }
+
     void Awake()
     {
         resurrectPos = transform.position;
@@ -153,7 +178,7 @@ public class Controller : MonoBehaviour {
 					hVelocity = 0;
 				}
 				//Do not cling to wall if grounded
-				if (control && Input.GetKey (KeyCode.RightArrow) && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
+				if (control && HoldingRight() && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
 					wallCling = true;
                     StopPeck();
 				} else {
@@ -166,7 +191,7 @@ public class Controller : MonoBehaviour {
 					hVelocity = 0;
 				}
 				//Do not cling to wall if grounded
-				if (control && Input.GetKey (KeyCode.LeftArrow) && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
+				if (control && HoldingLeft() && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
 					wallCling = true;
                     StopPeck();
 				} else {
@@ -194,7 +219,7 @@ public class Controller : MonoBehaviour {
 		}
 
 		//Gliding
-		if (control && Input.GetKey (KeyCode.Space) && !grounded && !wallCling && rigidbody2D.velocity.y <= 0) {
+		if (control && HoldJump() && !grounded && !wallCling && rigidbody2D.velocity.y <= 0) {
 			glideSpeed -= descendAcceleration;
 			if (glideSpeed < maxFallSpeed){
 				glideSpeed = maxFallSpeed;
@@ -211,7 +236,7 @@ public class Controller : MonoBehaviour {
 		}
 
 		//Adjust falling speed
-		if (!grounded && !gliding && !wallCling && !(control && Input.GetKeyDown (KeyCode.Space)) && !Input.GetKey (KeyCode.Space)){
+		if (!grounded && !gliding && !wallCling && !(control && PressJump()) && !HoldJump()){
 			float newVelocityY = stopJumpSpeed + Mathf.Abs(hVelocity * jumpHeightCoefficient);
 		    if (rigidbody2D.velocity.y > newVelocityY){
 				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, newVelocityY);
@@ -242,13 +267,13 @@ public class Controller : MonoBehaviour {
 		}
 
 		rigidbody2D.velocity = new Vector2 (hVelocity, rigidbody2D.velocity.y);
-		if (hVelocity >= 0 && facing == -1 && Input.GetKey (KeyCode.RightArrow) && control) {
+		if (hVelocity >= 0 && facing == -1 && HoldingRight() && control) {
 			Flip ();
 		}
-		else if (hVelocity <= 0 && facing == 1 && Input.GetKey (KeyCode.LeftArrow) && control) {
+		else if (hVelocity <= 0 && facing == 1 && HoldingLeft() && control) {
 			Flip ();
 		}
-		Debug.Log ("Grounded:" + grounded + " Wall cling: " + wallCling + " Touching wall: " + touchingWall + " Facing: " + facing + " Hurt: " + isHurt + " Dead: " + isDead + " Pecking: " + pecking + " hVelocity: " + hVelocity);
+		Debug.Log ("Grounded:" + grounded + " Wall cling: " + wallCling + " Touching wall: " + touchingWall + " Facing: " + facing + " Hurt: " + isHurt + " Dead: " + isDead + " Pecking: " + pecking + " hVelocity: " + hVelocity + " Horizontal: " + Input.GetAxisRaw("Horizontal"));
 	}
 
 	void Update(){
@@ -256,7 +281,7 @@ public class Controller : MonoBehaviour {
 			//HurtPlayer (4);
             KillPlayer();
 		}
-		if (control && Input.GetKeyDown (KeyCode.X)) {
+		if (control && PressPeck()) {
             //Cannot peck while gliding or clinging to a wall
             if (!pecking && !gliding && !wallCling)
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
@@ -265,7 +290,7 @@ public class Controller : MonoBehaviour {
 			KillPlayer ();  //Sets playerKilled to true
 		}
 		//Jumping and wall jumping
-		if (control && Input.GetKeyDown (KeyCode.Space)) {
+		if (control && PressJump()) {
 			//Wall jump
 			if (wallCling){
 				if (!grounded){
@@ -318,7 +343,7 @@ public class Controller : MonoBehaviour {
 
 	void UpdateMovement(){
 		//If holding left arrow
-		if (control && Input.GetKey (KeyCode.LeftArrow)) {
+		if (control && HoldingLeft()) {
 			if (hVelocity > -maxHSpeed) {
 				hVelocity -= hAccel;
 			}
@@ -327,7 +352,7 @@ public class Controller : MonoBehaviour {
 			}
 		}
 		//If holding right arrow
-		else if (control && Input.GetKey (KeyCode.RightArrow)) {
+		else if (control && HoldingRight()) {
 			if (hVelocity < maxHSpeed) {
 				hVelocity += hAccel;
 			}
@@ -336,10 +361,8 @@ public class Controller : MonoBehaviour {
 			}
 		}
 		//If not holding left or right
-		else if (!(control && Input.GetKey (KeyCode.LeftArrow)) &&
-		         !(control && Input.GetKey (KeyCode.RightArrow)) &&
-		         !(control && Input.GetKeyDown (KeyCode.LeftArrow)) &&
-		         !(control && Input.GetKeyDown (KeyCode.RightArrow))) {
+		else if (!(control && HoldingLeft()) &&
+		         !(control && HoldingRight())) {
 			//If horizontal velocity very close to 0
 			if ((hVelocity < hAccel && hVelocity > 0) ||(hVelocity > -hAccel && hVelocity < 0)){
 				hVelocity = 0;
