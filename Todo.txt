@@ -1,11 +1,11 @@
 Finish level
 Bananas
-Feedback / sound for hurting enemies
-Timer
 Goal, unlocks with golden feathers
 Dashing peck attack*
 Increase pacing speed*
-Fix corner glitch* if possible
+Fix corner glitch if possible*
+- Feedback / sound for hurting enemies
+- Timer
 - Add WASD movement
 - Instructions for feathers, fruit and wall jumping
 - Instructions menu button

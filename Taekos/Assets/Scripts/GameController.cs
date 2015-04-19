@@ -8,14 +8,17 @@ public class GameController : MonoBehaviour {
     public static event FeatherHandler UpdateFeatherCounter;
 	public ScoreTextController scoreTextController;
     public Image screenFade;
+    public Text timerText;
     public int fadeTime = 45;
     public int totalFeathers = 20;
+    private float timer;
     private int numFeathers;
     private int livesRemaining;
     private bool isGameOver;
 
     void Awake()
     {
+        timer = 0f;
         numFeathers = 0;
         livesRemaining = Settings.NumberOfLives;
         isGameOver = false;
@@ -46,7 +49,33 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        float cseconds = timer - (int)timer;
+        cseconds = Mathf.Round(cseconds * 100f) / 100f;
+        cseconds *= 100f;
+        if (cseconds >= 100f)
+        {
+            cseconds -= 100f;
+        }
+        string cseconds_s = cseconds.ToString();
+        if (cseconds < 10f)
+        {
+            cseconds_s = "0" + cseconds_s;
+        }
+
+        float seconds = (int)timer % 60;
+        string seconds_s = seconds.ToString();
+        if (seconds < 10f)
+        {
+            seconds_s = "0" + seconds_s;
+        }
+        float minutes = (int) timer / 60;
+        string minutes_s = minutes.ToString();
+        if (minutes < 10f)
+        {
+            minutes_s = "0" + minutes_s;
+        }
+        timer += Time.deltaTime;
+        timerText.text = "Time: " + minutes_s + "\"" + seconds_s + "\"" + cseconds_s;
 	}
 
     int getLives()

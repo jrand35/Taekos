@@ -29,6 +29,7 @@ public class Controller : MonoBehaviour {
 	public GameObject peckBoxPrefab;
 	public GameObject trail;
     public AudioSource checkpointSound;
+    public AudioSource peckHitSound;
 	public LayerMask whatIsGround;
 	public float characterHeight;
 	public float jumpHeightCoefficient = 0.3f;
@@ -535,6 +536,11 @@ public class Controller : MonoBehaviour {
             Destroy(peckBox);
             peckBox = null;
         }
+    }
+
+    void PlayPeckSound()
+    {
+        peckHitSound.Play();
     }
 
 	IEnumerator HurtAnimation(){

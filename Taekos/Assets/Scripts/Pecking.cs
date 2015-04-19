@@ -5,6 +5,7 @@ public class Pecking : MonoBehaviour {
     public int damageValue = 1;
     private bool enablePeck;
     private Controller controller;
+
     void Start()
     {
         controller = GetComponentInParent<Controller>();
@@ -17,13 +18,17 @@ public class Pecking : MonoBehaviour {
                 EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
                 if (enemyController != null)
                 {
-                    enemyController.DamageEnemy(damageValue, controller.getFacing());
+                    if (enemyController.getInvincible())
+                    {
+
+                    }
+                    else
+                    {
+                        SendMessageUpwards("PlayPeckSound");
+                        enemyController.DamageEnemy(damageValue, controller.getFacing());
+                    }
                 }
             }
         }
     }
-
-    //public void EnablePeck(bool peck){
-        //enablePeck = peck;
-    //}
 }

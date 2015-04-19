@@ -20,6 +20,11 @@ public class EnemyController : MonoBehaviour {
 		return playerDamageValue;
 	}
 
+    public bool getInvincible()
+    {
+        return invincible;
+    }
+
     public void DamageEnemy(int damage, int direction){
         if (invincible)
             return;
