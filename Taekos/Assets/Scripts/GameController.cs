@@ -6,11 +6,14 @@ public class GameController : MonoBehaviour {
 
     public delegate void FeatherHandler(int numFeathers, int maxFeathers);
     public static event FeatherHandler UpdateFeatherCounter;
+    public delegate void DoorHandler(int numFeathers, int requiredFeathers);
+    public static event DoorHandler UpdateDoor;
 	public ScoreTextController scoreTextController;
     public Image screenFade;
     public Text timerText;
     public int fadeTime = 45;
     public int totalFeathers = 20;
+    public int requiredFeathers = 1;
     private float timer;
     private int numFeathers;
     private int livesRemaining;
@@ -30,6 +33,7 @@ public class GameController : MonoBehaviour {
         Controller.getGameOver += getGameOver;
         Controller.AddLives += AddLives;
         CollectItems.addFeathers += AddFeathers;
+        HitBox.completeLevel += CompleteLevel;
     }
 
     void OnDisable()
@@ -38,6 +42,7 @@ public class GameController : MonoBehaviour {
         Controller.getGameOver -= getGameOver;
         Controller.AddLives -= AddLives;
         CollectItems.addFeathers -= AddFeathers;
+        HitBox.completeLevel -= CompleteLevel;
     }
 
 	// Use this for initialization
@@ -45,6 +50,7 @@ public class GameController : MonoBehaviour {
         StartCoroutine(ScreenFade());
 		scoreTextController.UpdateScore (0);
         UpdateFeatherCounter(numFeathers, totalFeathers);
+        UpdateDoor(numFeathers, requiredFeathers);
 	}
 	
 	// Update is called once per frame
@@ -92,6 +98,7 @@ public class GameController : MonoBehaviour {
     {
         numFeathers += add;
         UpdateFeatherCounter(numFeathers, totalFeathers);
+        UpdateDoor(numFeathers, requiredFeathers);
     }
 
     void AddLives(int add)
@@ -117,7 +124,17 @@ public class GameController : MonoBehaviour {
             yield return 0;
         }
         Application.LoadLevel("GameOver");
-        Debug.Log("Game Over");
+    }
+
+    void CompleteLevel()
+    {
+        if (numFeathers >= requiredFeathers)
+        {
+            Settings.Results.Score = scoreTextController.getScore();
+            Settings.Results.Feathers = numFeathers;
+            Settings.Results.Time = (int)(timer * 100);
+            Application.LoadLevel("ResultsScreen");
+        }
     }
 
     public IEnumerator ScreenFade()

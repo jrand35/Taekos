@@ -8,6 +8,49 @@ public class Settings : MonoBehaviour {
     private static int musicVolume = 100;
     private static int soundVolume = 100;
 
+    public class Results
+    {
+        private static long score;
+        private static int feathers;
+        private static int time;
+
+        public static long Score
+        {
+            get
+            {
+                return score;
+            }
+            set
+            {
+                score = value;
+            }
+        }
+
+        public static int Feathers
+        {
+            get
+            {
+                return feathers;
+            }
+            set
+            {
+                feathers = value;
+            }
+        }
+
+        public static int Time
+        {
+            get
+            {
+                return time;
+            }
+            set
+            {
+                time = value;
+            }
+        }
+    }
+
     public static int NumberOfLives
     {
         get

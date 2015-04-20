@@ -36,6 +36,7 @@ public class TitleScreen : MonoBehaviour {
     private bool onOptionsMenu;
 	private bool dayTime;
     private bool buttonClicked;
+    private bool onInstructions;
     private float dMenuX = 53f;
     private float menuDistance = 800;
     private const int MENU_MAIN = 0;
@@ -44,6 +45,10 @@ public class TitleScreen : MonoBehaviour {
 
     void Awake()
     {
+        onInstructions = false;
+        Settings.Results.Feathers = 0;
+        Settings.Results.Score = 0;
+        Settings.Results.Time = 0;
         musicVolume = Settings.MusicVolume;
         soundVolume = Settings.SoundVolume;
         startingNumberOfLives = Settings.NumberOfLives;
@@ -53,8 +58,7 @@ public class TitleScreen : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         menu = MENU_MAIN;
-        onMainMenu = true;
-        onOptionsMenu = false;
+        SetMenuActive(true, false);
         blinkingButton.active = false;
         gameStartSound = transform.GetChild(0).gameObject;
         buttonPressSound = transform.GetChild(1).gameObject;
@@ -82,7 +86,34 @@ public class TitleScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            StartCoroutine(LoadFirstLevel());
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (onOptionsMenu)
+            {
+                ChangeMenu(0);
+            }
+            else if (onInstructions)
+            {
+                returnFromInstructions();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)){
+            if (onMainMenu)
+            {
+                goToInstructions();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        {
+            if (onMainMenu)
+            {
+                ChangeMenu(1);
+            }
+        }
 	}
 
 	IEnumerator Run(){
@@ -116,6 +147,7 @@ public class TitleScreen : MonoBehaviour {
 
     public void goToInstructions()
     {
+        onInstructions = true;
         buttonPressSound.audio.Play();
         InstructionsBackButton.enabled = true;
         SetMenuActive(false, false);
@@ -129,6 +161,7 @@ public class TitleScreen : MonoBehaviour {
 
     public void returnFromInstructions()
     {
+        onInstructions = false;
         buttonPressSound.audio.Play();
         InstructionsBackButton.enabled = false;
         SetMenuActive(true, false);
@@ -217,6 +250,8 @@ public class TitleScreen : MonoBehaviour {
 
     void SetMenuActive(bool mainMenuActive, bool optionsMenuActive)
     {
+        onMainMenu = mainMenuActive;
+        onOptionsMenu = optionsMenuActive;
         Button[] mainButtons = mainMenuButtons.GetComponentsInChildren<Button>();
         foreach (Button b in mainButtons)
         {

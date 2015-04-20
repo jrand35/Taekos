@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class HitBox : MonoBehaviour {
     public delegate void TakeDamageHandler(int damage);
@@ -8,6 +9,11 @@ public class HitBox : MonoBehaviour {
     public static event KillPlayerHandler killPlayer;
     public delegate void CheckpointHandler(Vector3 position, int checkpointIndex);
     public static event CheckpointHandler getCheckpoint;
+    public delegate void CompleteLevelHandler();
+    public static event CompleteLevelHandler completeLevel;
+    public Transform back_, top, front_, bottom;
+    public LayerMask whatIsDoor;
+    private float backx, backy, frontx, fronty;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,6 +43,30 @@ public class HitBox : MonoBehaviour {
             EnemyController damageValue = other.gameObject.GetComponent<EnemyController>();
             int damage = damageValue.getPlayerDamageValue();
             takeDamage(damage);
+        }
+        else if (other.gameObject.tag == "Doors")
+        {
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                completeLevel();
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            backx = back_.position.x;
+            backy = bottom.position.y;
+            frontx = front_.position.x;
+            fronty = top.position.y;
+            Vector2 back = new Vector2(backx, backy);
+            Vector2 front = new Vector2(frontx, fronty);
+            if (Physics2D.OverlapArea(back, front, whatIsDoor))
+            {
+                completeLevel();
+            }
         }
     }
 }

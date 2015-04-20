@@ -48,4 +48,9 @@ public class ScoreTextController : MonoBehaviour {
 			scoreDigits[i].sprite = scoreNumbers[digit];
 		}
 	}
+
+    public long getScore()
+    {
+        return score;
+    }
 }

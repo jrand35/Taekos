@@ -24,6 +24,11 @@ public class LeftLifeButtonController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         EnableButton();
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && myButton.enabled)
+        {
+            leftLifeButtonClicked(-1, true);
+            EnableButton();
+        }
 	}
 
     void EnableButton()

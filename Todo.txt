@@ -1,9 +1,10 @@
 Finish level
+Litholite
 Bananas
-Goal, unlocks with golden feathers
 Dashing peck attack*
 Increase pacing speed*
 Fix corner glitch if possible*
+- Goal, unlocks with golden feathers
 - Feedback / sound for hurting enemies
 - Timer
 - Add WASD movement

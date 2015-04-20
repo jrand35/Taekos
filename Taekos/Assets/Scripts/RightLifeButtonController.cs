@@ -27,6 +27,11 @@ public class RightLifeButtonController : MonoBehaviour
     void Update()
     {
         EnableButton();
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && myButton.enabled)
+        {
+            rightLifeButtonClicked(1, true);
+            EnableButton();
+        }
     }
 
     void EnableButton()
