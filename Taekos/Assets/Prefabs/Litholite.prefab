@@ -172,8 +172,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 13.8264704, y: 5.87848377}
-  m_Center: {x: 7.42625427, y: 2.43924189}
+  m_Size: {x: 24.3485146, y: 10.6026735}
+  m_Center: {x: 12.6872864, y: 4.80133677}
 --- !u!61 &6199712
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -195,7 +195,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: d91fc152b73d5c84ea7095bb86ee6e42, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -287,6 +287,7 @@ MonoBehaviour:
     m_Bits: 512
   edge: {fileID: 495590}
   front: {fileID: 495592}
+  blinkSprite: {fileID: 0}
   move: 1
   facing: -1
 --- !u!114 &11499712

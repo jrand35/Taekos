@@ -8,6 +8,12 @@ public class Python : MonoBehaviour {
     public Transform front;
     public int facing = 1;
     private float xspeed = 2;
+    private bool dead;
+
+    void Awake()
+    {
+        dead = false;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +33,8 @@ public class Python : MonoBehaviour {
 
     void ReverseDirection()
     {
+        if (dead)
+            return;
         rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;
@@ -35,6 +43,12 @@ public class Python : MonoBehaviour {
 
     void EnemyDeath()
     {
-        Destroy(gameObject);
+        StopAllCoroutines();
+        dead = true;
+        collider2D.enabled = false;
+        rigidbody2D.velocity = new Vector2(-5f * facing, 10f);
+        rigidbody2D.gravityScale = 1f;
+        rigidbody2D.isKinematic = false;
+        Destroy(gameObject, 2f);
     }
 }

@@ -55,13 +55,13 @@ public class HitBox : MonoBehaviour {
                 takeDamage(1);
             }
         }
-        else if (other.gameObject.tag == "Doors")
+/*        else if (other.gameObject.tag == "Doors")
         {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 completeLevel();
             }
-        }
+        }*/
     }
 
     void Update()

@@ -8,10 +8,13 @@ public class Litholite : MonoBehaviour
     public LayerMask whatIsGround;
     public Transform edge;
     public Transform front;
+    public SpriteRenderer blinkSprite;
     public bool move;
     public int facing = 1;
     private Animator anim;
-    private int waitFrames = 35;
+    private int postBlink = 10;
+    private int blinkFrames = 5;
+    private int waitFrames = 40;
     private float xspeed = 2;
     private float shootSpeed = 12f;
     private bool attacking;
@@ -40,6 +43,10 @@ public class Litholite : MonoBehaviour
         if (!attacking)
         {
             StopCoroutine("Shooting");
+            if (blinkSprite != null)
+            {
+                blinkSprite.enabled = false;
+            }
         }
         if (move && (!Physics2D.OverlapPoint(edge.position, whatIsGround) || Physics2D.OverlapPoint(front.position, whatIsGround)))
         {
@@ -54,7 +61,17 @@ public class Litholite : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < waitFrames; i++)
+            for (int i = 0; i < waitFrames - blinkFrames - postBlink; i++)
+            {
+                yield return 0;
+            }
+            for (int i = 0; i < blinkFrames; i++)
+            {
+                blinkSprite.enabled = true;
+                yield return 0;
+            }
+            blinkSprite.enabled = false;
+            for (int i = 0; i < postBlink; i++)
             {
                 yield return 0;
             }
@@ -62,6 +79,7 @@ public class Litholite : MonoBehaviour
             bullet.transform.localScale = new Vector3(0.5f * facing, 0.5f, 1f);
             bullet.rigidbody2D.velocity = new Vector2(shootSpeed * facing, 0f);
             audio.Play();
+            Destroy(bullet, 2f);
         }
     }
 
@@ -80,6 +98,7 @@ public class Litholite : MonoBehaviour
         else
         {
             StopCoroutine("Shooting");
+            blinkSprite.enabled = false;
             Debug.Log("Attack ending...");
             rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         }
@@ -103,5 +122,6 @@ public class Litholite : MonoBehaviour
         rigidbody2D.velocity = new Vector2(-5f * facing, 10f);
         rigidbody2D.gravityScale = 1f;
         rigidbody2D.isKinematic = false;
+        Destroy(gameObject, 2f);
     }
 }
