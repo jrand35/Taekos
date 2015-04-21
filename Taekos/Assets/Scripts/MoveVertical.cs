@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovePlatform : MonoBehaviour {
+public class MoveVertical : MonoBehaviour {
 
     public Transform topMarker;
     public Transform bottomMarker;

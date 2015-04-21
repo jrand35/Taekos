@@ -33,6 +33,9 @@ public class Controller : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public float characterHeight;
 	public float jumpHeightCoefficient = 0.3f;
+    private GameObject touchingWallObject;
+    private GameObject backTouchingWallObject;
+    private GameObject groundedObject;
     private GameObject peckBox;
     private float maxHSpeed = 11f;
     private float normalGravity = 2f;                 //1.5f
@@ -168,8 +171,16 @@ public class Controller : MonoBehaviour {
         //backTouchingWall = (Physics2D.OverlapCircle(backWallCheck.position, wallRadius, whatIsGround) && !isDead);
 
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+        if (grounded)
+            groundedObject = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround).gameObject;
         touchingWall = (Physics2D.OverlapArea(top.position, front.position, whatIsGround) && !isDead);
+        if (touchingWall)
+        {
+            touchingWallObject = Physics2D.OverlapArea(top.position, front.position, whatIsGround).gameObject;
+        }
         backTouchingWall = (Physics2D.OverlapArea(top.position, back.position, whatIsGround) && !isDead);
+        if (backTouchingWall)
+            backTouchingWallObject = Physics2D.OverlapArea(top.position, back.position, whatIsGround).gameObject;
 		UpdateMovement ();
 		//If character's front is touching wall
 		if (touchingWall) {
@@ -251,6 +262,40 @@ public class Controller : MonoBehaviour {
 			}
 		}
 
+        if (grounded)
+        {
+            if (groundedObject.rigidbody2D != null)
+            {
+                Vector3 newPos = transform.position;
+                newPos.x += groundedObject.rigidbody2D.velocity.x * Time.deltaTime;
+                newPos.y += Mathf.Min(groundedObject.rigidbody2D.velocity.y * Time.deltaTime, 0f);
+                transform.position = newPos;
+            }
+        }
+
+        if (backTouchingWall)
+        {
+            if (backTouchingWallObject.rigidbody2D != null)
+            {
+                Vector3 newPos = transform.position;
+                newPos.x += backTouchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
+                //newPos.y += backTouchingWallObject.rigidbody2D.velocity.y * Time.deltaTime;
+                transform.position = newPos;
+            }
+        }
+
+        if (touchingWall)
+        {
+            if (touchingWallObject.rigidbody2D != null)
+            {
+                Vector3 newPos = transform.position;
+                newPos.x += touchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
+                if (wallCling)
+                    newPos.y += touchingWallObject.rigidbody2D.velocity.y * Time.deltaTime;
+                transform.position = newPos;
+            }
+        }
+
 		//Cling to wall
 		if (wallCling && !isDead) {
 			hVelocity = 0;
@@ -275,6 +320,8 @@ public class Controller : MonoBehaviour {
 			Flip ();
 		}
 		Debug.Log ("Grounded:" + grounded + " Wall cling: " + wallCling + " Touching wall: " + touchingWall + " Facing: " + facing + " Hurt: " + isHurt + " Dead: " + isDead + " Pecking: " + pecking + " hVelocity: " + hVelocity + " Horizontal: " + Input.GetAxisRaw("Horizontal"));
+        if (touchingWallObject != null)
+            Debug.Log(touchingWallObject.name);
 	}
 
 	void Update(){
