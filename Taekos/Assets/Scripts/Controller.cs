@@ -48,7 +48,7 @@ public class Controller : MonoBehaviour {
 	private float startingJumpSpeed = 25f;              //20f
 	private float jumpSpeed;							//15f, 22.5f
 	private float wallJumpSpeed = 7;
-    private float wallClingDescend = 2.2f;
+    private float wallClingDescend = 4f;
 	private float groundRadius = 0.2f;
 	private float wallRadius = 0.3f;
 	private float minWallClingSpeed = 8f;
@@ -167,9 +167,6 @@ public class Controller : MonoBehaviour {
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxFallSpeed);
         }
 
-        //touchingWall = (Physics2D.OverlapCircle (wallCheck.position, wallRadius, whatIsGround) && !isDead);
-        //backTouchingWall = (Physics2D.OverlapCircle(backWallCheck.position, wallRadius, whatIsGround) && !isDead);
-
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
         if (grounded)
             groundedObject = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround).gameObject;
@@ -278,7 +275,9 @@ public class Controller : MonoBehaviour {
             if (backTouchingWallObject.rigidbody2D != null)
             {
                 Vector3 newPos = transform.position;
-                newPos.x += backTouchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
+                if (wallCling || (backTouchingWallObject.rigidbody2D.velocity.x > 0 && transform.position.x > backTouchingWallObject.transform.position.x) ||
+                    (backTouchingWallObject.rigidbody2D.velocity.x < 0 && transform.position.x < backTouchingWallObject.transform.position.x))
+                    newPos.x += backTouchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
                 //newPos.y += backTouchingWallObject.rigidbody2D.velocity.y * Time.deltaTime;
                 transform.position = newPos;
             }
@@ -289,7 +288,9 @@ public class Controller : MonoBehaviour {
             if (touchingWallObject.rigidbody2D != null)
             {
                 Vector3 newPos = transform.position;
-                newPos.x += touchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
+                if (wallCling || (touchingWallObject.rigidbody2D.velocity.x > 0 && transform.position.x > touchingWallObject.transform.position.x) ||
+                    (touchingWallObject.rigidbody2D.velocity.x < 0 && transform.position.x < touchingWallObject.transform.position.x))
+                    newPos.x += touchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
                 if (wallCling)
                     newPos.y += touchingWallObject.rigidbody2D.velocity.y * Time.deltaTime;
                 transform.position = newPos;
@@ -343,8 +344,13 @@ public class Controller : MonoBehaviour {
 			if (wallCling){
 				if (!grounded){
 					wallCling = false;
-					hVelocity = wallJumpSpeed * -facing;
-					rigidbody2D.velocity = new Vector2(wallJumpSpeed * -facing, jumpSpeed);
+                    float wallVelocity = 0f;
+                    if (touchingWallObject.rigidbody2D != null)
+                    {
+                        wallVelocity = Mathf.Abs(touchingWallObject.rigidbody2D.velocity.x);
+                    }
+                    hVelocity = (wallJumpSpeed + wallVelocity) * -facing;
+                    rigidbody2D.velocity = new Vector2(hVelocity, jumpSpeed);
 					Flip ();
 					jumpSound.audio.Play();
 				}
