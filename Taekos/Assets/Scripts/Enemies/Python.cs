@@ -32,4 +32,9 @@ public class Python : MonoBehaviour {
         newScale.x *= -1;
         transform.localScale = newScale;
     }
+
+    void EnemyDeath()
+    {
+        Destroy(gameObject);
+    }
 }

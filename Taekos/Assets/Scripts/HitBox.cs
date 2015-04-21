@@ -41,8 +41,19 @@ public class HitBox : MonoBehaviour {
         if (other.gameObject.tag == "Enemies")
         {
             EnemyController damageValue = other.gameObject.GetComponent<EnemyController>();
-            int damage = damageValue.getPlayerDamageValue();
-            takeDamage(damage);
+            if (damageValue != null)
+            {
+                if (!damageValue.EnemyDead())
+                {
+                    int damage = damageValue.getPlayerDamageValue();
+                    takeDamage(damage);
+                }
+            }
+            else
+            {
+                //Default to taking 1 damage
+                takeDamage(1);
+            }
         }
         else if (other.gameObject.tag == "Doors")
         {

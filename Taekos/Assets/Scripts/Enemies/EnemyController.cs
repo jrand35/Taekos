@@ -25,6 +25,11 @@ public class EnemyController : MonoBehaviour {
         return invincible;
     }
 
+    public bool EnemyDead()
+    {
+        return (enemyLife <= 0);
+    }
+
     public void DamageEnemy(int damage, int direction){
         if (invincible)
             return;
@@ -44,7 +49,7 @@ public class EnemyController : MonoBehaviour {
     void KillEnemy(){
         long longEnemyScore = (long)enemyScore;
         addScore(longEnemyScore);
-        Destroy(gameObject);
+        SendMessage("EnemyDeath");
     }
 
     IEnumerator HurtEnemy(int direction)

@@ -17,6 +17,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &154654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454654}
+  m_Layer: 10
+  m_Name: Shot position
+  m_TagString: Untagged
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &195590
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +76,7 @@ GameObject:
   - 95: {fileID: 9599712}
   - 114: {fileID: 11499712}
   - 114: {fileID: 11495590}
+  - 82: {fileID: 8254654}
   m_Layer: 10
   m_Name: Litholite
   m_TagString: Enemies
@@ -80,6 +96,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 499712}
   m_RootOrder: 2
+--- !u!4 &454654
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.03999996, y: 1.46000004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 499712}
+  m_RootOrder: 3
 --- !u!4 &495590
 Transform:
   m_ObjectHideFlags: 1
@@ -117,6 +145,7 @@ Transform:
   - {fileID: 495592}
   - {fileID: 495590}
   - {fileID: 448298}
+  - {fileID: 454654}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5099712
@@ -156,6 +185,64 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 4.90506744, y: 4.7342577}
   m_Center: {x: -.236938477, y: 2.42168427}
+--- !u!82 &8254654
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199712}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d91fc152b73d5c84ea7095bb86ee6e42, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9599712
 Animator:
   serializedVersion: 3
@@ -193,6 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3204bc8a2dee28640820e572088be26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shot: {fileID: 133484, guid: a56f9d14881f5dd4aa81daa67aa118d1, type: 2}
+  shotPos: {fileID: 454654}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512

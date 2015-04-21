@@ -18,7 +18,7 @@ public class Pecking : MonoBehaviour {
                 EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
                 if (enemyController != null)
                 {
-                    if (enemyController.getInvincible())
+                    if (enemyController.getInvincible() || enemyController.EnemyDead())
                     {
 
                     }
