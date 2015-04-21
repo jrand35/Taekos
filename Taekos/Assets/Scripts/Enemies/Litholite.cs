@@ -9,11 +9,21 @@ public class Litholite : MonoBehaviour
     public Transform front;
     public bool move;
     public int facing = 1;
+    private Animator anim;
     private float xspeed = 2;
+    private bool attacking;
+    private bool dead;
+
+    void Awake()
+    {
+        attacking = false;
+        dead = false;
+    }
 
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
         if (move)
             rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         if (facing == -1)
@@ -26,6 +36,21 @@ public class Litholite : MonoBehaviour
         {
             facing = -facing;
             ReverseDirection();
+        }
+        anim.SetBool("Attacking", attacking);
+        anim.SetBool("Dead", dead);
+    }
+
+    void Attack(bool attack)
+    {
+        attacking = attack;
+        if (attack)
+        {
+            rigidbody2D.velocity = Vector2.zero;
+        }
+        else
+        {
+            rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         }
     }
 

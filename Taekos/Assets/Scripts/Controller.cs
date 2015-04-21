@@ -320,9 +320,6 @@ public class Controller : MonoBehaviour {
 		else if (hVelocity <= 0 && facing == 1 && HoldingLeft() && control) {
 			Flip ();
 		}
-		Debug.Log ("Grounded:" + grounded + " Wall cling: " + wallCling + " Touching wall: " + touchingWall + " Facing: " + facing + " Hurt: " + isHurt + " Dead: " + isDead + " Pecking: " + pecking + " hVelocity: " + hVelocity + " Horizontal: " + Input.GetAxisRaw("Horizontal"));
-        if (touchingWallObject != null)
-            Debug.Log(touchingWallObject.name);
 	}
 
 	void Update(){

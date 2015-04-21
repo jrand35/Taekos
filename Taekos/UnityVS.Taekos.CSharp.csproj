@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Enemies\Coconut.cs" />
+    <Compile Include="Assets\Scripts\Enemies\DetectPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Enemies\Litholite.cs" />
     <Compile Include="Assets\Scripts\Enemies\Piranha.cs" />
