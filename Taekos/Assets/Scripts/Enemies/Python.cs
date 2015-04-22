@@ -7,6 +7,7 @@ public class Python : MonoBehaviour {
     public Transform edge;
     public Transform front;
     public int facing = 1;
+    private Animator anim;
     private float xspeed = 2;
     private bool dead;
 
@@ -17,6 +18,7 @@ public class Python : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        anim = GetComponent<Animator>();
         rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         if (facing == -1)
             ReverseDirection();
@@ -29,6 +31,7 @@ public class Python : MonoBehaviour {
             facing = -facing;
             ReverseDirection();
         }
+        anim.SetBool("Dead", dead);
     }
 
     void ReverseDirection()

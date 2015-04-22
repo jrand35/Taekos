@@ -12,8 +12,8 @@ public class GameController : MonoBehaviour {
     public Image screenFade;
     public Text timerText;
     public int fadeTime = 45;
-    public int totalFeathers = 20;
-    public int requiredFeathers = 1;
+    public int totalFeathers;
+    public int requiredFeathers;
     private float timer;
     private int numFeathers;
     private int livesRemaining;

@@ -6,6 +6,8 @@ public class Door : MonoBehaviour {
     public Sprite[] numbers;
     public SpriteRenderer number1;
     public SpriteRenderer number2;
+    public SpriteRenderer need;
+    public SpriteRenderer feather;
     private ParticleSystem particleSystem;
     private SpriteRenderer spriteRenderer;
 
@@ -46,6 +48,8 @@ public class Door : MonoBehaviour {
         {
             number1.gameObject.SetActive(true);
             number2.gameObject.SetActive(true);
+            need.gameObject.SetActive(true);
+            feather.gameObject.SetActive(true);
             int digit1 = remainingFeathers / 10;
             int digit2 = remainingFeathers % 10;
             Sprite sprite1 = numbers[digit1];
@@ -63,7 +67,7 @@ public class Door : MonoBehaviour {
             {
                 number1.gameObject.SetActive(true);
                 Vector3 newPos = number2.transform.localPosition;
-                newPos.x = 0.5f;
+                newPos.x = 0.3f;
                 number2.transform.localPosition = newPos;
             }
         }
@@ -71,6 +75,8 @@ public class Door : MonoBehaviour {
         {
             number1.gameObject.SetActive(false);
             number2.gameObject.SetActive(false);
+            need.gameObject.SetActive(false);
+            feather.gameObject.SetActive(false);
         }
     }
 

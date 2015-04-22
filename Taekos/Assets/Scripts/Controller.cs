@@ -24,6 +24,8 @@ public class Controller : MonoBehaviour {
 	public Transform groundCheck;
 	public Transform wallCheck;
 	public Transform backWallCheck;
+    public Transform bananaThrowPos;
+    public GameObject banana;
 	public GameObject jumpSound;
 	public GameObject hurtSound;
 	public GameObject peckBoxPrefab;
@@ -37,6 +39,7 @@ public class Controller : MonoBehaviour {
     private GameObject backTouchingWallObject;
     private GameObject groundedObject;
     private GameObject peckBox;
+    private float bananaThrowSpeed = 15f;
     private float maxHSpeed = 11f;
     private float normalGravity = 2f;                 //1.5f
     private float fallingGravity = 1f;
@@ -107,6 +110,11 @@ public class Controller : MonoBehaviour {
     bool PressPeck()
     {
         return (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Q));
+    }
+
+    bool PressBanana()
+    {
+        return (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.E));
     }
 
     void Awake()
@@ -327,11 +335,19 @@ public class Controller : MonoBehaviour {
 			//HurtPlayer (4);
             KillPlayer();
 		}
+        //Peck
 		if (control && PressPeck()) {
             //Cannot peck while gliding or clinging to a wall
             if (!pecking && !gliding && !wallCling)
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
 		}
+        //Throw banana
+        if (control && PressBanana())
+        {
+            //Vector3 newPos = transform.position;
+            GameObject projectile = Instantiate(banana, bananaThrowPos.position, Quaternion.identity) as GameObject;
+            projectile.rigidbody2D.velocity = new Vector2(facing * bananaThrowSpeed + hVelocity, 0f);
+        }
 		if (playerLife <= 0 && !playerKilled) {
 			KillPlayer ();  //Sets playerKilled to true
 		}

@@ -91,7 +91,6 @@ public class Litholite : MonoBehaviour
         attacking = attack;
         if (attack)
         {
-            Debug.Log("Attack starting...");
             StartCoroutine("Shooting");
             rigidbody2D.velocity = Vector2.zero;
         }
@@ -99,7 +98,6 @@ public class Litholite : MonoBehaviour
         {
             StopCoroutine("Shooting");
             blinkSprite.enabled = false;
-            Debug.Log("Attack ending...");
             rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         }
     }

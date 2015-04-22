@@ -10,6 +10,8 @@ TagManager:
   - Health items
   - Feathers
   - Doors
+  - Player Projectile
+  - Banana Boundary
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -51,6 +53,10 @@ TagManager:
   - name: Doors
     userID: 9
     uniqueID: 636372157
+    locked: 0
+  - name: Player Projectiles
+    userID: 10
+    uniqueID: 3303364135
     locked: 0
   - name: Player
     userID: 3
