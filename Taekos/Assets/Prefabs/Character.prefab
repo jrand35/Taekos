@@ -993,7 +993,7 @@ MonoBehaviour:
   peckHitSound: {fileID: 8295510}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294963912
+    m_Bits: 4294959816
   characterHeight: 0
   jumpHeightCoefficient: .200000003
 --- !u!114 &11487056

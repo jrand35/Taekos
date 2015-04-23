@@ -331,8 +331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincible: 0
+  moveBack: 0
   enemyLife: 3
-  enemyScore: 100
+  enemyScore: 1000
 --- !u!212 &21288698
 SpriteRenderer:
   m_ObjectHideFlags: 1
