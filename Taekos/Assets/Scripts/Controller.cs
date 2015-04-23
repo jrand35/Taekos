@@ -64,6 +64,7 @@ public class Controller : MonoBehaviour {
 	private float killSpin = 5f;
 	private Collider2D[] colliders;
 	private CircleCollider2D circleCollider;
+    private int bananaCount;
     private int peckFrames = 3;
 	private int maxPlayerLife = 4;
 	private int playerLife;
@@ -119,6 +120,7 @@ public class Controller : MonoBehaviour {
 
     void Awake()
     {
+        bananaCount = 0;
         resurrectPos = transform.position;
         peckingLocalPos = new Vector3(0.35f, 0.8f, 0f);
         checkpointIndex = 0;
@@ -130,6 +132,7 @@ public class Controller : MonoBehaviour {
         HitBox.killPlayer += KillPlayer;
         HitBox.getCheckpoint += UpdateCheckpoint;
         CollectItems.addHealth += AddHealth;
+        Banana.destroyBanana += AddBanana;
     }
 
     void OnDisable()
@@ -138,6 +141,7 @@ public class Controller : MonoBehaviour {
         HitBox.killPlayer -= KillPlayer;
         HitBox.getCheckpoint -= UpdateCheckpoint;
         CollectItems.addHealth -= AddHealth;
+        Banana.destroyBanana -= AddBanana;
     }
 
 	void Start () {
@@ -331,6 +335,7 @@ public class Controller : MonoBehaviour {
 	}
 
 	void Update(){
+        //Debug.Log(bananaCount);
 		if (control && Input.GetKeyDown (KeyCode.K)) {
 			//HurtPlayer (4);
             KillPlayer();
@@ -342,11 +347,13 @@ public class Controller : MonoBehaviour {
 			StartCoroutine (Peck ());	//Fix animator for transitioning to jumping animation
 		}
         //Throw banana
-        if (control && PressBanana())
+        if (control && PressBanana() && bananaCount <= 0)
         {
             //Vector3 newPos = transform.position;
+            bananaCount++;
             GameObject projectile = Instantiate(banana, bananaThrowPos.position, Quaternion.identity) as GameObject;
             projectile.rigidbody2D.velocity = new Vector2(facing * bananaThrowSpeed + hVelocity, 0f);
+            projectile.transform.localScale = new Vector3(facing, 1f, 1f);
         }
 		if (playerLife <= 0 && !playerKilled) {
 			KillPlayer ();  //Sets playerKilled to true
@@ -457,6 +464,11 @@ public class Controller : MonoBehaviour {
             checkpointSound.Play();
             resurrectPos = checkpointPos;
         }
+    }
+
+    void AddBanana(int add)
+    {
+        bananaCount += add;
     }
 
     void AddHealth(int addHealth)
