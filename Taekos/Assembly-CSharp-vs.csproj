@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\LeftLifeButtonController.cs" />
      <Compile Include="Assets\Scripts\Lifebar.cs" />
      <Compile Include="Assets\Scripts\MoveChildrenHorizontal.cs" />
+     <Compile Include="Assets\Scripts\MoveChildrenVertical.cs" />
      <Compile Include="Assets\Scripts\MoveHorizontal.cs" />
      <Compile Include="Assets\Scripts\MoveVertical.cs" />
      <Compile Include="Assets\Scripts\ParticleSortingLayer.cs" />

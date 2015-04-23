@@ -98,7 +98,8 @@ public class Litholite : MonoBehaviour
         {
             StopCoroutine("Shooting");
             blinkSprite.enabled = false;
-            rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+            if (move)
+                rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         }
     }
 
