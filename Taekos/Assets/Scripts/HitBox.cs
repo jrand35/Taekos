@@ -38,7 +38,7 @@ public class HitBox : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemies")
+        if (other.gameObject.tag == "Enemies" || other.gameObject.tag == "Enemy Projectiles")
         {
             EnemyController damageValue = other.gameObject.GetComponent<EnemyController>();
             if (damageValue != null)

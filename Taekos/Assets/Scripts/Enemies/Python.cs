@@ -10,6 +10,7 @@ public class Python : MonoBehaviour {
     private Animator anim;
     private float xspeed = 2;
     private bool dead;
+    private Collider2D[] childrenColliders;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class Python : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        childrenColliders = GetComponentsInChildren<Collider2D>();
         anim = GetComponent<Animator>();
         rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
         if (facing == -1)
@@ -48,6 +50,10 @@ public class Python : MonoBehaviour {
     {
         StopAllCoroutines();
         dead = true;
+        foreach (Collider2D c in childrenColliders)
+        {
+            c.enabled = false;
+        }
         collider2D.enabled = false;
         rigidbody2D.velocity = new Vector2(-5f * facing, 10f);
         rigidbody2D.gravityScale = 1f;

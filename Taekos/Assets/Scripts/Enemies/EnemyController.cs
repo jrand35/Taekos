@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour {
     public delegate void ScoreHandler(long addScore);
     public static event ScoreHandler addScore;
     public bool invincible = false;
+    public bool moveBack = true;
     public int enemyLife = 3;
     public int enemyScore = 100;
     private bool enemyHurt;
@@ -28,6 +29,24 @@ public class EnemyController : MonoBehaviour {
     public bool EnemyDead()
     {
         return (enemyLife <= 0);
+    }
+
+    public void DamageEnemy(int direction)
+    {
+        if (invincible)
+            return;
+        enemyLife -= 1;
+        if (enemyLife <= 0)
+        {
+            KillEnemy();
+        }
+        else
+        {
+            if (!enemyHurt)
+            {
+                StartCoroutine(HurtEnemy(direction));
+            }
+        }
     }
 
     public void DamageEnemy(int damage, int direction){
@@ -54,14 +73,19 @@ public class EnemyController : MonoBehaviour {
 
     IEnumerator HurtEnemy(int direction)
     {
+        Vector2 startVelocity = new Vector2();
         enemyHurt = true;
-        Vector2 startVelocity = rigidbody2D.velocity;
-        rigidbody2D.velocity = new Vector2(direction * 4f, 0f);
+        if (moveBack)
+        {
+            startVelocity = rigidbody2D.velocity;
+            rigidbody2D.velocity = new Vector2(direction * 4f, 0f);
+        }
         for (int i = 0; i < enemyHurtFrames; i++)
         {
             yield return 0;
         }
-        rigidbody2D.velocity = startVelocity;
+        if (moveBack)
+            rigidbody2D.velocity = startVelocity;
         enemyHurt = false;
     }
 }

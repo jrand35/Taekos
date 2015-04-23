@@ -114,6 +114,7 @@ public class Litholite : MonoBehaviour
 
     void EnemyDeath()
     {
+        Destroy(blinkSprite.gameObject);
         StopAllCoroutines();
         dead = true;
         collider2D.enabled = false;

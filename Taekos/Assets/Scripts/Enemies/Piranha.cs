@@ -9,8 +9,10 @@ public class Piranha : MonoBehaviour {
     public float jumpSpeed = 25;
     private Vector3 startPosition;
     private SpriteRenderer spr;
+    private bool dead;
 	// Use this for initialization
 	void Start () {
+        dead = false;
         startPosition = transform.position;
         spr = GetComponent<SpriteRenderer>();
         StartCoroutine(Run());
@@ -37,6 +39,17 @@ public class Piranha : MonoBehaviour {
                 yield return 0;
             }
         }
+    }
+
+    void EnemyDeath()
+    {
+        StopAllCoroutines();
+        dead = true;
+        collider2D.enabled = false;
+        rigidbody2D.velocity = new Vector2(-5f, 10f);
+        rigidbody2D.gravityScale = 1f;
+        rigidbody2D.isKinematic = false;
+        Destroy(gameObject, 2f);
     }
 	
 	// Update is called once per frame

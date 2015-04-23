@@ -39,7 +39,7 @@ public class Controller : MonoBehaviour {
     private GameObject backTouchingWallObject;
     private GameObject groundedObject;
     private GameObject peckBox;
-    private float bananaThrowSpeed = 15f;
+    private float bananaThrowSpeed = 22f;
     private float maxHSpeed = 11f;
     private float normalGravity = 2f;                 //1.5f
     private float fallingGravity = 1f;
@@ -352,8 +352,17 @@ public class Controller : MonoBehaviour {
             //Vector3 newPos = transform.position;
             bananaCount++;
             GameObject projectile = Instantiate(banana, bananaThrowPos.position, Quaternion.identity) as GameObject;
-            projectile.rigidbody2D.velocity = new Vector2(facing * bananaThrowSpeed + hVelocity, 0f);
-            projectile.transform.localScale = new Vector3(facing, 1f, 1f);
+            if (wallCling)
+            {
+                projectile.rigidbody2D.velocity = new Vector2(facing * -1f * bananaThrowSpeed + hVelocity, 0f);
+                projectile.transform.localScale = new Vector3(facing * -1f, 1f, 1f);
+                projectile.transform.position = new Vector3(projectile.transform.position.x + 0.5f * -facing, projectile.transform.position.y, projectile.transform.position.z);
+            }
+            else
+            {
+                projectile.rigidbody2D.velocity = new Vector2(facing * bananaThrowSpeed + hVelocity, 0f);
+                projectile.transform.localScale = new Vector3(facing, 1f, 1f);
+            }
         }
 		if (playerLife <= 0 && !playerKilled) {
 			KillPlayer ();  //Sets playerKilled to true

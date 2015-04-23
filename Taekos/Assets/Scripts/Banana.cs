@@ -13,16 +13,19 @@ public class Banana : MonoBehaviour {
     private SpriteRenderer spr;
     private int facing;
     private int catchDelay = 20;
-    private float move = 3f;
+    private float move = 5f;
     private float initialvel;
+    private float maxvel;
     private float vel;
     private float dvel;
     private float zrot;
     private float dzrot = 10f;
+    private bool returning;
 
     void Awake()
     {
         zrot = 0f;
+        returning = false;
     }
 
 	// Use this for initialization
@@ -32,7 +35,8 @@ public class Banana : MonoBehaviour {
         StartCoroutine(Delay());
         vel = rigidbody2D.velocity.x;
         initialvel = vel;
-        dvel = -vel;
+        dvel = -vel * 1.5f;
+        maxvel = -initialvel;
         if (vel > 0)
         {
             facing = 1;
@@ -75,12 +79,42 @@ public class Banana : MonoBehaviour {
             }
             transform.position = new Vector3(transform.position.x - facing*0.05f, transform.position.y, transform.position.z);
         }
+        if ((initialvel > 0 && vel < 0) || (initialvel < 0 && vel > 0))
+        {
+            returning = true;
+        }
+        else
+        {
+            returning = false;
+        }
+        if (maxvel > 0 && vel > maxvel)
+        {
+            vel = maxvel;
+            rigidbody2D.velocity = new Vector2(vel, 0f);
+        }
+        if (maxvel < 0 && vel < maxvel)
+        {
+            vel = maxvel;
+            rigidbody2D.velocity = new Vector2(vel, 0f);
+        }
 	}
 
     void Update()
     {
         zrot += dzrot;// *Time.deltaTime;
         spr.transform.rotation = Quaternion.Euler(0f, 0f, zrot);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemies")
+        {
+            other.SendMessage("DamageEnemy", facing);
+            vel = -vel;
+            rigidbody2D.velocity = new Vector2(vel, 0f);
+            transform.position = new Vector3(transform.position.x + vel * Time.deltaTime, transform.position.y, transform.position.z);
+            audio.Play();
+        }
     }
 
     //Taekos catches the banana

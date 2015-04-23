@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Pecking : MonoBehaviour {
-    public int damageValue = 1;
+    public int damageValue = 2;
     private bool enablePeck;
     private Controller controller;
 
