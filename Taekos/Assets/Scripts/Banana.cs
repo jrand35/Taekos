@@ -10,9 +10,12 @@ public class Banana : MonoBehaviour {
     public Transform front;
     public Transform bottom;
     public Transform back;
+    public Color hit1;
+    public Color hit2;
     private SpriteRenderer spr;
     private int facing;
-    private int catchDelay = 20;
+    private int catchDelay = 8;
+    private int life;
     private float move = 5f;
     private float initialvel;
     private float maxvel;
@@ -24,6 +27,7 @@ public class Banana : MonoBehaviour {
 
     void Awake()
     {
+        life = 3;
         zrot = 0f;
         returning = false;
     }
@@ -114,6 +118,20 @@ public class Banana : MonoBehaviour {
             rigidbody2D.velocity = new Vector2(vel, 0f);
             transform.position = new Vector3(transform.position.x + vel * Time.deltaTime, transform.position.y, transform.position.z);
             audio.Play();
+
+            life--;
+            if (life == 2)
+            {
+                spr.color = hit1;
+            }
+            else if (life == 1)
+            {
+                spr.color = hit2;
+            }
+            else if (life == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
