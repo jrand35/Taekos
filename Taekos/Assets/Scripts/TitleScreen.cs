@@ -9,6 +9,9 @@ public class TitleScreen : MonoBehaviour {
     public GameObject mainMenuButtons;
     public GameObject optionsMenu;
     public GameObject optionsMenuButtons;
+    public SpriteRenderer skyScreen;
+    public Sprite dayScreen;
+    public Sprite nightScreen;
     public RectTransform InstructionsMenu;
     public Image screenFade;
     public Image blinkingButton;
@@ -124,9 +127,11 @@ public class TitleScreen : MonoBehaviour {
 			Color cloudColor;
 			if (dayTime){
 				cloudColor = new Color(1f, 1f, 1f, 1f);
+                skyScreen.sprite = dayScreen;
 			}
 			else{
-				cloudColor = new Color(0.4f, 0.4f, 0.4f, 4f);
+                cloudColor = new Color(0.4f, 0.4f, 0.4f, 4f);
+                skyScreen.sprite = nightScreen;
 			}
 			Vector3 cloudPos = cloudSpawn.transform.position;
 			float topY = top.transform.position.y;
