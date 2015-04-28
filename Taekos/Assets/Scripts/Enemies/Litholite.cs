@@ -11,6 +11,7 @@ public class Litholite : MonoBehaviour
     public SpriteRenderer blinkSprite;
     public bool move;
     public int facing = 1;
+    public int startDelay;
     private Animator anim;
     private int postBlink = 10;
     private int blinkFrames = 5;
@@ -61,7 +62,7 @@ public class Litholite : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < waitFrames - blinkFrames - postBlink; i++)
+            for (int i = 0; i < startDelay; i++)
             {
                 yield return 0;
             }
@@ -80,6 +81,10 @@ public class Litholite : MonoBehaviour
             bullet.rigidbody2D.velocity = new Vector2(shootSpeed * facing, 0f);
             audio.Play();
             Destroy(bullet, 2f);
+            for (int i = 0; i < waitFrames - blinkFrames - postBlink - startDelay; i++)
+            {
+                yield return 0;
+            }
         }
     }
 
