@@ -14,7 +14,7 @@ public class Litholite : MonoBehaviour
     private Animator anim;
     private int postBlink = 10;
     private int blinkFrames = 5;
-    private int waitFrames = 40;
+    private int waitFrames = 70;
     private float xspeed = 2;
     private float shootSpeed = 12f;
     private bool attacking;
