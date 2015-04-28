@@ -1,0 +1,38 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.0]
+    Renderer: NVIDIA GeForce GTS 240 (ID=0x607)
+    Vendor:   NVIDIA
+    VRAM:     1007 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading K:\2D Game Development\Taekos\Taekos 3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.359 seconds
+desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 4.330410 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2795.
+Total: 23.540667 ms (FindLiveObjects: 0.090080 ms CreateObjectMapping: 0.023097 ms MarkObjects: 0.317206 ms  DeleteObjects: 0.402282 ms)
+
+UnloadTime: 8.688923 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 219 unused Assets to reduce memory usage. Loaded Objects now: 221.
+Total: 26.529877 ms (FindLiveObjects: 0.014243 ms CreateObjectMapping: 0.026177 ms MarkObjects: 0.158988 ms  DeleteObjects: 0.919283 ms)
+
+UnloadTime: 0.450017 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 328.
+Total: 29.797415 ms (FindLiveObjects: 0.011548 ms CreateObjectMapping: 0.015398 ms MarkObjects: 0.356087 ms  DeleteObjects: 0.097394 ms)
+
