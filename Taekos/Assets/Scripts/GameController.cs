@@ -1,24 +1,34 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
+/// <summary>
+/// The game controller. Keeps track of the time, number of lives, feathers, whether the game is over, and whether or not to unlock the door
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class GameController : MonoBehaviour {
 
-    public delegate void FeatherHandler(int numFeathers, int maxFeathers);
-    public static event FeatherHandler UpdateFeatherCounter;
-    public delegate void DoorHandler(int numFeathers, int requiredFeathers);
-    public static event DoorHandler UpdateDoor;
-	public ScoreTextController scoreTextController;
-    public Image screenFade;
-    public Text timerText;
-    public int fadeTime = 45;
-    public int totalFeathers;
-    public int requiredFeathers;
-    private float timer;
-    private int numFeathers;
-    private int livesRemaining;
-    private bool isGameOver;
-
+    public delegate void FeatherHandler(int numFeathers, int maxFeathers);      ///< Event handler for UpdateFeatherCounter
+    public static event FeatherHandler UpdateFeatherCounter;                    ///< Called in Lifebar.cs to update the number of collected and required feathers on the UI
+    public delegate void DoorHandler(int numFeathers, int requiredFeathers);    ///< Event handler for UpdateDoor
+    public static event DoorHandler UpdateDoor;                                 ///< Called in Door.cs, to possibly unlock the door
+	public ScoreTextController scoreTextController;                             ///< Public reference to the game's score UI controller
+    public Image screenFade;                                                    ///< A large black rectangle used to fade the screen in during the start of the level and out during a game over
+    public Text timerText;                                                      ///< UI that tracks how long the player has been playing the level
+    public int fadeTime = 45;                                                   ///< Duration in frames for how long the screen fades in or out
+    public int totalFeathers;                                                   ///< Total number of feathers in the level
+    public int requiredFeathers;                                                ///< Number of feathers required to collect to beat the level (8 required, 10 total)
+    private float timer;                                                        ///< The time passed since the level started
+    private int numFeathers;                                                    ///< The number of feathers Taekos has collected
+    private int livesRemaining;                                                 ///< The number of lives Taekos has left
+    private bool isGameOver;                                                    ///< Whether or not Taekos just lost his last life
+    
+    /// <summary>
+    /// Initialize variables
+    /// </summary>
     void Awake()
     {
         timer = 0f;
@@ -27,6 +37,9 @@ public class GameController : MonoBehaviour {
         isGameOver = false;
     }
 
+    /// <summary>
+    /// Subscribe to events
+    /// </summary>
     void OnEnable()
     {
         Controller.getCurrentLives += getLives;
@@ -36,6 +49,9 @@ public class GameController : MonoBehaviour {
         HitBox.completeLevel += CompleteLevel;
     }
 
+    /// <summary>
+    /// Unsubscribe to events
+    /// </summary>
     void OnDisable()
     {
         Controller.getCurrentLives += getLives;
@@ -45,7 +61,9 @@ public class GameController : MonoBehaviour {
         HitBox.completeLevel -= CompleteLevel;
     }
 
-	// Use this for initialization
+	/// <summary>
+    /// Fade the screen in and initialize the UI
+    /// </summary>
 	void Start () {
         StartCoroutine(ScreenFade());
 		scoreTextController.UpdateScore (0);
@@ -53,7 +71,6 @@ public class GameController : MonoBehaviour {
         UpdateDoor(numFeathers, requiredFeathers);
 	}
 	
-	// Update is called once per frame
 	void Update () {
         float cseconds = timer - (int)timer;
         cseconds = Mathf.Round(cseconds * 100f) / 100f;
@@ -84,16 +101,26 @@ public class GameController : MonoBehaviour {
         timerText.text = "Time: " + minutes_s + "\"" + seconds_s + "\"" + cseconds_s;
 	}
 
+    /// <summary>
+    /// Return the number of lives remaining
+    /// </summary>
     int getLives()
     {
         return livesRemaining;
     }
 
+    /// <summary>
+    /// Returns whether or not Taekos has lost all lives
+    /// </summary>
     bool getGameOver()
     {
         return isGameOver;
     }
 
+    /// <summary>
+    /// Called by CollectItems.addFeathers event,
+    /// Update the feathers UI
+    /// </summary>
     void AddFeathers(int add)
     {
         numFeathers += add;
@@ -101,6 +128,11 @@ public class GameController : MonoBehaviour {
         UpdateDoor(numFeathers, requiredFeathers);
     }
 
+    /// <summary>
+    /// Called by Controller.AddLives event,
+    /// Update the life counter whenever Taekos loses a life
+    /// </summary>
+    /// <param name="add"></param>
     void AddLives(int add)
     {
         livesRemaining += add;
@@ -112,6 +144,10 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Coroutine called by AddLives if Taekos gets hit and runs out of lives
+    /// </summary>
+    /// <returns></returns>
     IEnumerator GameOver()
     {
         screenFade.enabled = true;
@@ -123,9 +159,12 @@ public class GameController : MonoBehaviour {
             screenFade.color = new Color(1f, 1f, 1f, alpha);
             yield return 0;
         }
-        Application.LoadLevel("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 
+    /// <summary>
+    /// Load the results screen when Taekos gets to the door
+    /// </summary>
     void CompleteLevel()
     {
         if (numFeathers >= requiredFeathers)
@@ -133,10 +172,13 @@ public class GameController : MonoBehaviour {
             Settings.Results.Score = scoreTextController.getScore();
             Settings.Results.Feathers = numFeathers;
             Settings.Results.Time = (int)(timer * 100);
-            Application.LoadLevel("ResultsScreen");
+            SceneManager.LoadScene("ResultsScreen");
         }
     }
 
+    /// <summary>
+    /// Coroutine to fade the screen in when starting the level
+    /// </summary>
     public IEnumerator ScreenFade()
     {
         screenFade.rectTransform.position = new Vector3(400f, 300f, 0);
