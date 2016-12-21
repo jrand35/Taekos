@@ -1,38 +1,55 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// The script attached to the door. The level is complete when Taekos enters through the door.
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Door : MonoBehaviour {
 
-    public Sprite[] numbers;
-    public SpriteRenderer number1;
-    public SpriteRenderer number2;
-    public SpriteRenderer need;
-    public SpriteRenderer feather;
-    private ParticleSystem particleSystem;
-    private SpriteRenderer spriteRenderer;
+    public Sprite[] numbers;                ///< The sprites for the numbers on the feather counter (how many more you need)
+    public SpriteRenderer number1;          ///< SpriteRenderer for the 10s digit
+    public SpriteRenderer number2;          ///< SpriteRenderer for the 1s digit
+    public SpriteRenderer need;             ///< "Need" text above the feather counter. Disappears when Taekos collects 8 feathers
+    public SpriteRenderer feather;          ///< A feather sprite. Disappears when Taekos collects 8 feathers
+    public ParticleSystem ParticleSystem;  ///< Particle system for making the door shine when it can be walked through
+    private SpriteRenderer spriteRenderer;  ///< The door's SpriteRenderer
 
+    /// <summary>
+    /// Initialize variables
+    /// </summary>
     void Awake()
     {
-        particleSystem = GetComponentInChildren<ParticleSystem>();
+        //particleSystem = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        particleSystem.GetComponent<Renderer>().sortingLayerName = "Doors";
     }
 
+    void Start()
+    {
+        ParticleSystem.GetComponent<Renderer>().sortingLayerName = "Doors";
+    }
+
+    /// <summary>
+    /// Subscribe to events
+    /// </summary>
     void OnEnable()
     {
         GameController.UpdateDoor += UpdateDoor;
     }
 
+    /// <summary>
+    /// Unsubscribe to events
+    /// </summary>
     void OnDisable()
     {
         GameController.UpdateDoor -= UpdateDoor;
     }
 
-	// Use this for initialization
-	void Start () {
-
-	}
-
+    /// <summary>
+    /// Called by the GameController.UpdateDoor event, update the feather counter and possibly unlock the door
+    /// </summary>
     void UpdateDoor(int numFeathers, int requiredFeathers)
     {
         if (numFeathers >= requiredFeathers)
@@ -80,16 +97,21 @@ public class Door : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Unlock the door
+    /// </summary>
     void SetActive(bool active)
     {
         if (active)
         {
-            particleSystem.enableEmission = true;
+            ParticleSystem.gameObject.SetActive(true);
+            //particleSystem.emission.enabled = true;
             spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
         }
         else
         {
-            particleSystem.enableEmission = false;
+            ParticleSystem.gameObject.SetActive(false);
+            //particleSystem.emission.enabled = false;
             spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f, 1f);
         }
     }

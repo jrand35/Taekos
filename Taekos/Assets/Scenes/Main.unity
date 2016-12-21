@@ -13075,6 +13075,7 @@ MonoBehaviour:
   number2: {fileID: 1691121642}
   need: {fileID: 1290542540}
   feather: {fileID: 1471287026}
+  ParticleSystem: {fileID: 1377663240}
 --- !u!61 &746663368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22970,7 +22971,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -23042,7 +23043,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 0
+  randomSeed: -1645675653
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -34112,6 +34113,14 @@ Prefab:
     - target: {fileID: 6182354, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239888, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239888, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6187058, guid: 002baeeb2caf2c645a257563ac690dbf, type: 2}
