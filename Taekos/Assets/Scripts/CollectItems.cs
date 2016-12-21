@@ -1,25 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// A box collider that allows Taekos to collect feathers and mangos, a child of Taekos's GameObject
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class CollectItems : MonoBehaviour {
 
-    public delegate void ScoreHandler(long score);
-    public static event ScoreHandler addScore;
-    public delegate void HealthHandler(int health);
-    public static event HealthHandler addHealth;
-    public delegate void FeathersHandler(int feathers);
-    public static event FeathersHandler addFeathers;
-	public GameObject bonusPoints;
-    public AudioSource audio1;  //For powerups
-    public AudioSource audio2;  //For mangos and feathers
-	private float height = 1f;
-	private Controller controller;
+    public delegate void ScoreHandler(long score);      ///< Event handler for changes to the score
+    public static event ScoreHandler addScore;          ///< Send a message to ScoreTextController when Taekos collects a powerup (not used in the final build)
+    public delegate void HealthHandler(int health);     ///< Event handler for collecting a health powerup
+    public static event HealthHandler addHealth;        ///< Send a message to Controller when Taekos collects a mango 
+    public delegate void FeathersHandler(int feathers); ///< Event handler for collecting feathers
+    public static event FeathersHandler addFeathers;    ///< Send a message to GameController when Taekos collects a feather
+	public GameObject bonusPoints;                      ///< A Prefab of a "100" text sprite, appears when Taekos collects a powerup (not used in the final build)
+    public AudioSource audio1;                          ///< Sound effect for collecting powerups
+    public AudioSource audio2;                          ///< Sound effect for collecting mangos and feathers
+	private float height = 1f;                          ///< Offset y position when instantiating a powerup prefab
+	private Controller controller;                      ///< Reference to the Controller object
 
+    /// <summary>
+    /// Get a reference to the Controller
+    /// </summary>
 	void Start(){
 
 		controller = GetComponentInParent<Controller> ();
 	}
 
+    /// <summary>
+    /// When Taekos collects a powerup, adjust his maximum jump height,
+    /// When he collects a feather, update the GameController and feather counter,
+    /// When he collects a mango (health item), update the Controller and add a point to his life bar
+    /// </summary>
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Powerups") {
 			Destroy (other.gameObject);

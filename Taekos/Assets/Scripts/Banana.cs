@@ -1,29 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Banana that Taekos uses as a weapon
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Banana : MonoBehaviour {
 
-    public delegate void DestroyHandler(int add);
-    public static event DestroyHandler destroyBanana;
-    public LayerMask whatIsGround;
-    public Transform top;
-    public Transform front;
-    public Transform bottom;
-    public Transform back;
-    public Color hit1;
-    public Color hit2;
-    private SpriteRenderer spr;
-    private int facing;
-    private int catchDelay = 8;
-    private int life;
-    private float move = 5f;
-    private float initialvel;
-    private float maxvel;
-    private float vel;
-    private float dvel;
-    private float zrot;
-    private float dzrot = 10f;
-    private bool returning;
+    public delegate void DestroyHandler(int add);       ///< Event handler for when the banana is destroyed
+    public static event DestroyHandler destroyBanana;   ///< Event for when the banana is destroyed
+    public LayerMask whatIsGround;                      ///< Layer mask for collision detection with walls
+    public Transform top;                               ///< Collision detection at the top of the banana
+    public Transform front;                             ///< Collision detection at the front of the banana
+    public Transform bottom;                            ///< Collision detection at the bottom of the banana
+    public Transform back;                              ///< Collision detection at the back of the banana
+    public Color hit1;                                  ///< Color of the banana after hitting an enemy once
+    public Color hit2;                                  ///< Color of the banana after hitting an enemy twice
+    private SpriteRenderer spr;                         ///< Reference to the banana's sprite renderer
+    private int facing;                                 ///< 1 for facing right, -1 for facing left
+    private int catchDelay = 8;                         ///< Delay in frames before Taekos can catch the Banana
+    private int life;                                   ///< How many hits the banana can take (3)
+    private float move = 5f;                            ///< Vertical movement when holding the up or down arrow key
+    private float initialvel;                           ///< Starting velocity
+    private float maxvel;                               ///< Maximum velocity
+    private float vel;                                  ///< Current velocity
+    private float dvel;                                 ///< Horizontal acceleration
+    private float zrot;                                 ///< Current rotation
+    private float dzrot = 10f;                          ///< Rotation speed
+    private bool returning;                             ///< True if the banana is moving back toward Taekos after being thrown
 
     void Awake()
     {
@@ -32,7 +38,6 @@ public class Banana : MonoBehaviour {
         returning = false;
     }
 
-	// Use this for initialization
     void Start()
     {
         spr = GetComponentInChildren<SpriteRenderer>();
@@ -53,6 +58,11 @@ public class Banana : MonoBehaviour {
         transform.localScale = new Vector3(facing, 1f, 1f);
 	}
 	
+    /// <summary>
+    /// Move the banana after being thrown, adjust speed,
+    /// move vertical if up or down arrow is being held,
+    /// Don't move the banana up or down if there is a wall above or below it
+    /// </summary>
 	void FixedUpdate () {
         vel += (dvel * Time.deltaTime);
         GetComponent<Rigidbody2D>().velocity = new Vector2(vel, 0f);
@@ -103,12 +113,18 @@ public class Banana : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// Rotate the banana on the Z axis
+    /// </summary>
     void Update()
     {
         zrot += dzrot;// *Time.deltaTime;
         spr.transform.rotation = Quaternion.Euler(0f, 0f, zrot);
     }
 
+    /// <summary>
+    /// Hit enemies and reverse the banana's direction
+    /// </summary>
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemies")
@@ -134,8 +150,10 @@ public class Banana : MonoBehaviour {
             }
         }
     }
-
-    //Taekos catches the banana
+    
+    /// <summary>
+    /// Taekos catches the banana
+    /// </summary>
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -147,6 +165,9 @@ public class Banana : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Destroy the banana if it goes off screen
+    /// </summary>
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Banana Boundary")
@@ -155,11 +176,18 @@ public class Banana : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Send a message to Taekos,
+    /// After the banana is destroyed, Taekos can throw bananas again
+    /// </summary>
     void OnDestroy()
     {
         destroyBanana(-1);
     }
 
+    /// <summary>
+    /// Temporarily prevent Taekos from catching the banana when he first throws it
+    /// </summary>
     IEnumerator Delay()
     {
         int time = catchDelay;
