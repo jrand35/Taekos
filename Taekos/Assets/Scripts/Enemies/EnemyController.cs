@@ -77,15 +77,15 @@ public class EnemyController : MonoBehaviour {
         enemyHurt = true;
         if (moveBack)
         {
-            startVelocity = rigidbody2D.velocity;
-            rigidbody2D.velocity = new Vector2(direction * 4f, 0f);
+            startVelocity = GetComponent<Rigidbody2D>().velocity;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(direction * 4f, 0f);
         }
         for (int i = 0; i < enemyHurtFrames; i++)
         {
             yield return 0;
         }
         if (moveBack)
-            rigidbody2D.velocity = startVelocity;
+            GetComponent<Rigidbody2D>().velocity = startVelocity;
         enemyHurt = false;
     }
 }

@@ -40,14 +40,14 @@ public class ResultsScreen : MonoBehaviour {
         {
             yield return 0;
         }
-        audio.Play();
+        GetComponent<AudioSource>().Play();
         feathersBonus = 200 * Settings.Results.Feathers;
         feathersNumber.text = feathersBonus.ToString();
         for (int i = 0; i < delayFrames; i++)
         {
             yield return 0;
         }
-        audio.Play();
+        GetComponent<AudioSource>().Play();
         score += feathersBonus;
         scoreNumber.text = score.ToString();
         feathersNumber.text = "0";
@@ -55,7 +55,7 @@ public class ResultsScreen : MonoBehaviour {
         {
             yield return 0;
         }
-        audio.Play();
+        GetComponent<AudioSource>().Play();
         score += timeBonus;
         scoreNumber.text = score.ToString();
         timeNumber.text = "0";
@@ -63,7 +63,7 @@ public class ResultsScreen : MonoBehaviour {
 
     public void ReturnToTitle()
     {
-        audio.Play();
+        GetComponent<AudioSource>().Play();
         Application.LoadLevel("Title");
     }
 }

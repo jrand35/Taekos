@@ -21,7 +21,7 @@ public class Python : MonoBehaviour {
 	void Start () {
         childrenColliders = GetComponentsInChildren<Collider2D>();
         anim = GetComponent<Animator>();
-        rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(facing * xspeed, 0f);
         if (facing == -1)
             ReverseDirection();
 	}
@@ -40,7 +40,7 @@ public class Python : MonoBehaviour {
     {
         if (dead)
             return;
-        rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(facing * xspeed, 0f);
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;
         transform.localScale = newScale;
@@ -54,10 +54,10 @@ public class Python : MonoBehaviour {
         {
             c.enabled = false;
         }
-        collider2D.enabled = false;
-        rigidbody2D.velocity = new Vector2(-5f * facing, 10f);
-        rigidbody2D.gravityScale = 1f;
-        rigidbody2D.isKinematic = false;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-5f * facing, 10f);
+        GetComponent<Rigidbody2D>().gravityScale = 1f;
+        GetComponent<Rigidbody2D>().isKinematic = false;
         Destroy(gameObject, 2f);
     }
 }

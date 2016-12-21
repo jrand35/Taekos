@@ -15,7 +15,7 @@ public class Door : MonoBehaviour {
     {
         particleSystem = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        particleSystem.renderer.sortingLayerName = "Doors";
+        particleSystem.GetComponent<Renderer>().sortingLayerName = "Doors";
     }
 
     void OnEnable()

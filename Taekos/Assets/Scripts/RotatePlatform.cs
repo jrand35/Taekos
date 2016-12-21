@@ -13,8 +13,8 @@ public class RotatePlatform : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		movePosition = 0f;
-		startPosition = rigidbody2D.position;
-		rigidbody2D.angularVelocity = angularVelocity;//= new Vector2 (2f, 0);
+		startPosition = GetComponent<Rigidbody2D>().position;
+		GetComponent<Rigidbody2D>().angularVelocity = angularVelocity;//= new Vector2 (2f, 0);
 	}
 	
 	// Update is called once per frame
@@ -24,7 +24,7 @@ public class RotatePlatform : MonoBehaviour {
 			movePosition -= (2f * Mathf.PI);
 		}
 		float newY = startPosition.y + (moveDistance * Mathf.Sin (movePosition));
-		transform.position = new Vector2 (rigidbody2D.position.x, newY);
+		transform.position = new Vector2 (GetComponent<Rigidbody2D>().position.x, newY);
 	}
 
 	void FixedUpdate(){

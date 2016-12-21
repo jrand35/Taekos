@@ -10,7 +10,7 @@ public class BonusPoints : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rigidbody2D.velocity = new Vector2 (0f, 1f);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (0f, 1f);
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		SetSprite ();
 		StartCoroutine (Fade ());

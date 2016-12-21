@@ -23,10 +23,10 @@ public class Piranha : MonoBehaviour {
         while (true)
         {
             transform.position = startPosition;
-            rigidbody2D.velocity = new Vector2(0f, jumpSpeed);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, jumpSpeed);
             for (int i = 0; i < delay; i++)
             {
-                if (rigidbody2D.velocity.y > 0)
+                if (GetComponent<Rigidbody2D>().velocity.y > 0)
                 {
                     //Rising
                     spr.sprite = frame1;
@@ -45,10 +45,10 @@ public class Piranha : MonoBehaviour {
     {
         StopAllCoroutines();
         dead = true;
-        collider2D.enabled = false;
-        rigidbody2D.velocity = new Vector2(-5f, 10f);
-        rigidbody2D.gravityScale = 1f;
-        rigidbody2D.isKinematic = false;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-5f, 10f);
+        GetComponent<Rigidbody2D>().gravityScale = 1f;
+        GetComponent<Rigidbody2D>().isKinematic = false;
         Destroy(gameObject, 2f);
     }
 	

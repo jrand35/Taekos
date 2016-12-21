@@ -14,7 +14,7 @@ public class Coconut : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         parentTransform = transform.parent.transform;
-        parentRigidbody = transform.parent.rigidbody2D;
+        parentRigidbody = transform.parent.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame

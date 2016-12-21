@@ -37,7 +37,7 @@ public class Banana : MonoBehaviour {
     {
         spr = GetComponentInChildren<SpriteRenderer>();
         StartCoroutine(Delay());
-        vel = rigidbody2D.velocity.x;
+        vel = GetComponent<Rigidbody2D>().velocity.x;
         initialvel = vel;
         dvel = -vel * 1.5f;
         maxvel = -initialvel;
@@ -55,7 +55,7 @@ public class Banana : MonoBehaviour {
 	
 	void FixedUpdate () {
         vel += (dvel * Time.deltaTime);
-        rigidbody2D.velocity = new Vector2(vel, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(vel, 0f);
 
         bool topTouching = Physics2D.OverlapPoint(top.position, whatIsGround);
         bool bottomTouching = Physics2D.OverlapPoint(bottom.position, whatIsGround);
@@ -79,7 +79,7 @@ public class Banana : MonoBehaviour {
             if ((facing == 1 && vel > 0) || (facing == -1 && vel < 0))
             {
                 vel = 0f;
-                rigidbody2D.velocity = new Vector2(vel, 0f);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(vel, 0f);
             }
             transform.position = new Vector3(transform.position.x - facing*0.05f, transform.position.y, transform.position.z);
         }
@@ -94,12 +94,12 @@ public class Banana : MonoBehaviour {
         if (maxvel > 0 && vel > maxvel)
         {
             vel = maxvel;
-            rigidbody2D.velocity = new Vector2(vel, 0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(vel, 0f);
         }
         if (maxvel < 0 && vel < maxvel)
         {
             vel = maxvel;
-            rigidbody2D.velocity = new Vector2(vel, 0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(vel, 0f);
         }
 	}
 
@@ -115,9 +115,9 @@ public class Banana : MonoBehaviour {
         {
             other.SendMessage("DamageEnemy", facing);
             vel = -vel;
-            rigidbody2D.velocity = new Vector2(vel, 0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(vel, 0f);
             transform.position = new Vector3(transform.position.x + vel * Time.deltaTime, transform.position.y, transform.position.z);
-            audio.Play();
+            GetComponent<AudioSource>().Play();
 
             life--;
             if (life == 2)

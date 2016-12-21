@@ -19,7 +19,7 @@ public class MoveVertical : MonoBehaviour {
 
     IEnumerator Run()
     {
-        rigidbody2D.velocity = new Vector2(0f, speed);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
         Vector3 top = topMarker.transform.position;
         Vector3 bottom = bottomMarker.transform.position;
         while (gameObject != null)
@@ -28,13 +28,13 @@ public class MoveVertical : MonoBehaviour {
             {
                 transform.position = new Vector3(transform.position.x, top.y, 0f);
                 speed = -speed;
-                rigidbody2D.velocity = new Vector2(0f, speed);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
             }
             if (transform.position.y < bottom.y)
             {
                 transform.position = new Vector3(transform.position.x, bottom.y, 0f);
                 speed = -speed;
-                rigidbody2D.velocity = new Vector2(0f, speed);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
             }
             yield return 0;
         }

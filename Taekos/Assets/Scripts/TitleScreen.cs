@@ -62,7 +62,7 @@ public class TitleScreen : MonoBehaviour {
 	void Start () {
         menu = MENU_MAIN;
         SetMenuActive(true, false);
-        blinkingButton.active = false;
+        blinkingButton.enabled = false;
         gameStartSound = transform.GetChild(0).gameObject;
         buttonPressSound = transform.GetChild(1).gameObject;
         screenFade.color = new Color(1f, 1f, 1f, 0f);
@@ -142,7 +142,7 @@ public class TitleScreen : MonoBehaviour {
 			float scale = 0.5f + ((topY - cloudPos.y) / 8);
 			GameObject newCloud = Instantiate (cloudSprite, cloudPos, new Quaternion (0f, 0f, 0f, 0f)) as GameObject;
 			SpriteRenderer spriteRenderer = newCloud.GetComponent<SpriteRenderer>();
-			newCloud.rigidbody2D.velocity = new Vector2 (hSpeed, 0f);
+			newCloud.GetComponent<Rigidbody2D>().velocity = new Vector2 (hSpeed, 0f);
 			spriteRenderer.color = cloudColor;
 			spriteRenderer.sortingOrder = 100 - (int)(cloudPos.y * 10);
 			newCloud.transform.localScale = new Vector3(scale, scale, 1f);
@@ -153,7 +153,7 @@ public class TitleScreen : MonoBehaviour {
     public void goToInstructions()
     {
         onInstructions = true;
-        buttonPressSound.audio.Play();
+        buttonPressSound.GetComponent<AudioSource>().Play();
         InstructionsBackButton.enabled = true;
         SetMenuActive(false, false);
         mainMenu.transform.position = new Vector3(
@@ -167,7 +167,7 @@ public class TitleScreen : MonoBehaviour {
     public void returnFromInstructions()
     {
         onInstructions = false;
-        buttonPressSound.audio.Play();
+        buttonPressSound.GetComponent<AudioSource>().Play();
         InstructionsBackButton.enabled = false;
         SetMenuActive(true, false);
         mainMenu.transform.position = new Vector3(
@@ -180,19 +180,19 @@ public class TitleScreen : MonoBehaviour {
 
     public IEnumerator LoadFirstLevel()
     {
-        gameStartSound.audio.Play();
+        gameStartSound.GetComponent<AudioSource>().Play();
         screenFade.rectTransform.SetAsLastSibling();    //Move the image in front of the button and title screen
         float alpha = 0f;
         float dAlpha = 1f / (float)fadeTime;
-        float dVolume = audio.volume / (float)fadeTime;
+        float dVolume = GetComponent<AudioSource>().volume / (float)fadeTime;
 
         //Remove button, show blinking button
-        startButton.active = false;
-        blinkingButton.active = true;
+        startButton.enabled = false;
+        blinkingButton.enabled = true;
 
         for (int i = 0; i < fadeTime; i++)
         {
-            audio.volume -= dVolume;
+            GetComponent<AudioSource>().volume -= dVolume;
             alpha += dAlpha;
             screenFade.color = new Color(1f, 1f, 1f, alpha);
 
@@ -271,7 +271,7 @@ public class TitleScreen : MonoBehaviour {
 
     public void ChangeMenu(int setMenu)
     {
-        buttonPressSound.audio.Play();
+        buttonPressSound.GetComponent<AudioSource>().Play();
         menu = setMenu;
         StartCoroutine(MoveMenu());
     }
@@ -307,7 +307,7 @@ public class TitleScreen : MonoBehaviour {
         lifeCounter.sprite = lifeNumbers[Settings.NumberOfLives];
         if (playSound)
         {
-            buttonPressSound.audio.Play();
+            buttonPressSound.GetComponent<AudioSource>().Play();
         }
     }
 }

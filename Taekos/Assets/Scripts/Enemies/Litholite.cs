@@ -34,7 +34,7 @@ public class Litholite : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         if (move)
-            rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(facing * xspeed, 0f);
         if (facing == -1)
             ReverseDirection();
     }
@@ -78,8 +78,8 @@ public class Litholite : MonoBehaviour
             }
             GameObject bullet = Instantiate(shot, shotPos.position, Quaternion.identity) as GameObject;
             bullet.transform.localScale = new Vector3(0.5f * facing, 0.5f, 1f);
-            bullet.rigidbody2D.velocity = new Vector2(shootSpeed * facing, 0f);
-            audio.Play();
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * facing, 0f);
+            GetComponent<AudioSource>().Play();
             Destroy(bullet, 2f);
             for (int i = 0; i < waitFrames - blinkFrames - postBlink - startDelay; i++)
             {
@@ -97,14 +97,14 @@ public class Litholite : MonoBehaviour
         if (attack)
         {
             StartCoroutine("Shooting");
-            rigidbody2D.velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
         else
         {
             StopCoroutine("Shooting");
             blinkSprite.enabled = false;
             if (move)
-                rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(facing * xspeed, 0f);
         }
     }
 
@@ -112,7 +112,7 @@ public class Litholite : MonoBehaviour
     {
         if (dead)
             return;
-        rigidbody2D.velocity = new Vector2(facing * xspeed, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(facing * xspeed, 0f);
         Vector3 newScale = transform.localScale;
         newScale.x *= -1;
         transform.localScale = newScale;
@@ -123,10 +123,10 @@ public class Litholite : MonoBehaviour
         Destroy(blinkSprite.gameObject);
         StopAllCoroutines();
         dead = true;
-        collider2D.enabled = false;
-        rigidbody2D.velocity = new Vector2(-5f * facing, 10f);
-        rigidbody2D.gravityScale = 1f;
-        rigidbody2D.isKinematic = false;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-5f * facing, 10f);
+        GetComponent<Rigidbody2D>().gravityScale = 1f;
+        GetComponent<Rigidbody2D>().isKinematic = false;
         Destroy(gameObject, 2f);
     }
 }

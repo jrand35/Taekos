@@ -114,7 +114,7 @@ public class GameController : MonoBehaviour {
 
     IEnumerator GameOver()
     {
-        screenFade.active = true;
+        screenFade.enabled = true;
         float alpha = 0f;
         float dAlpha = 1f / (float)fadeTime;
         for (int i = 0; i < fadeTime; i++)
@@ -153,6 +153,6 @@ public class GameController : MonoBehaviour {
             yield return 0;
         }
         if (!isGameOver)
-        screenFade.active = false;
+        screenFade.enabled = false;
     }
 }

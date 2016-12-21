@@ -42,16 +42,16 @@ public class CollectItems : MonoBehaviour {
             audio2.Play();
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.tag == "Health items" && other.gameObject.renderer.enabled)
+        else if (other.gameObject.tag == "Health items" && other.gameObject.GetComponent<Renderer>().enabled)
         {
             //Play item pickup sound
             //Disable the object's renderer so it cannot be seen by the camera
             //Wait until the sound has finished playing, then destroy the item
             audio2.Play();
-            other.gameObject.renderer.enabled = false;
+            other.gameObject.GetComponent<Renderer>().enabled = false;
             if (other.transform.childCount != 0)
             {
-                other.transform.GetChild(0).renderer.enabled = false;
+                other.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
             }
             Destroy(other.gameObject, 2f);
             addHealth(1);

@@ -175,8 +175,8 @@ public class Controller : MonoBehaviour {
 
 	//Do not need to use Time.deltaTime
 	void FixedUpdate () {
-		if (rigidbody2D.velocity.y < maxFallSpeed) {
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxFallSpeed);
+		if (GetComponent<Rigidbody2D>().velocity.y < maxFallSpeed) {
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, maxFallSpeed);
         }
 
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
@@ -199,7 +199,7 @@ public class Controller : MonoBehaviour {
 					hVelocity = 0;
 				}
 				//Do not cling to wall if grounded
-				if (control && HoldingRight() && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
+				if (control && HoldingRight() && GetComponent<Rigidbody2D>().velocity.y <= minWallClingSpeed && !grounded) {
 					wallCling = true;
                     StopPeck();
 				} else {
@@ -212,7 +212,7 @@ public class Controller : MonoBehaviour {
 					hVelocity = 0;
 				}
 				//Do not cling to wall if grounded
-				if (control && HoldingLeft() && rigidbody2D.velocity.y <= minWallClingSpeed && !grounded) {
+				if (control && HoldingLeft() && GetComponent<Rigidbody2D>().velocity.y <= minWallClingSpeed && !grounded) {
 					wallCling = true;
                     StopPeck();
 				} else {
@@ -240,14 +240,14 @@ public class Controller : MonoBehaviour {
 		}
 
 		//Gliding
-		if (control && HoldJump() && !grounded && !wallCling && rigidbody2D.velocity.y <= 0) {
+		if (control && HoldJump() && !grounded && !wallCling && GetComponent<Rigidbody2D>().velocity.y <= 0) {
 			glideSpeed -= descendAcceleration;
 			if (glideSpeed < maxFallSpeed){
 				glideSpeed = maxFallSpeed;
 			}
             gliding = true;	//Necessary?
             StopPeck();
-			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, glideSpeed);
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, glideSpeed);
 		}
 		//Not gliding
 		else {
@@ -259,8 +259,8 @@ public class Controller : MonoBehaviour {
 		//Adjust falling speed
 		if (!grounded && !gliding && !wallCling && !(control && PressJump()) && !HoldJump()){
 			float newVelocityY = stopJumpSpeed + Mathf.Abs(hVelocity * jumpHeightCoefficient);
-		    if (rigidbody2D.velocity.y > newVelocityY){
-				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, newVelocityY);
+		    if (GetComponent<Rigidbody2D>().velocity.y > newVelocityY){
+				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, newVelocityY);
 			}
 		}
 
@@ -273,23 +273,23 @@ public class Controller : MonoBehaviour {
 
         if (grounded)
         {
-            if (groundedObject.rigidbody2D != null)
+            if (groundedObject.GetComponent<Rigidbody2D>() != null)
             {
                 Vector3 newPos = transform.position;
-                newPos.x += groundedObject.rigidbody2D.velocity.x * Time.deltaTime;
-                newPos.y += Mathf.Min(groundedObject.rigidbody2D.velocity.y * Time.deltaTime, 0f);
+                newPos.x += groundedObject.GetComponent<Rigidbody2D>().velocity.x * Time.deltaTime;
+                newPos.y += Mathf.Min(groundedObject.GetComponent<Rigidbody2D>().velocity.y * Time.deltaTime, 0f);
                 transform.position = newPos;
             }
         }
 
         if (backTouchingWall)
         {
-            if (backTouchingWallObject.rigidbody2D != null)
+            if (backTouchingWallObject.GetComponent<Rigidbody2D>() != null)
             {
                 Vector3 newPos = transform.position;
-                if (wallCling || (backTouchingWallObject.rigidbody2D.velocity.x > 0 && transform.position.x > backTouchingWallObject.transform.position.x) ||
-                    (backTouchingWallObject.rigidbody2D.velocity.x < 0 && transform.position.x < backTouchingWallObject.transform.position.x))
-                    newPos.x += backTouchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
+                if (wallCling || (backTouchingWallObject.GetComponent<Rigidbody2D>().velocity.x > 0 && transform.position.x > backTouchingWallObject.transform.position.x) ||
+                    (backTouchingWallObject.GetComponent<Rigidbody2D>().velocity.x < 0 && transform.position.x < backTouchingWallObject.transform.position.x))
+                    newPos.x += backTouchingWallObject.GetComponent<Rigidbody2D>().velocity.x * Time.deltaTime;
                 //newPos.y += backTouchingWallObject.rigidbody2D.velocity.y * Time.deltaTime;
                 transform.position = newPos;
             }
@@ -297,14 +297,14 @@ public class Controller : MonoBehaviour {
 
         if (touchingWall)
         {
-            if (touchingWallObject.rigidbody2D != null)
+            if (touchingWallObject.GetComponent<Rigidbody2D>() != null)
             {
                 Vector3 newPos = transform.position;
-                if (wallCling || (touchingWallObject.rigidbody2D.velocity.x > 0 && transform.position.x > touchingWallObject.transform.position.x) ||
-                    (touchingWallObject.rigidbody2D.velocity.x < 0 && transform.position.x < touchingWallObject.transform.position.x))
-                    newPos.x += touchingWallObject.rigidbody2D.velocity.x * Time.deltaTime;
+                if (wallCling || (touchingWallObject.GetComponent<Rigidbody2D>().velocity.x > 0 && transform.position.x > touchingWallObject.transform.position.x) ||
+                    (touchingWallObject.GetComponent<Rigidbody2D>().velocity.x < 0 && transform.position.x < touchingWallObject.transform.position.x))
+                    newPos.x += touchingWallObject.GetComponent<Rigidbody2D>().velocity.x * Time.deltaTime;
                 if (wallCling)
-                    newPos.y += touchingWallObject.rigidbody2D.velocity.y * Time.deltaTime;
+                    newPos.y += touchingWallObject.GetComponent<Rigidbody2D>().velocity.y * Time.deltaTime;
                 transform.position = newPos;
             }
         }
@@ -312,20 +312,20 @@ public class Controller : MonoBehaviour {
 		//Cling to wall
 		if (wallCling && !isDead) {
 			hVelocity = 0;
-			float vVelocity = rigidbody2D.velocity.y;
+			float vVelocity = GetComponent<Rigidbody2D>().velocity.y;
 			if (vVelocity < 0){
 				vVelocity = 0;
 			}
-			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, vVelocity);
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, vVelocity);
 			if (vVelocity == 0){
-				rigidbody2D.gravityScale = wallClingDescend;
+				GetComponent<Rigidbody2D>().gravityScale = wallClingDescend;
 			}
 		}
 		else if (!isDead){
-			rigidbody2D.gravityScale = normalGravity;
+			GetComponent<Rigidbody2D>().gravityScale = normalGravity;
 		}
 
-		rigidbody2D.velocity = new Vector2 (hVelocity, rigidbody2D.velocity.y);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (hVelocity, GetComponent<Rigidbody2D>().velocity.y);
 		if (hVelocity >= 0 && facing == -1 && HoldingRight() && control) {
 			Flip ();
 		}
@@ -354,13 +354,13 @@ public class Controller : MonoBehaviour {
             GameObject projectile = Instantiate(banana, bananaThrowPos.position, Quaternion.identity) as GameObject;
             if (wallCling)
             {
-                projectile.rigidbody2D.velocity = new Vector2(facing * -1f * bananaThrowSpeed + hVelocity, 0f);
+                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(facing * -1f * bananaThrowSpeed + hVelocity, 0f);
                 projectile.transform.localScale = new Vector3(facing * -1f, 1f, 1f);
                 projectile.transform.position = new Vector3(projectile.transform.position.x + 0.5f * -facing, projectile.transform.position.y, projectile.transform.position.z);
             }
             else
             {
-                projectile.rigidbody2D.velocity = new Vector2(facing * bananaThrowSpeed + hVelocity, 0f);
+                projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(facing * bananaThrowSpeed + hVelocity, 0f);
                 projectile.transform.localScale = new Vector3(facing, 1f, 1f);
             }
         }
@@ -374,25 +374,25 @@ public class Controller : MonoBehaviour {
 				if (!grounded){
 					wallCling = false;
                     float wallVelocity = 0f;
-                    if (touchingWallObject.rigidbody2D != null)
+                    if (touchingWallObject.GetComponent<Rigidbody2D>() != null)
                     {
-                        wallVelocity = Mathf.Abs(touchingWallObject.rigidbody2D.velocity.x);
+                        wallVelocity = Mathf.Abs(touchingWallObject.GetComponent<Rigidbody2D>().velocity.x);
                     }
                     hVelocity = (wallJumpSpeed + wallVelocity) * -facing;
-                    rigidbody2D.velocity = new Vector2(hVelocity, jumpSpeed);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(hVelocity, jumpSpeed);
 					Flip ();
-					jumpSound.audio.Play();
+					jumpSound.GetComponent<AudioSource>().Play();
 				}
 			}
 			//Jump
 			if (grounded){
 				//Jump height increases with horizontal movement
-				rigidbody2D.velocity = new Vector2(hVelocity, jumpSpeed + Mathf.Abs(hVelocity * jumpHeightCoefficient));
-				jumpSound.audio.Play();
+				GetComponent<Rigidbody2D>().velocity = new Vector2(hVelocity, jumpSpeed + Mathf.Abs(hVelocity * jumpHeightCoefficient));
+				jumpSound.GetComponent<AudioSource>().Play();
 			}
 		}
-		float vSpeed = rigidbody2D.velocity.y;
-		bool vSpeedIsZero = (rigidbody2D.velocity.y == 0f);
+		float vSpeed = GetComponent<Rigidbody2D>().velocity.y;
+		bool vSpeedIsZero = (GetComponent<Rigidbody2D>().velocity.y == 0f);
 		anim.SetBool ("grounded", grounded);
 		anim.SetFloat ("vSpeed", vSpeed);
 		anim.SetBool("vSpeedIsZero", vSpeedIsZero);
@@ -507,21 +507,21 @@ public class Controller : MonoBehaviour {
         }
         if (playerLife > 0)
         {
-            hurtSound.audio.Play();
+            hurtSound.GetComponent<AudioSource>().Play();
         }
         UpdateLifebar(playerLife, getCurrentLives(), 1);
         if (playerLife > 0)
         {
             hVelocity = hurtBackSpeed * facing;
             Vector2 vel = new Vector2(hVelocity, hurtJumpSpeed);
-            rigidbody2D.velocity = vel;
+            GetComponent<Rigidbody2D>().velocity = vel;
             StartCoroutine(HurtAnimation());
             StartCoroutine(Invincible());
         }
     }
 
 	void KillPlayer(){
-        hurtSound.audio.Play();
+        hurtSound.GetComponent<AudioSource>().Play();
         playerKilled = true;
         playerLife = 0;
         AddLives(-1);
@@ -540,10 +540,10 @@ public class Controller : MonoBehaviour {
         {
             b.enabled = false;
         }
-		rigidbody2D.gravityScale = fallingGravity;
+		GetComponent<Rigidbody2D>().gravityScale = fallingGravity;
 		hVelocity = hurtBackSpeed * facing;
 		Vector2 vel = new Vector2 (hVelocity, hurtJumpSpeed);
-		rigidbody2D.velocity = vel;
+		GetComponent<Rigidbody2D>().velocity = vel;
         FollowPlayer(false);
         if (!getGameOver())
         {
@@ -557,7 +557,7 @@ public class Controller : MonoBehaviour {
         playerLife = maxPlayerLife;
         UpdateLifebar(playerLife, getCurrentLives(), 0);
         StartCoroutine(Invincible());
-        rigidbody2D.velocity = new Vector2(0f, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
         transform.position = resurrectPos;
         isDead = false;
         control = true;
@@ -565,7 +565,7 @@ public class Controller : MonoBehaviour {
         {
             b.enabled = true;
         }
-        rigidbody2D.gravityScale = normalGravity;
+        GetComponent<Rigidbody2D>().gravityScale = normalGravity;
         FollowPlayer(true);
     }
 

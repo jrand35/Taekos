@@ -22,7 +22,7 @@ public class MoveHorizontal : MonoBehaviour
 
     IEnumerator Run()
     {
-        rigidbody2D.velocity = new Vector2(speed, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0f);
         Vector3 right = rightMarker.transform.position;
         Vector3 left = leftMarker.transform.position;
         while (gameObject != null)
@@ -31,13 +31,13 @@ public class MoveHorizontal : MonoBehaviour
             {
                 transform.position = new Vector3(right.x, transform.position.y, 0f);
                 speed = -speed;
-                rigidbody2D.velocity = new Vector2(speed, 0f);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0f);
             }
             if (transform.position.x < left.x)
             {
                 transform.position = new Vector3(left.x, transform.position.y, 0f);
                 speed = -speed;
-                rigidbody2D.velocity = new Vector2(speed, 0f);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0f);
             }
             yield return 0;
         }
