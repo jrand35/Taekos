@@ -1,38 +1,38 @@
 Initialize engine version: 4.6.1f1 (d1db7a1b5196)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.0]
-    Renderer: NVIDIA Quadro FX 580 (Microsoft Corporation - WDDM v1.1) (ID=0x659)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
     Vendor:   NVIDIA
-    VRAM:     499 MB
+    VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: K:\2D Game Development\Taekos\Taekos 2_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading K:\2D Game Development\Taekos\Taekos 2_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: K:\2D Game Development\Taekos\Taekos 2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading K:\2D Game Development\Taekos\Taekos 2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: K:\2D Game Development\Taekos\Taekos 2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading K:\2D Game Development\Taekos\Taekos 2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.311 seconds
-desktop: 1280x1024 60Hz; virtual: 2560x1024 at 0,0
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.113 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: K:\2D Game Development\Taekos\Taekos 2_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: K:\2D Game Development\Taekos\Taekos 2_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 4.800085 ms
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 2_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 9.013478 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2728.
-Total: 30.381401 ms (FindLiveObjects: 0.207555 ms CreateObjectMapping: 0.027909 ms MarkObjects: 0.337799 ms  DeleteObjects: 0.562998 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2726.
+Total: 4.438644 ms (FindLiveObjects: 0.332779 ms CreateObjectMapping: 0.060792 ms MarkObjects: 1.066237 ms  DeleteObjects: 1.711664 ms)
 
-UnloadTime: 6.591095 ms
+UnloadTime: 5.205656 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 219 unused Assets to reduce memory usage. Loaded Objects now: 216.
-Total: 26.597601 ms (FindLiveObjects: 0.015719 ms CreateObjectMapping: 0.029192 ms MarkObjects: 0.166493 ms  DeleteObjects: 1.040023 ms)
+Unloading 219 unused Assets to reduce memory usage. Loaded Objects now: 214.
+Total: 1.169664 ms (FindLiveObjects: 0.010658 ms CreateObjectMapping: 0.015790 ms MarkObjects: 0.131848 ms  DeleteObjects: 0.723589 ms)
 
-UnloadTime: 0.740399 ms
+UnloadTime: 1.292828 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 324.
-Total: 26.018242 ms (FindLiveObjects: 0.015077 ms CreateObjectMapping: 0.019889 ms MarkObjects: 0.250221 ms  DeleteObjects: 0.095597 ms)
+Total: 2.017996 ms (FindLiveObjects: 0.041054 ms CreateObjectMapping: 0.035922 ms MarkObjects: 0.538448 ms  DeleteObjects: 0.238038 ms)
 

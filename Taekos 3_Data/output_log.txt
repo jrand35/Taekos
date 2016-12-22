@@ -1,38 +1,61 @@
 Initialize engine version: 4.6.1f1 (d1db7a1b5196)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.0]
-    Renderer: NVIDIA GeForce GTS 240 (ID=0x607)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
     Vendor:   NVIDIA
-    VRAM:     1007 MB
+    VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading K:\2D Game Development\Taekos\Taekos 3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading K:\2D Game Development\Taekos\Taekos 3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.359 seconds
-desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.211 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: K:\2D Game Development\Taekos\Taekos 3_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 4.330410 ms
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Joshua\Documents\GitHub\Taekos\Taekos 3_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 10.270369 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2795.
-Total: 23.540667 ms (FindLiveObjects: 0.090080 ms CreateObjectMapping: 0.023097 ms MarkObjects: 0.317206 ms  DeleteObjects: 0.402282 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2793.
+Total: 2.396564 ms (FindLiveObjects: 0.194219 ms CreateObjectMapping: 0.034738 ms MarkObjects: 0.541605 ms  DeleteObjects: 0.842804 ms)
 
-UnloadTime: 8.688923 ms
+UnloadTime: 15.936697 ms
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 219 unused Assets to reduce memory usage. Loaded Objects now: 221.
-Total: 26.529877 ms (FindLiveObjects: 0.014243 ms CreateObjectMapping: 0.026177 ms MarkObjects: 0.158988 ms  DeleteObjects: 0.919283 ms)
+Unloading 219 unused Assets to reduce memory usage. Loaded Objects now: 219.
+Total: 4.256654 ms (FindLiveObjects: 0.041054 ms CreateObjectMapping: 0.063555 ms MarkObjects: 0.444495 ms  DeleteObjects: 2.462093 ms)
 
-UnloadTime: 0.450017 ms
+UnloadTime: 1.234796 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 328.
-Total: 29.797415 ms (FindLiveObjects: 0.011548 ms CreateObjectMapping: 0.015398 ms MarkObjects: 0.356087 ms  DeleteObjects: 0.097394 ms)
+Total: 0.866489 ms (FindLiveObjects: 0.015395 ms CreateObjectMapping: 0.015395 ms MarkObjects: 0.220668 ms  DeleteObjects: 0.108952 ms)
+
+UnloadTime: 1.946147 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 41 unused Assets to reduce memory usage. Loaded Objects now: 2793.
+Total: 4.297314 ms (FindLiveObjects: 0.304751 ms CreateObjectMapping: 0.075003 ms MarkObjects: 0.996364 ms  DeleteObjects: 1.593235 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Banana.OnDestroy () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 66.011108 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 219 unused Assets to reduce memory usage. Loaded Objects now: 219.
+Total: 3.259895 ms (FindLiveObjects: 0.041844 ms CreateObjectMapping: 0.075003 ms MarkObjects: 0.446863 ms  DeleteObjects: 1.978912 ms)
+
+UnloadTime: 0.622925 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 328.
+Total: 0.672269 ms (FindLiveObjects: 0.011842 ms CreateObjectMapping: 0.014211 ms MarkObjects: 0.178034 ms  DeleteObjects: 0.082504 ms)
 

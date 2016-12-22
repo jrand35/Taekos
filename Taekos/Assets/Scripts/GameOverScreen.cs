@@ -1,16 +1,25 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// The Game Over screen that appears when Taekos loses all lives
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class GameOverScreen : MonoBehaviour {
+    public AudioSource continueClick;   ///< Sound to play when clicking the Continue button
+    public Graphic[] fadingObjects; ///< The continue button, quit button, and remaining continues counter
+	public Image gameOverImage;     ///< The Game Over UI text
+    public Image fadeImage;         ///< A black rectangle for the background
+    public Text remainingText;      ///< Displays the remaining number of continues
+    private float delay = 4f;       ///< Delay in seconds before returning to the title screen, if there are no continues left
 
-    public Graphic[] fadingObjects;
-	public Image gameOverImage;
-    public Image fadeImage;
-    public Text remainingText;
-    private float delay = 4f;
-
-	// Use this for initialization
+	/// <summary>
+    /// Display the number of remaining continues and start the Run coroutine
+    /// </summary>
     void Start()
     {
         //Settings.NumberOfContinues = 1;
@@ -23,6 +32,9 @@ public class GameOverScreen : MonoBehaviour {
 		StartCoroutine (Run ());
 	}
 
+    /// <summary>
+    /// Fade in the Game Over text, then display the buttons and Continues counter
+    /// </summary>
 	IEnumerator Run(){
 		for (float i = 0f, alpha = 0f; i <= 1f; i += 0.005f, alpha += 0.005f) {
 			float scale = 1f + 2f * (Mathf.Pow(i - 1, 2));
@@ -53,6 +65,10 @@ public class GameOverScreen : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// If the player clicks "Continue" then fade the screen out before loading the main level,
+    /// Called by Continue coroutine
+    /// </summary>
     IEnumerator FadeOut()
     {
         for (int i = 0; i <= 1000; i += 5)
@@ -61,12 +77,15 @@ public class GameOverScreen : MonoBehaviour {
             fadeImage.color = new Color(1f, 1f, 1f, i / 1000.0f);
             yield return 0;
         }
+        SceneManager.LoadScene("Main");
     }
 
-    //Finish, create fade effect
+    /// <summary>
+    /// When the player clicks Continue, turn off the buttons and call FadeOut coroutine
+    /// </summary>
     public void Continue()
     {
-        Application.LoadLevel("Main");
+        continueClick.Play();
         foreach (Graphic g in fadingObjects)
         {
             g.enabled = false;
@@ -76,9 +95,11 @@ public class GameOverScreen : MonoBehaviour {
         StartCoroutine(FadeOut());
     }
 
-    //Finish, create fade effect
+    /// <summary>
+    /// Quit the game and return to the title screen
+    /// </summary>
     public void Quit()
     {
-        Application.LoadLevel("Title");
+        SceneManager.LoadScene("Title");
     }
 }

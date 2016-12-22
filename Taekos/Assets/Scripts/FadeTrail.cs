@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Displays an after-image around Taekos when he collects a powerup. Not used in the final build
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class FadeTrail : MonoBehaviour {
 
-	private int lifetime = 2;
-	private float alpha = 1f;
-	private float xscale;
-	private float yscale;
-	private float grow = 0.02f;
-	private SpriteRenderer spriteRenderer;
-	// Use this for initialization
+	private float alpha = 1f;               ///< The current alpha value of the image, fades from 1 to 0 over time
+	private float xscale;                   ///< The horizontal scale of the image
+	private float yscale;                   ///< The vertical scale of the image
+	private float grow = 0.02f;             ///< The scale growth rate
+	private SpriteRenderer spriteRenderer;  ///< Reference to the sprite renderer
+	
+    /// <summary>
+    /// Get a reference to the sprite renderer and start the Run coroutine
+    /// </summary>
 	void Start () {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		xscale = transform.localScale.x;
@@ -17,6 +25,9 @@ public class FadeTrail : MonoBehaviour {
 		StartCoroutine (Run ());
 	}
 
+    /// <summary>
+    /// Start scaling the afterimage and fade it out
+    /// </summary>
 	IEnumerator Run(){
 		while (alpha > 0) {
 			alpha -= 0.02f;

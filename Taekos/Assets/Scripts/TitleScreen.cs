@@ -175,6 +175,14 @@ public class TitleScreen : MonoBehaviour {
 	}
 
     /// <summary>
+    /// When the user clicks the Quit button to exit the game
+    /// </summary>
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    /// <summary>
     /// Called by the instructions menu button
     /// </summary>
     public void goToInstructions()
