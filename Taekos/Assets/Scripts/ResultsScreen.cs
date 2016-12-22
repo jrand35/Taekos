@@ -1,13 +1,20 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// The results screen after the player beats the level
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class ResultsScreen : MonoBehaviour {
 
     public Text scoreNumber;
     public Text feathersNumber;
     public Text timeNumber;
-    private int delayFrames = 60;
+    private int delayFrames = 60;   ///< Delay in between score phases
     private long score;
     private int feathers;
     private int time;
@@ -19,16 +26,13 @@ public class ResultsScreen : MonoBehaviour {
         time = Settings.Results.Time;
     }
 
-	// Use this for initialization
 	void Start () {
         StartCoroutine(Run());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+    /// <summary>
+    /// Show the feathers and time bonuses, then add them to the score
+    /// </summary>
     IEnumerator Run()
     {
         int feathersBonus;
@@ -64,6 +68,6 @@ public class ResultsScreen : MonoBehaviour {
     public void ReturnToTitle()
     {
         GetComponent<AudioSource>().Play();
-        Application.LoadLevel("Title");
+        SceneManager.LoadScene("Title");
     }
 }

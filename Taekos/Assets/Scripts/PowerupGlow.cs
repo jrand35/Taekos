@@ -1,17 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Allow the mango to glow
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class PowerupGlow : MonoBehaviour {
 
-    public float dRad = 0.1f;
+    public float dRad = 0.1f;               ///< The rotation speed
     private SpriteRenderer spriteRenderer;
 
-	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(Glow());
 	}
 
+    /// <summary>
+    /// Allow the mango to glow along a factor between 0.5 and 1
+    /// </summary>
     IEnumerator Glow()
     {
         float rad = 0f;

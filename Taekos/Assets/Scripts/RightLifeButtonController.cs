@@ -2,6 +2,12 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// The script attached to the button for increasing the number of lives in the options menu
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class RightLifeButtonController : MonoBehaviour
 {
 
@@ -9,7 +15,7 @@ public class RightLifeButtonController : MonoBehaviour
     private Image image;
     private bool darkened;
     public delegate void RightLifeButtonEventHandler(int addScore, bool playSound);
-    public static event RightLifeButtonEventHandler rightLifeButtonClicked;
+    public static event RightLifeButtonEventHandler rightLifeButtonClicked;         ///< Event fired when the button is clicked
     // Use this for initialization
     void Start()
     {
@@ -34,6 +40,9 @@ public class RightLifeButtonController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enable or disable the button
+    /// </summary>
     void EnableButton()
     {
         if ((enabled || !darkened) && Settings.NumberOfLives == 9)
@@ -48,6 +57,5 @@ public class RightLifeButtonController : MonoBehaviour
             darkened = false;
             image.color = new Color(1f, 1f, 1f, 1f);
         }
-       // Debug.Log("Enabled:" + myButton.enabled + " Darkened: " + darkened);
     }
 }
