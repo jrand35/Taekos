@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['mainmenu',['mainMenu',['../class_title_screen.html#a3ad13b60595f5ab9c25e9e794c63e1c8',1,'TitleScreen']]],
+  ['mainmenubuttons',['mainMenuButtons',['../class_title_screen.html#a880438f138e718cb4aac81b1354994da',1,'TitleScreen']]],
+  ['masksprites',['maskSprites',['../class_lifebar.html#af9b3d2c58cec9fb71b3094a62ca42e1b',1,'Lifebar']]],
+  ['maxfallspeed',['maxFallSpeed',['../class_controller.html#ac9ac4e71fdad59fedf8ba7b1f43a7188',1,'Controller']]],
+  ['maxhspeed',['maxHSpeed',['../class_controller.html#ac6c89930bccda1e615e118ee801f6811',1,'Controller']]],
+  ['maxplayerlife',['maxPlayerLife',['../class_controller.html#a8729ff5d149e377856ec564d53ff8625',1,'Controller']]],
+  ['maxvel',['maxvel',['../class_banana.html#aa234785c41553c7a469f0897a560c135',1,'Banana']]],
+  ['menu',['menu',['../class_title_screen.html#ae4ef27bc840b0e29e77d1d5611c671e4',1,'TitleScreen']]],
+  ['menu_5fmain',['MENU_MAIN',['../class_title_screen.html#a77ae064f9727f69530ede2b2c899be6e',1,'TitleScreen']]],
+  ['menu_5foptions',['MENU_OPTIONS',['../class_title_screen.html#a3058534862c3ceaf10320160ff9e98ae',1,'TitleScreen']]],
+  ['menudistance',['menuDistance',['../class_title_screen.html#a63133dd39402e23b8db3fbbb7a15686a',1,'TitleScreen']]],
+  ['minwallclingspeed',['minWallClingSpeed',['../class_controller.html#a65c985bc1cda9867d972396531711b76',1,'Controller']]],
+  ['move',['move',['../class_banana.html#a871b8427e0e24f8b1206e4b20e1b10bc',1,'Banana.move()'],['../class_litholite.html#a0a10a4d43a25ad452f88d958662ffd87',1,'Litholite.move()']]],
+  ['moveback',['moveBack',['../class_enemy_controller.html#a08761b4fc986392c48990ba3187efc0b',1,'EnemyController']]],
+  ['movedistance',['moveDistance',['../class_rotate_platform.html#ac0aa7a158daa686177b81e37e9fe1518',1,'RotatePlatform']]],
+  ['moveposition',['movePosition',['../class_rotate_platform.html#aebba339729f70f340c6316fab6b1e106',1,'RotatePlatform']]],
+  ['movespeed',['moveSpeed',['../class_rotate_platform.html#a2d7e5182644782dda7c7f49ef5f27d8c',1,'RotatePlatform']]],
+  ['musicvolume',['musicVolume',['../class_settings.html#aa20d7d7bf8c4f59c438d1d731d0a4131',1,'Settings.musicVolume()'],['../class_title_screen.html#a26422160b45e38d18f53aa2675525f9e',1,'TitleScreen.musicVolume()']]],
+  ['mybutton',['myButton',['../class_left_life_button_controller.html#a8087062769c7362212ecfad54c94bf61',1,'LeftLifeButtonController.myButton()'],['../class_right_life_button_controller.html#a890ac907bcba5d50fcccc86a85b797ef',1,'RightLifeButtonController.myButton()']]]
+];

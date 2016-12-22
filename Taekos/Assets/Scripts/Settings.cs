@@ -1,13 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Need to use static?
+/// <summary>
+/// Global game settings:
+/// Number of starting lives, continues, music and sound volume,
+/// Declared static so the values stay the same when changing scenes
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Settings : MonoBehaviour {
     private static int numberOfLives = 2;
     private static int numberOfContinues = 2;
     private static int musicVolume = 100;
     private static int soundVolume = 100;
 
+    /// <summary>
+    /// Results class,
+    /// Values passed to the results screen
+    /// <remarks>
+    /// By Joshua Rand
+    /// </remarks>
+    /// </summary>
     public class Results
     {
         private static long score;

@@ -2,19 +2,30 @@
 using System.Collections;
 using System;
 
+/// <summary>
+/// A hitbox attached to Taekos,
+/// Handles ground detection and collisions between enemies and checkpoints
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class HitBox : MonoBehaviour {
-    public delegate void TakeDamageHandler(int damage);
-    public static event TakeDamageHandler takeDamage;
-    public delegate void KillPlayerHandler();
-    public static event KillPlayerHandler killPlayer;
-    public delegate void CheckpointHandler(Vector3 position, int checkpointIndex);
-    public static event CheckpointHandler getCheckpoint;
-    public delegate void CompleteLevelHandler();
-    public static event CompleteLevelHandler completeLevel;
-    public Transform back_, top, front_, bottom;
-    public LayerMask whatIsDoor;
-    private float backx, backy, frontx, fronty;
+    public delegate void TakeDamageHandler(int damage);                             ///< Event handler for taking damage
+    public static event TakeDamageHandler takeDamage;                               ///< Event for taking damage, called when colliding with an enemy
+    public delegate void KillPlayerHandler();                                       ///< Event handler for killing the player
+    public static event KillPlayerHandler killPlayer;                               ///< Event for killing the player, called when touching a death boundary at the bottom of the screen
+    public delegate void CheckpointHandler(Vector3 position, int checkpointIndex);  ///< Event handler for getting checkpoints
+    public static event CheckpointHandler getCheckpoint;                            ///< Event for getting a checkpoint, called when colliding with a checkpoint
+    public delegate void CompleteLevelHandler();                                    ///< Event handler for completing the level
+    public static event CompleteLevelHandler completeLevel;                         ///< Event for completing the level, called when the player presses down in front of a door
+    public Transform back_, top, front_, bottom;                                    ///< Used for checking Physics overlapping with a door
+    public LayerMask whatIsDoor;                                                    ///< Reference to the door's layer
+    private float backx, backy, frontx, fronty;                                     ///< Positions of back_, top, front_, and bottom                     
 
+    ///<summary>
+    /// Fire the getCheckpoint event when getting a checkpoint,
+    /// Message sent to Controller.cs
+    /// </summary>
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Checkpoint")
@@ -27,6 +38,9 @@ public class HitBox : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Detect collision with death boundary at the bottom of the screen
+    /// </summary>
     void OnCollisionEnter2D(Collision2D other)
     {
         //Kill the player instantly when they fall off the screen
@@ -36,6 +50,10 @@ public class HitBox : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Handle collisions with enemies and projectiles,
+    /// Fire the takeDamage event, sending a message to Controller.cs
+    /// </summary>
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemies" || other.gameObject.tag == "Enemy Projectiles")
@@ -64,6 +82,9 @@ public class HitBox : MonoBehaviour {
         }*/
     }
 
+    /// <summary>
+    /// Complete the level if the player presses S or Down in front of a door
+    /// </summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))

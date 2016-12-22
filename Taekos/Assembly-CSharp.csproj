@@ -68,7 +68,6 @@
      <Compile Include="Assets\Scripts\MoveChildrenVertical.cs" />
      <Compile Include="Assets\Scripts\MoveHorizontal.cs" />
      <Compile Include="Assets\Scripts\MoveVertical.cs" />
-     <Compile Include="Assets\Scripts\ParticleSortingLayer.cs" />
      <Compile Include="Assets\Scripts\Pecking.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\PowerupGlow.cs" />

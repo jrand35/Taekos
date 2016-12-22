@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['facing',['facing',['../class_banana.html#aabf8b600bfa404dc6c112fdf3e85055e',1,'Banana.facing()'],['../class_controller.html#aa1780de13d38e70327631e3997c70444',1,'Controller.facing()'],['../class_litholite.html#a343346b771171ce87e3e9560119c6e3f',1,'Litholite.facing()'],['../class_python.html#aae095e6a2003e2e6ec819e09d85f2ea0',1,'Python.facing()']]],
+  ['fadedelay',['fadeDelay',['../class_bonus_points.html#ab0efe443e323f4b3dc13402fef385854',1,'BonusPoints']]],
+  ['fadeimage',['fadeImage',['../class_game_over_screen.html#adda2aa240664033baea7b7dc9f8ee565',1,'GameOverScreen']]],
+  ['fadetime',['fadeTime',['../class_game_controller.html#a77b047cf4595a3abeb9e0261a3f6fd28',1,'GameController.fadeTime()'],['../class_title_screen.html#a4e92a8303baa404f644a2ff917e68517',1,'TitleScreen.fadeTime()']]],
+  ['fadingobjects',['fadingObjects',['../class_game_over_screen.html#a99316557629350be5bb3e09412a1a521',1,'GameOverScreen']]],
+  ['fallinggravity',['fallingGravity',['../class_controller.html#af123b6dd4c31689902c82bef469ad512',1,'Controller']]],
+  ['feather',['feather',['../class_door.html#a93f57d7ad0eb7dbb5c9d17a1b46c68ed',1,'Door']]],
+  ['feathercounter',['featherCounter',['../class_lifebar.html#a412f5e62c9020ad306d969d854300964',1,'Lifebar']]],
+  ['feathers',['feathers',['../class_results_screen.html#a0ff3e3d0cc55c8e7a9a40e1940309341',1,'ResultsScreen.feathers()'],['../class_settings_1_1_results.html#ac93f509083ae106a56bbf066d92946ce',1,'Settings.Results.feathers()']]],
+  ['feathersnumber',['feathersNumber',['../class_results_screen.html#a0f73463bd0ef4ff0438a8d347bfb999d',1,'ResultsScreen']]],
+  ['followplayer',['followPlayer',['../class_player_follow.html#a8e38a48791f4c093cac78209c5603b3b',1,'PlayerFollow']]],
+  ['frame1',['frame1',['../class_piranha.html#aed31151e4b52af3cf8e205751ec201cf',1,'Piranha']]],
+  ['frame2',['frame2',['../class_piranha.html#a43de63532788d29a4a112be01bc98aef',1,'Piranha']]],
+  ['front',['front',['../class_banana.html#a8fca98a7c44f341e04b16a5106483b6f',1,'Banana.front()'],['../class_controller.html#afa820e0b06c3d3ee1605d700ff73ebf5',1,'Controller.front()'],['../class_litholite.html#ab95c293033f6767f00e918ab287e5a90',1,'Litholite.front()'],['../class_python.html#ad12761a6402b9dc466c946cdecda2968',1,'Python.front()']]],
+  ['front_5f',['front_',['../class_hit_box.html#a34429412f6e11efc42c6ac3824d984e9',1,'HitBox']]],
+  ['frontx',['frontx',['../class_hit_box.html#a00cf7a327418ade0060848dc0383367b',1,'HitBox']]],
+  ['fronty',['fronty',['../class_hit_box.html#a2f3fd100dcdb75ce553c8e1992baeab8',1,'HitBox']]]
+];

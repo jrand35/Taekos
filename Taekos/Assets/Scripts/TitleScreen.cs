@@ -1,51 +1,62 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// The title screen controller,
+/// Controls the main menu, options menu, and instructions menu
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class TitleScreen : MonoBehaviour {
 
-	public GameObject cloudSprite;	//Cloud prefab
-    public GameObject mainMenu;
-    public GameObject mainMenuButtons;
-    public GameObject optionsMenu;
-    public GameObject optionsMenuButtons;
-    public SpriteRenderer skyScreen;
-    public Sprite dayScreen;
-    public Sprite nightScreen;
-    public RectTransform InstructionsMenu;
-    public Image screenFade;
-    public Image blinkingButton;
-    public Image lifeCounter;
-    public Sprite[] lifeNumbers;
-    public Sprite blink1;
-    public Sprite blink2;
+	public GameObject cloudSprite;	        ///< Cloud prefab
+    public GameObject mainMenu;             ///< Main menu group
+    public GameObject mainMenuButtons;      ///< Main menu buttons group
+    public GameObject optionsMenu;          ///< Options menu group
+    public GameObject optionsMenuButtons;   ///< Options menu buttons group
+    public SpriteRenderer skyScreen;        ///< The background sky, changes depending on the time of day
+    public Sprite dayScreen;                ///< Sprite for playing the game during the day
+    public Sprite nightScreen;              ///< Sprite for playing the game during the night
+    public RectTransform InstructionsMenu;  ///< RectTransform for moving the instructions menu in and out of the screen
+    public Image screenFade;                ///< A large, rectangular black sprite for fading the screen in and out
+    public Image blinkingButton;            ///< Behind the start button, becomes visible when the player clicks "Start"
+    public Image lifeCounter;               ///< Number sprite for the number of lives in the options menu
+    public Sprite[] lifeNumbers;            ///< Number sprites, 0-9
+    public Sprite blink1;                   ///< Blinking sprite 1
+    public Sprite blink2;                   ///< Blinking sprite 2
     public Button startButton;
     public Button optionsButton;
     public Button backButton;
     public Button InstructionsBackButton;
-	public Transform cloudSpawn;
-	public Transform top;
-	public Transform bottom;
-    public int fadeTime = 45;
-    private int startingNumberOfLives;
-    private int startingNumberOfContinues;
-    private int musicVolume;
-    private int soundVolume;
-    private int menu;
+	public Transform cloudSpawn;            ///< Spawning position for the clouds
+	public Transform top;                   ///< Top of the cloud spawning area
+	public Transform bottom;                ///< Bottom of the cloud spawning area
+    public int fadeTime = 45;               ///< Time in frames to fade the screen out to the first level
+    private int startingNumberOfLives;      ///< Set to Settings.numberOfLives
+    private int startingNumberOfContinues;  ///< Set to Settings.numberOfContinues
+    private int musicVolume;                ///< Set to Settings.MusicVolume
+    private int soundVolume;                ///< Set to Settings.SoundVolume
+    private int menu;                       ///< Index of the currently active menu, 0 = Main menu, 1 = Options menu
     private GameObject gameStartSound;
     private GameObject buttonPressSound;
     private SpriteRenderer spriteRenderer;
-    private bool onMainMenu;
-    private bool onOptionsMenu;
-	private bool dayTime;
-    private bool buttonClicked;
-    private bool onInstructions;
-    private float dMenuX = 53f;
-    private float menuDistance = 800;
-    private const int MENU_MAIN = 0;
-    private const int MENU_OPTIONS = 1;
-    private Vector3 instructionsPos;
+    private bool onMainMenu;                ///< True if currently on the main menu
+    private bool onOptionsMenu;             ///< True if currently on the options menu
+	private bool dayTime;                   ///< Whether it is currently day or night
+    //private bool buttonClicked;
+    private bool onInstructions;            ///< True if currently on the instructions menu
+    private float dMenuX = 53f;             ///< The speed to move the screen when the user changes the menu
+    private float menuDistance = 800;       ///< The total distance to move the screen when changing menus
+    private const int MENU_MAIN = 0;        ///< The main menu index
+    private const int MENU_OPTIONS = 1;     ///< The options menu index
+    private Vector3 instructionsPos;        ///< The position for the instructions menu
 
+    /// <summary>
+    /// Set the main menu values to the values in the Settings static class
+    /// </summary>
     void Awake()
     {
         onInstructions = false;
@@ -58,7 +69,9 @@ public class TitleScreen : MonoBehaviour {
         startingNumberOfContinues = Settings.NumberOfContinues;
     }
 
-	// Use this for initialization
+	/// <summary>
+    /// Start the game in the main menu
+    /// </summary>
 	void Start () {
         menu = MENU_MAIN;
         SetMenuActive(true, false);
@@ -69,25 +82,33 @@ public class TitleScreen : MonoBehaviour {
 		StartCoroutine (Run ());
 		var time = System.DateTime.Now;
 		dayTime = (time.Hour >= 6 && time.Hour < 18);
-        buttonClicked = false;
+        //buttonClicked = false;
         UpdateLifeCounter(0, false);
         instructionsPos = InstructionsMenu.localPosition;
         InstructionsBackButton.enabled = false;
 	}
 
+    /// <summary>
+    /// Subscribe to events, when the left and right life buttons are clicked
+    /// </summary>
     void OnEnable()
     {
         LeftLifeButtonController.leftLifeButtonClicked += UpdateLifeCounter;
         RightLifeButtonController.rightLifeButtonClicked += UpdateLifeCounter;
     }
 
+    /// <summary>
+    /// Unsubscribe to events
+    /// </summary>
     void OnDisable()
     {
         LeftLifeButtonController.leftLifeButtonClicked -= UpdateLifeCounter;
         RightLifeButtonController.rightLifeButtonClicked -= UpdateLifeCounter;
     }
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Read input from the keyboard to navigate the menu
+    /// </summary>
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -119,6 +140,9 @@ public class TitleScreen : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// Create the clouds
+    /// </summary>
 	IEnumerator Run(){
 		while (true) {
 			float cloudDelay = Random.value * 0.7f;
@@ -150,6 +174,9 @@ public class TitleScreen : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// Called by the instructions menu button
+    /// </summary>
     public void goToInstructions()
     {
         onInstructions = true;
@@ -164,6 +191,9 @@ public class TitleScreen : MonoBehaviour {
         InstructionsMenu.localPosition = new Vector3(0f, 0f, 0f);
     }
 
+    /// <summary>
+    /// Called by the back button on the instructions menu button
+    /// </summary>
     public void returnFromInstructions()
     {
         onInstructions = false;
@@ -178,6 +208,10 @@ public class TitleScreen : MonoBehaviour {
         InstructionsMenu.localPosition = instructionsPos;
     }
 
+    /// <summary>
+    /// Called by the start button
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator LoadFirstLevel()
     {
         gameStartSound.GetComponent<AudioSource>().Play();
@@ -207,9 +241,12 @@ public class TitleScreen : MonoBehaviour {
             }
             yield return 0;
         }
-        Application.LoadLevel("Main");
+        SceneManager.LoadScene("Main");
     }
 
+    /// <summary>
+    /// Move the screen like a transition when changing menus
+    /// </summary>
     IEnumerator MoveMenu()
     {
         //Set to main menu
@@ -253,6 +290,9 @@ public class TitleScreen : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Enable the currently active menu and disable all inactive menus
+    /// </summary>
     void SetMenuActive(bool mainMenuActive, bool optionsMenuActive)
     {
         onMainMenu = mainMenuActive;
@@ -269,6 +309,9 @@ public class TitleScreen : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Call the MoveMenu coroutine
+    /// </summary>
     public void ChangeMenu(int setMenu)
     {
         buttonPressSound.GetComponent<AudioSource>().Play();
@@ -276,6 +319,9 @@ public class TitleScreen : MonoBehaviour {
         StartCoroutine(MoveMenu());
     }
 
+    /// <summary>
+    /// Update the life counter UI
+    /// </summary>
     public void UpdateLifeCounter(int addLife, bool playSound)
     {
         Settings.NumberOfLives += addLife;
