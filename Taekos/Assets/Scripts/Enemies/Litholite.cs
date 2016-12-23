@@ -1,27 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Litholite (robotic crab) enemy,
+/// Moves left and right, or not at all, and shoots lasers at Taekos when he is in the line of sight,
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Litholite : MonoBehaviour
 {
-    public GameObject shot;
+    public GameObject shot;             ///< Laser prefab
     public Transform shotPos;
-    public LayerMask whatIsGround;
-    public Transform edge;
-    public Transform front;
-    public SpriteRenderer blinkSprite;
-    public bool move;
-    public int facing = 1;
-    public int startDelay;
+    public LayerMask whatIsGround;      ///< For wall detection
+    public Transform edge;              ///< Detection for turning around at the edge of a platform
+    public Transform front;             ///< Detection for turning around in front of a wall
+    public SpriteRenderer blinkSprite;  ///< Allow the Litholite to blink blue just before shooting
+    public bool move;                   ///< Enable the Litholite to move or not
+    public int facing = 1;              ///< 1 for right, -1 for left
+    public int startDelay;              ///< Delay in frames before the Litholite starts shooting
     private Animator anim;
-    private int postBlink = 10;
-    private int blinkFrames = 5;
-    private int waitFrames = 70;
+    private int postBlink = 10;         ///< Delay in frames after the Litholite blinks to start shooting
+    private int blinkFrames = 5;        ///< Duration of the blink
+    private int waitFrames = 70;        ///< Delay between shots
     private float xspeed = 2;
     private float shootSpeed = 12f;
     private bool attacking;
     private bool dead;
     private IEnumerator shooting;
 
+    /// <summary>
+    /// Create a reference to the Shooting coroutine
+    /// </summary>
     void Awake()
     {
         shooting = Shooting();
@@ -29,7 +39,9 @@ public class Litholite : MonoBehaviour
         dead = false;
     }
 
-    // Use this for initialization
+    /// <summary>
+    /// Start moving and possibly turn around
+    /// </summary>
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -39,6 +51,9 @@ public class Litholite : MonoBehaviour
             ReverseDirection();
     }
 
+    /// <summary>
+    /// Detect Taekos and shoot at him
+    /// </summary>
     void Update()
     {
         if (!attacking)
@@ -58,6 +73,9 @@ public class Litholite : MonoBehaviour
         anim.SetBool("Dead", dead);
     }
 
+    /// <summary>
+    /// Shoot lasers at Taekos with delays between each shot
+    /// </summary>
     IEnumerator Shooting()
     {
         while (true)
@@ -88,6 +106,10 @@ public class Litholite : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Message sent by DetectPlayer object when Taekos comes in the line of sight,
+    /// Allow the Litholite to start shooting and start the Shooting coroutine
+    /// </summary>
     void Attack(bool attack)
     {
         //Only call once if attack state is changing
@@ -108,6 +130,9 @@ public class Litholite : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Turn around if there is an edge or wall in front of the Litholite
+    /// </summary>
     void ReverseDirection()
     {
         if (dead)
@@ -118,6 +143,9 @@ public class Litholite : MonoBehaviour
         transform.localScale = newScale;
     }
 
+    /// <summary>
+    /// Fly off screen, shut off collision detection, and destroy the Litholite after 2 seconds
+    /// </summary>
     void EnemyDeath()
     {
         Destroy(blinkSprite.gameObject);
