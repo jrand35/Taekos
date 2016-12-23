@@ -2,19 +2,28 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Taekos's lifebar in the top-left part of the screen.
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Lifebar : MonoBehaviour {
-	public Image lifebar;       //White image
-    public Image lifebarMask;   //Lifebar image
+	public Image lifebar;           ///< White Image
+    public Image lifebarMask;       ///< Lifebar image
 	public Sprite[] sprites;
     public Sprite[] maskSprites;
     public Text livesRemaining;
     public Text featherCounter;
     private float blinkTime = 0.1f;
     private Color normalColor;
-    private Color redColor;     //When taking damage
-    private Color greenColor;   //When restoring health
+    private Color redColor;         ///< When taking damage
+    private Color greenColor;       ///< When restoring health
 	private RectTransform rec;
 
+    /// <summary>
+    /// Assign colors
+    /// </summary>
     void Awake()
     {
         normalColor = new Color(1f, 1f, 1f, 1f);
@@ -22,12 +31,18 @@ public class Lifebar : MonoBehaviour {
         greenColor = new Color(0f, 1f, 0f, 0.5f);   //May need to fix
     }
 
+    /// <summary>
+    /// Subscribe to events
+    /// </summary>
     void OnEnable()
     {
         Controller.UpdateLifebar += UpdateLifebar;
         GameController.UpdateFeatherCounter += UpdateFeatherCounter;
     }
 
+    /// <summary>
+    /// Unsubscribe to events
+    /// </summary>
     void OnDisable()
     {
         Controller.UpdateLifebar -= UpdateLifebar;
@@ -36,13 +51,15 @@ public class Lifebar : MonoBehaviour {
 
 	void Start(){
         rec = lifebar.transform.GetComponent<RectTransform>();
-        //lifebarMask.color = new Color(1f, 1f, 0f, 0f);
 	}
 
-    //effectType
-    //0: No effect
-    //1: Blink red
-    //2: Blink green
+    /// <summary>
+    /// Update the lifebar and life counter
+    /// effectType:
+    /// 0: No effect
+    /// 1: Blink red
+    /// 2: Blink green
+    /// </summary>
     void UpdateLifebar(int currentLife, int lives, int effectType)
     {
         lifebarMask.color = normalColor;
@@ -83,14 +100,19 @@ public class Lifebar : MonoBehaviour {
         livesRemaining.text = "x " + lives;
 	}
 
+    /// <summary>
+    /// Update the feather counter
+    /// </summary>
     void UpdateFeatherCounter(int featherCount, int maxFeathers)
     {
         featherCounter.text = "x " + featherCount + " / " + maxFeathers;
     }
 
-    //col
-    //1: Red
-    //2: Green
+    /// <summary>
+    /// Have the lifebar blink
+    /// 1: Red
+    /// 2: Green
+    /// </summary>
     IEnumerator Blink(int col)
     {
         if (col == 1)

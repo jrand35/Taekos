@@ -1,55 +1,59 @@
-﻿//Created by Joshua Rand
-//Possibly change ground and wall detection to areas
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// Taekos's character controller,
+/// Handles walking, jumping, attacking, etc.
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Controller : MonoBehaviour {
 	
 //	public Text jumpText;
     public delegate void ControllerEventHandler(bool followPlayer);
-    public static event ControllerEventHandler FollowPlayer;
+    public static event ControllerEventHandler FollowPlayer;                    ///< Tells the camera to follow Taekos
     public delegate int GetCurrentLivesHandler();
-    public static event GetCurrentLivesHandler getCurrentLives;
+    public static event GetCurrentLivesHandler getCurrentLives;                 ///< Requests the current number of lives
     public delegate bool GetGameOverHandler();
-    public static event GetGameOverHandler getGameOver;
+    public static event GetGameOverHandler getGameOver;                         ///< Checks whether or not the game is over
     public delegate void AddLivesHandler(int add);
-    public static event AddLivesHandler AddLives;
+    public static event AddLivesHandler AddLives;                               ///< Add or subtract a life
     public delegate void LifebarHandler(int health, int lives, int effect);
-    public static event LifebarHandler UpdateLifebar;
-    public Transform top;
-    public Transform front;
-    public Transform back;
-	public Transform groundCheck;
-	public Transform wallCheck;
-	public Transform backWallCheck;
-    public Transform bananaThrowPos;
-    public GameObject banana;
-	public GameObject jumpSound;
-	public GameObject hurtSound;
-	public GameObject peckBoxPrefab;
-	public GameObject trail;
-    public AudioSource checkpointSound;
-    public AudioSource peckHitSound;
-	public LayerMask whatIsGround;
-	public float characterHeight;
-	public float jumpHeightCoefficient = 0.3f;
-    private GameObject touchingWallObject;
-    private GameObject backTouchingWallObject;
-    private GameObject groundedObject;
-    private GameObject peckBox;
+    public static event LifebarHandler UpdateLifebar;                           ///< Update the lifebar
+    public Transform top;               ///< Top collision detection
+    public Transform front;             ///< Front collision detection
+    public Transform back;              ///< Back collision detection
+	public Transform groundCheck;       ///< Check if Taekos is on the ground
+	public Transform wallCheck;         ///< Check if Taekos is in front of a wall
+	public Transform backWallCheck;     ///< Check if a wall is behind Taekos
+    public Transform bananaThrowPos;    ///< Position to generate a banana from
+    public GameObject banana;           ///< Banana weapon prefab
+	public GameObject jumpSound;        ///< Jumping sound effect
+	public GameObject hurtSound;        ///< Hurt sound effect
+	public GameObject peckBoxPrefab;    ///< Create a hitbox for hurting enemies
+	public GameObject trail;            ///< Trail prefab for after getting a powerup (not used in final build)
+    public AudioSource checkpointSound; ///< Sound effect for getting a checkpoint
+    public AudioSource peckHitSound;    ///< Sound effect for pecking an enemy
+	public LayerMask whatIsGround;      ///< Ground layer mask
+	public float characterHeight;       ///< How tall Taekos is
+	public float jumpHeightCoefficient = 0.3f;  ///< To increase the jump height slightly when running
+    private GameObject touchingWallObject;      ///< Wall detection in front
+    private GameObject backTouchingWallObject;  ///< Wall detection from behind
+    private GameObject groundedObject;          ///< Ground detection
+    private GameObject peckBox;                 ///< Peck Box GameObject
     private float bananaThrowSpeed = 22f;
-    private float maxHSpeed = 11f;
-    private float normalGravity = 2f;                 //1.5f
-    private float fallingGravity = 1f;
-	private float glideSpeed;
-	private float hVelocity;
-	private float hAccel = 1f;
+    private float maxHSpeed = 11f;              ///< Maximum running speed
+    private float normalGravity = 2f;           ///< Gravity for normal conditions      //1.5f
+    private float fallingGravity = 1f;          ///< Gravity for Taekos's death animation
+    private float glideSpeed;
+	private float hVelocity;                    ///< Current horizontal velocity
+	private float hAccel = 1f;                  ///< Run/walk acceleration
     private float startingGlideSpeed = -1.5f;			//-1.5f
     private float descendAcceleration = 0.05f;			//0.02f, 0.013f
 	private float startingJumpSpeed = 25f;              //20f
-	private float jumpSpeed;							//15f, 22.5f
+	private float jumpSpeed;					///< Current jump speed		//15f, 22.5f
 	private float wallJumpSpeed = 7;
     private float wallClingDescend = 4f;
 	private float groundRadius = 0.2f;
@@ -61,21 +65,21 @@ public class Controller : MonoBehaviour {
 	private float hurtBackSpeed = -5f;
 	private float hurtTime = 0.5f;
     private float resurrectDelay = 2.5f;
-	private float killSpin = 5f;
+	private float killSpin = 5f;                ///< Was originally going to have Taekos spin when after he died
 	private Collider2D[] colliders;
 	private CircleCollider2D circleCollider;
-    private int bananaCount;
+    private int bananaCount;                    ///< Number of bananas currently active, Taekos can only throw one when this is at 0
     private int peckFrames = 3;
-	private int maxPlayerLife = 4;
-	private int playerLife;
-	private int facing = 1;
+	private int maxPlayerLife = 4;              ///< Number of hits Taekos can take
+	private int playerLife;                     ///< Curren number of hits Taekos has left
+	private int facing = 1;                     ///< 1 for right, -1 for left
 	private int invincibleFrames = 120;
     private int checkpointIndex;
 	private bool isDead;
-	private bool playerKilled; //So that KillPlayer() is called only once
+	private bool playerKilled;                  ///< So that KillPlayer() is called only once
 	private bool isHurt;
 	private bool isInvincible;
-	private bool control;
+	private bool control;                       ///< Allow Taekos to be controlled by the player
 	private bool grounded;
 	private bool gliding;
 	private bool touchingWall;
@@ -88,36 +92,58 @@ public class Controller : MonoBehaviour {
 	private SpriteRenderer spriteRenderer;
 	private Animator anim;
 
+    /// <summary>
+    /// Called when the player holds left
+    /// </summary>
     bool HoldingLeft()
     {
         return (Input.GetAxisRaw("Horizontal") == -1);
     }
 
+    /// <summary>
+    /// Called when the player holds right
+    /// </summary>
     bool HoldingRight()
     {
         return (Input.GetAxisRaw("Horizontal") == 1);
     }
 
+    /// <summary>
+    /// Called when the player presses the jump button
+    /// </summary>
     bool PressJump()
     {
         return (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space));
     }
 
+    /// <summary>
+    /// Called when the player holds the jump button
+    /// </summary>
     bool HoldJump()
     {
         return (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space));
     }
 
+    /// <summary>
+    /// Called when the player presses the peck button
+    /// </summary>
     bool PressPeck()
     {
         return (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Q));
     }
 
+    /// <summary>
+    /// Called when the player presses the banana throw button
+    /// </summary>
+    /// <returns></returns>
     bool PressBanana()
     {
         return (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.E));
     }
 
+    /// <summary>
+    /// Initialize variables
+    /// </summary>
     void Awake()
     {
         bananaCount = 0;
@@ -126,6 +152,9 @@ public class Controller : MonoBehaviour {
         checkpointIndex = 0;
     }
 
+    /// <summary>
+    /// Subscribe to events
+    /// </summary>
     void OnEnable()
     {
         HitBox.takeDamage += HurtPlayer;
@@ -135,6 +164,9 @@ public class Controller : MonoBehaviour {
         Banana.destroyBanana += AddBanana;
     }
 
+    /// <summary>
+    /// Unsubscribe to events
+    /// </summary>
     void OnDisable()
     {
         HitBox.takeDamage -= HurtPlayer;
@@ -144,6 +176,9 @@ public class Controller : MonoBehaviour {
         Banana.destroyBanana -= AddBanana;
     }
 
+    /// <summary>
+    /// Initialize more variables
+    /// </summary>
 	void Start () {
 
 		//jumpHeightCoefficient Needs to be set again?
@@ -173,7 +208,9 @@ public class Controller : MonoBehaviour {
         UpdateLifebar(playerLife, getCurrentLives(), 0);
 	}
 
-	//Do not need to use Time.deltaTime
+	/// <summary>
+	/// Player physics
+	/// </summary>
 	void FixedUpdate () {
 		if (GetComponent<Rigidbody2D>().velocity.y < maxFallSpeed) {
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, maxFallSpeed);
@@ -334,6 +371,9 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// Throwing a banana and updating the animator
+    /// </summary>
 	void Update(){
         //Debug.Log(bananaCount);
 		if (control && Input.GetKeyDown (KeyCode.K)) {
@@ -407,11 +447,17 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// Return facing
+    /// </summary>
     public int getFacing()
     {
         return facing;
     }
 
+    /// <summary>
+    /// Allows Taekos to turn around
+    /// </summary>
 	void Flip(){
 		if (facing == 1) {
 			facing = -1;
@@ -424,6 +470,9 @@ public class Controller : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
+    /// <summary>
+    /// Called in FixedUpdate to update Taekos's velocity
+    /// </summary>
 	void UpdateMovement(){
 		//If holding left arrow
 		if (control && HoldingLeft()) {
@@ -465,6 +514,9 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// Update the current checkpoint index
+    /// </summary>
     void UpdateCheckpoint(Vector3 checkpointPos, int index)
     {
         if (checkpointIndex < index)
@@ -475,11 +527,18 @@ public class Controller : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Keep track of the number of bananas
+    /// </summary>
     void AddBanana(int add)
     {
         bananaCount += add;
     }
 
+    /// <summary>
+    /// When picking up a mango
+    /// </summary>
+    /// <param name="addHealth"></param>
     void AddHealth(int addHealth)
     {
         playerLife += addHealth;
@@ -494,6 +553,9 @@ public class Controller : MonoBehaviour {
         UpdateLifebar(playerLife, getCurrentLives(), 2);
     }
 
+    /// <summary>
+    /// Called by enemies when they collide with Taekos
+    /// </summary>
     public void HurtPlayer(int damage)
     {
         if (isInvincible || isDead)
@@ -520,6 +582,9 @@ public class Controller : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Called when Taekos collides with a death boundary
+    /// </summary>
 	void KillPlayer(){
         hurtSound.GetComponent<AudioSource>().Play();
         playerKilled = true;
@@ -551,6 +616,9 @@ public class Controller : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// When Taekos respawns after being killed
+    /// </summary>
     void ResurrectCharacter()
     {
         playerKilled = false;
@@ -569,18 +637,28 @@ public class Controller : MonoBehaviour {
         FollowPlayer(true);
     }
 
+    /// <summary>
+    /// Delay after Taekos dies to resurrect
+    /// </summary>
+    /// <returns></returns>
     IEnumerator WaitToResurrectPlayer()
     {
         yield return new WaitForSeconds(resurrectDelay);
         ResurrectCharacter();
     }
 
+    /// <summary>
+    /// When Taekos collects a powerup, increase his jump height
+    /// </summary>
 	public IEnumerator MultiplyJumpSpeed(float scale, float duration){
 		jumpSpeed *= scale;
 		yield return new WaitForSeconds (duration);
 		jumpSpeed = startingJumpSpeed;
 	}
 
+    /// <summary>
+    /// Display a trail when Taekos has a powerup
+    /// </summary>
 	IEnumerator Trail(){
 		while (true) {
 			if (jumpSpeed != startingJumpSpeed){
@@ -596,7 +674,10 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
-    //Pecking stops when clinging to a wall
+    /// <summary>
+    /// Peck attack Coroutine,
+    /// Pecking stops when clinging to a wall
+    /// </summary>
 	IEnumerator Peck(){
         StartPeck();
         for (int i = 0; i < peckFrames; i++)
@@ -606,6 +687,9 @@ public class Controller : MonoBehaviour {
         StopPeck();
 	}
 
+    /// <summary>
+    /// Peck attack
+    /// </summary>
     void StartPeck()
     {
         pecking = true;
@@ -615,6 +699,9 @@ public class Controller : MonoBehaviour {
         peckBox.transform.localPosition = peckingLocalPos;
     }
 
+    /// <summary>
+    /// Stop pecking, destroy the hit box
+    /// </summary>
     void StopPeck()
     {
         pecking = false;
@@ -625,11 +712,17 @@ public class Controller : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Play the pecking sound
+    /// </summary>
     void PlayPeckSound()
     {
         peckHitSound.Play();
     }
 
+    /// <summary>
+    /// Play the hurt animation
+    /// </summary>
 	IEnumerator HurtAnimation(){
 		isHurt = true;
 		control = false;
@@ -638,6 +731,9 @@ public class Controller : MonoBehaviour {
 		control = true;
 	}
 
+    /// <summary>
+    /// Become invincible after getting hurt or respawning
+    /// </summary>
 	IEnumerator Invincible(){
 		isInvincible = true;
 		Color full = new Color (1f, 1f, 1f, 1f);
