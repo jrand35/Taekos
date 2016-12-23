@@ -1,16 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Piranha enemy class
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class Piranha : MonoBehaviour {
     
-    public Sprite frame1;
-    public Sprite frame2;
-    public int delay = 180;
+    public Sprite frame1;               ///< For moving upward
+    public Sprite frame2;               ///< For moving downward
+    public int delay = 180;             ///< Delay for jumping up again
     public float jumpSpeed = 25;
     private Vector3 startPosition;
     private SpriteRenderer spr;
     private bool dead;
-	// Use this for initialization
+	
+    /// <summary>
+    /// Initialize variables and start Run coroutine
+    /// </summary>
 	void Start () {
         dead = false;
         startPosition = transform.position;
@@ -18,6 +27,9 @@ public class Piranha : MonoBehaviour {
         StartCoroutine(Run());
 	}
 
+    /// <summary>
+    /// Jump up and down and update the sprite for rising or falling
+    /// </summary>
     IEnumerator Run()
     {
         while (true)
@@ -41,6 +53,9 @@ public class Piranha : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Jump away, turn off collision detection, and destroy the GameObject after 2 seconds
+    /// </summary>
     void EnemyDeath()
     {
         StopAllCoroutines();
@@ -51,8 +66,4 @@ public class Piranha : MonoBehaviour {
         GetComponent<Rigidbody2D>().isKinematic = false;
         Destroy(gameObject, 2f);
     }
-	
-	// Update is called once per frame
-	void Update () {
-	}
 }

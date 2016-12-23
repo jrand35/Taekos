@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// The enemy controller, attached to all enemies,
+/// Determines how many points are added to the score after being killed,
+/// Start coroutines for getting hurt
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class EnemyController : MonoBehaviour {
     public delegate void ScoreHandler(long addScore);
     public static event ScoreHandler addScore;

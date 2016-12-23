@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Move an entire group of tiles left and right like a moving wall
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class MoveChildrenHorizontal : MonoBehaviour
 {
     public Transform rightMarker;
@@ -10,7 +16,9 @@ public class MoveChildrenHorizontal : MonoBehaviour
     private Transform[] childrenTransform;
     private Transform childTransform;
 
-    // Use this for initialization
+    /// <summary>
+    /// Get references to children and start Run coroutine
+    /// </summary>
     void Start()
     {
         childrenRigidbody = GetComponentsInChildren<Rigidbody2D>();
@@ -19,12 +27,10 @@ public class MoveChildrenHorizontal : MonoBehaviour
         StartCoroutine(Run());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /// <summary>
+    /// Move the tiles left and right between 2 points
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Run()
     {
         foreach (Rigidbody2D rgbd in childrenRigidbody)

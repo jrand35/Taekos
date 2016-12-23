@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Move an entire group of tiles up and down like a moving wall
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class MoveChildrenVertical : MonoBehaviour
 {
     public Transform upMarker;
@@ -10,7 +16,9 @@ public class MoveChildrenVertical : MonoBehaviour
     private Transform[] childrenTransform;
     private Transform childTransform;
 
-    // Use this for initialization
+    /// <summary>
+    /// Get references to children and start Run coroutine
+    /// </summary>
     void Start()
     {
         childrenRigidbody = GetComponentsInChildren<Rigidbody2D>();
@@ -19,12 +27,9 @@ public class MoveChildrenVertical : MonoBehaviour
         StartCoroutine(Run());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /// <summary>
+    /// Move the tiles up and down between 2 points
+    /// </summary>
     IEnumerator Run()
     {
         foreach (Rigidbody2D rgbd in childrenRigidbody)

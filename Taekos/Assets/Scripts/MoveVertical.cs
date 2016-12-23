@@ -1,22 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Script for moving a single tile up and down like a moving platform
+/// <remarks>
+/// By Joshua Rand
+/// </remarks>
+/// </summary>
 public class MoveVertical : MonoBehaviour {
 
     public Transform topMarker;
     public Transform bottomMarker;
     public float speed = 3f;
 
-	// Use this for initialization
+	/// <summary>
+	/// Start the Run coroutine
+	/// </summary>
 	void Start () {
         StartCoroutine(Run());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+    /// <summary>
+    /// Move the platform up and down between 2 points
+    /// </summary>
     IEnumerator Run()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
