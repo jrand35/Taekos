@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['taekos_20the_20parrot',['Taekos the Parrot',['../index.html',1,'']]],
   ['takedamage',['takeDamage',['../class_hit_box.html#afae965dedf7caf7fd7b6b8c46309feaf',1,'HitBox']]],
   ['takedamagehandler',['TakeDamageHandler',['../class_hit_box.html#a668516f0b0e12f59a0687b0cc5f81e3f',1,'HitBox']]],
   ['tile',['Tile',['../class_tile.html',1,'']]],
@@ -15,5 +16,5 @@ var searchData=
   ['totalfeathers',['totalFeathers',['../class_game_controller.html#a1b9d8019784804c1d82adb2a06f521ea',1,'GameController']]],
   ['touchingwall',['touchingWall',['../class_controller.html#ae91e9390ce9d2ecfda5e31945fdab8ca',1,'Controller']]],
   ['touchingwallobject',['touchingWallObject',['../class_controller.html#ae870fdd81a4cc7fdd074a4a303b378f7',1,'Controller']]],
-  ['trail',['trail',['../class_controller.html#a8e1988fb1bc2b8b3ad22906c811e3091',1,'Controller.trail()'],['../class_controller.html#a30e889ec6ef1edc858ff23f8967334b1',1,'Controller.Trail()']]]
+  ['trail',['Trail',['../class_controller.html#a30e889ec6ef1edc858ff23f8967334b1',1,'Controller.Trail()'],['../class_controller.html#a8e1988fb1bc2b8b3ad22906c811e3091',1,'Controller.trail()']]]
 ];

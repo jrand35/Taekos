@@ -67,6 +67,9 @@ $(function() {
 <div class="title">Pecking Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_pecking.html" title="Pecking script, allows Taekos to peck enemies ">Pecking</a> script, allows Taekos to peck enemies  
+ <a href="class_pecking.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Pecking:</div>
 <div class="dyncontent">
@@ -79,6 +82,7 @@ Inheritance diagram for Pecking:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a671cd423fb5a3a14b3c73a20a706a1a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pecking.html#a671cd423fb5a3a14b3c73a20a706a1a3">damageValue</a> = 2</td></tr>
+<tr class="memdesc:a671cd423fb5a3a14b3c73a20a706a1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many hits of damage pecking inflicts.  <a href="#a671cd423fb5a3a14b3c73a20a706a1a3">More...</a><br /></td></tr>
 <tr class="separator:a671cd423fb5a3a14b3c73a20a706a1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -86,6 +90,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a781f015f09d722e8001a1edc08b58fb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pecking.html#a781f015f09d722e8001a1edc08b58fb7">Start</a> ()</td></tr>
 <tr class="separator:a781f015f09d722e8001a1edc08b58fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b5748463482423be0999a3d22cf487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pecking.html#af6b5748463482423be0999a3d22cf487">OnTriggerEnter2D</a> (Collider2D other)</td></tr>
+<tr class="memdesc:af6b5748463482423be0999a3d22cf487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hit enemies and play the pecking sound  <a href="#af6b5748463482423be0999a3d22cf487">More...</a><br /></td></tr>
 <tr class="separator:af6b5748463482423be0999a3d22cf487"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -93,11 +98,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a05a57eb291c26bbf9ecb59a6b6039281"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pecking.html#a05a57eb291c26bbf9ecb59a6b6039281">enablePeck</a></td></tr>
 <tr class="separator:a05a57eb291c26bbf9ecb59a6b6039281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3369034cd0740768b7bc3feabdf22b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_controller.html">Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pecking.html#a3369034cd0740768b7bc3feabdf22b5b">controller</a></td></tr>
+<tr class="memdesc:a3369034cd0740768b7bc3feabdf22b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_controller.html" title="Taekos&#39;s character controller, Handles walking, jumping, attacking, etc. ">Controller</a> script.  <a href="#a3369034cd0740768b7bc3feabdf22b5b">More...</a><br /></td></tr>
 <tr class="separator:a3369034cd0740768b7bc3feabdf22b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00004">4</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
+<div class="textblock"><p><a class="el" href="class_pecking.html" title="Pecking script, allows Taekos to peck enemies ">Pecking</a> script, allows Taekos to peck enemies </p>
+<p>By Joshua Rand </p>
+
+<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00010">10</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af6b5748463482423be0999a3d22cf487"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6b5748463482423be0999a3d22cf487">&sect;&nbsp;</a></span>OnTriggerEnter2D()</h2>
@@ -123,7 +131,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00014">14</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
+<p>Hit enemies and play the pecking sound </p>
+
+<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00023">23</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
 
 </div>
 </div>
@@ -150,7 +160,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00009">9</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00015">15</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
 
 </div>
 </div>
@@ -175,7 +185,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00007">7</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
+<p>Reference to the <a class="el" href="class_controller.html" title="Taekos&#39;s character controller, Handles walking, jumping, attacking, etc. ">Controller</a> script. </p>
+
+<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00013">13</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
 
 </div>
 </div>
@@ -191,7 +203,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00005">5</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
+<p>How many hits of damage pecking inflicts. </p>
+
+<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00011">11</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
 
 </div>
 </div>
@@ -215,7 +229,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00006">6</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pecking_8cs_source.html#l00012">12</a> of file <a class="el" href="_pecking_8cs_source.html">Pecking.cs</a>.</p>
 
 </div>
 </div>

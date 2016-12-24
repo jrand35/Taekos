@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['particlesortinglayer',['ParticleSortingLayer',['../class_particle_sorting_layer.html',1,'']]],
   ['pecking',['Pecking',['../class_pecking.html',1,'']]],
   ['piranha',['Piranha',['../class_piranha.html',1,'']]],
   ['playerfollow',['PlayerFollow',['../class_player_follow.html',1,'']]],

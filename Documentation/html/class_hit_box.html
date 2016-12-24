@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A hitbox attached to Taekos,  
+<p>A hitbox attached to Taekos, Handles ground detection and collisions between enemies and checkpoints  
  <a href="class_hit_box.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HitBox:</div>
@@ -84,12 +84,16 @@ Inheritance diagram for HitBox:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a668516f0b0e12f59a0687b0cc5f81e3f"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a668516f0b0e12f59a0687b0cc5f81e3f">TakeDamageHandler</a> (int damage)</td></tr>
+<tr class="memdesc:a668516f0b0e12f59a0687b0cc5f81e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler for taking damage.  <a href="#a668516f0b0e12f59a0687b0cc5f81e3f">More...</a><br /></td></tr>
 <tr class="separator:a668516f0b0e12f59a0687b0cc5f81e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb9fddcdadfcf68fa4ec11d973030e4f"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#abb9fddcdadfcf68fa4ec11d973030e4f">KillPlayerHandler</a> ()</td></tr>
+<tr class="memdesc:abb9fddcdadfcf68fa4ec11d973030e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler for killing the player.  <a href="#abb9fddcdadfcf68fa4ec11d973030e4f">More...</a><br /></td></tr>
 <tr class="separator:abb9fddcdadfcf68fa4ec11d973030e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e3c24e2b873dbc1d15894632d2be758"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a9e3c24e2b873dbc1d15894632d2be758">CheckpointHandler</a> (Vector3 position, int checkpointIndex)</td></tr>
+<tr class="memdesc:a9e3c24e2b873dbc1d15894632d2be758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler for getting checkpoints.  <a href="#a9e3c24e2b873dbc1d15894632d2be758">More...</a><br /></td></tr>
 <tr class="separator:a9e3c24e2b873dbc1d15894632d2be758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3ae97fe1ec9315c0d65ac2c63820b55"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#ae3ae97fe1ec9315c0d65ac2c63820b55">CompleteLevelHandler</a> ()</td></tr>
+<tr class="memdesc:ae3ae97fe1ec9315c0d65ac2c63820b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler for completing the level.  <a href="#ae3ae97fe1ec9315c0d65ac2c63820b55">More...</a><br /></td></tr>
 <tr class="separator:ae3ae97fe1ec9315c0d65ac2c63820b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -97,17 +101,22 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ae82786a9035be0692ac3623184930e25"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#ae82786a9035be0692ac3623184930e25">back_</a></td></tr>
 <tr class="separator:ae82786a9035be0692ac3623184930e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a8331942d7a311350426e5262da5f70"><td class="memItemLeft" align="right" valign="top">LayerMask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a2a8331942d7a311350426e5262da5f70">whatIsDoor</a></td></tr>
+<tr class="memdesc:a2a8331942d7a311350426e5262da5f70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the door's layer.  <a href="#a2a8331942d7a311350426e5262da5f70">More...</a><br /></td></tr>
 <tr class="separator:a2a8331942d7a311350426e5262da5f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
 <tr class="memitem:afae965dedf7caf7fd7b6b8c46309feaf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_hit_box.html#a668516f0b0e12f59a0687b0cc5f81e3f">TakeDamageHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#afae965dedf7caf7fd7b6b8c46309feaf">takeDamage</a></td></tr>
+<tr class="memdesc:afae965dedf7caf7fd7b6b8c46309feaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event for taking damage, called when colliding with an enemy.  <a href="#afae965dedf7caf7fd7b6b8c46309feaf">More...</a><br /></td></tr>
 <tr class="separator:afae965dedf7caf7fd7b6b8c46309feaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe22ff8f2f0f79bc26daf999f45a4559"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_hit_box.html#abb9fddcdadfcf68fa4ec11d973030e4f">KillPlayerHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#afe22ff8f2f0f79bc26daf999f45a4559">killPlayer</a></td></tr>
+<tr class="memdesc:afe22ff8f2f0f79bc26daf999f45a4559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event for killing the player, called when touching a death boundary at the bottom of the screen.  <a href="#afe22ff8f2f0f79bc26daf999f45a4559">More...</a><br /></td></tr>
 <tr class="separator:afe22ff8f2f0f79bc26daf999f45a4559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d453757b0d6e0529f8c9c1578ab54b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_hit_box.html#a9e3c24e2b873dbc1d15894632d2be758">CheckpointHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a76d453757b0d6e0529f8c9c1578ab54b">getCheckpoint</a></td></tr>
+<tr class="memdesc:a76d453757b0d6e0529f8c9c1578ab54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event for getting a checkpoint, called when colliding with a checkpoint.  <a href="#a76d453757b0d6e0529f8c9c1578ab54b">More...</a><br /></td></tr>
 <tr class="separator:a76d453757b0d6e0529f8c9c1578ab54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca1423ee2851c3cfb94e8a5260cec663"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_hit_box.html#ae3ae97fe1ec9315c0d65ac2c63820b55">CompleteLevelHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#aca1423ee2851c3cfb94e8a5260cec663">completeLevel</a></td></tr>
+<tr class="memdesc:aca1423ee2851c3cfb94e8a5260cec663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event for completing the level, called when the player presses down in front of a door.  <a href="#aca1423ee2851c3cfb94e8a5260cec663">More...</a><br /></td></tr>
 <tr class="separator:aca1423ee2851c3cfb94e8a5260cec663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -115,10 +124,13 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a3b0ee2f20ea4913accf39e70a635be49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a3b0ee2f20ea4913accf39e70a635be49">OnTriggerEnter2D</a> (Collider2D other)</td></tr>
 <tr class="separator:a3b0ee2f20ea4913accf39e70a635be49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b5ce2c45fd412414f83401931806e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#ac1b5ce2c45fd412414f83401931806e3">OnCollisionEnter2D</a> (Collision2D other)</td></tr>
+<tr class="memdesc:ac1b5ce2c45fd412414f83401931806e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect collision with death boundary at the bottom of the screen  <a href="#ac1b5ce2c45fd412414f83401931806e3">More...</a><br /></td></tr>
 <tr class="separator:ac1b5ce2c45fd412414f83401931806e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0407726333cd917d0ab2979fd3c0f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#aa0407726333cd917d0ab2979fd3c0f9d">OnTriggerStay2D</a> (Collider2D other)</td></tr>
+<tr class="memdesc:aa0407726333cd917d0ab2979fd3c0f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle collisions with enemies and projectiles, Fire the takeDamage event, sending a message to <a class="el" href="_controller_8cs.html">Controller.cs</a>  <a href="#aa0407726333cd917d0ab2979fd3c0f9d">More...</a><br /></td></tr>
 <tr class="separator:aa0407726333cd917d0ab2979fd3c0f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1841b9e7fa11fa4eb240aea978d0f70a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a1841b9e7fa11fa4eb240aea978d0f70a">Update</a> ()</td></tr>
+<tr class="memdesc:a1841b9e7fa11fa4eb240aea978d0f70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete the level if the player presses S or Down in front of a door  <a href="#a1841b9e7fa11fa4eb240aea978d0f70a">More...</a><br /></td></tr>
 <tr class="separator:a1841b9e7fa11fa4eb240aea978d0f70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -128,6 +140,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a34429412f6e11efc42c6ac3824d984e9"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a34429412f6e11efc42c6ac3824d984e9">front_</a></td></tr>
 <tr class="separator:a34429412f6e11efc42c6ac3824d984e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c897bf6514c79acfb957ea824d4ca3"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#af3c897bf6514c79acfb957ea824d4ca3">bottom</a></td></tr>
+<tr class="memdesc:af3c897bf6514c79acfb957ea824d4ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for checking Physics overlapping with a door.  <a href="#af3c897bf6514c79acfb957ea824d4ca3">More...</a><br /></td></tr>
 <tr class="separator:af3c897bf6514c79acfb957ea824d4ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24bfb580e08544895fb2402540224370"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a24bfb580e08544895fb2402540224370">backx</a></td></tr>
 <tr class="separator:a24bfb580e08544895fb2402540224370"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,12 +149,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a00cf7a327418ade0060848dc0383367b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a00cf7a327418ade0060848dc0383367b">frontx</a></td></tr>
 <tr class="separator:a00cf7a327418ade0060848dc0383367b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3fd100dcdb75ce553c8e1992baeab8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hit_box.html#a2f3fd100dcdb75ce553c8e1992baeab8">fronty</a></td></tr>
+<tr class="memdesc:a2f3fd100dcdb75ce553c8e1992baeab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of back_, top, front_, and bottom.  <a href="#a2f3fd100dcdb75ce553c8e1992baeab8">More...</a><br /></td></tr>
 <tr class="separator:a2f3fd100dcdb75ce553c8e1992baeab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A hitbox attached to Taekos, </p>
+<div class="textblock"><p>A hitbox attached to Taekos, Handles ground detection and collisions between enemies and checkpoints </p>
+<p>By Joshua Rand </p>
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00009">9</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00012">12</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9e3c24e2b873dbc1d15894632d2be758"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e3c24e2b873dbc1d15894632d2be758">&sect;&nbsp;</a></span>CheckpointHandler()</h2>
@@ -169,6 +184,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Event handler for getting checkpoints. </p>
+
 </div>
 </div>
 <a id="ae3ae97fe1ec9315c0d65ac2c63820b55"></a>
@@ -186,6 +203,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Event handler for completing the level. </p>
+
 </div>
 </div>
 <a id="abb9fddcdadfcf68fa4ec11d973030e4f"></a>
@@ -202,6 +221,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Event handler for killing the player. </p>
 
 </div>
 </div>
@@ -229,7 +250,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00034">34</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Detect collision with death boundary at the bottom of the screen </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00044">44</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -257,7 +280,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00022">22</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00029">29</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -285,7 +308,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00043">43</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Handle collisions with enemies and projectiles, Fire the takeDamage event, sending a message to <a class="el" href="_controller_8cs.html">Controller.cs</a> </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00057">57</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -304,6 +329,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Event handler for taking damage. </p>
 
 </div>
 </div>
@@ -330,7 +357,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00071">71</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Complete the level if the player presses S or Down in front of a door </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00088">88</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -347,7 +376,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00018">18</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00021">21</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -371,7 +400,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00020">20</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00023">23</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -395,7 +424,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00020">20</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00023">23</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -419,7 +448,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00018">18</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Used for checking Physics overlapping with a door. </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00021">21</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -443,7 +474,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00018">18</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00021">21</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -467,7 +498,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00020">20</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00023">23</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -491,7 +522,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00020">20</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Positions of back_, top, front_, and bottom. </p>
+<p>summary&gt; Fire the getCheckpoint event when getting a checkpoint, Message sent to <a class="el" href="_controller_8cs.html">Controller.cs</a> </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00023">23</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -515,7 +549,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00018">18</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00021">21</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -531,7 +565,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00019">19</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Reference to the door's layer. </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00022">22</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -556,7 +592,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00017">17</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Event for completing the level, called when the player presses down in front of a door. </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00020">20</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -580,7 +618,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00015">15</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Event for getting a checkpoint, called when colliding with a checkpoint. </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00018">18</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -604,7 +644,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00013">13</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Event for killing the player, called when touching a death boundary at the bottom of the screen. </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00016">16</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>
@@ -628,7 +670,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00011">11</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
+<p>Event for taking damage, called when colliding with an enemy. </p>
+
+<p>Definition at line <a class="el" href="_hit_box_8cs_source.html#l00014">14</a> of file <a class="el" href="_hit_box_8cs_source.html">HitBox.cs</a>.</p>
 
 </div>
 </div>

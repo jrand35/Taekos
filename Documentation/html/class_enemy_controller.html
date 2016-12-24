@@ -69,6 +69,9 @@ $(function() {
 <div class="title">EnemyController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The enemy controller, attached to all enemies, Determines how many points are added to the score after being killed, Start coroutines for getting hurt  
+ <a href="class_enemy_controller.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for EnemyController:</div>
 <div class="dyncontent">
@@ -83,53 +86,71 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dbab9bb5009324b376fb31e027c240c"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a7dbab9bb5009324b376fb31e027c240c">ScoreHandler</a> (long <a class="el" href="class_enemy_controller.html#a7b8a932ee99a9d7faae4f5838e3b10df">addScore</a>)</td></tr>
 <tr class="separator:a7dbab9bb5009324b376fb31e027c240c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc80b38dc04d7608326b764ba083b0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a5dc80b38dc04d7608326b764ba083b0f">getPlayerDamageValue</a> ()</td></tr>
+<tr class="memdesc:a5dc80b38dc04d7608326b764ba083b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return playerDamageValue  <a href="#a5dc80b38dc04d7608326b764ba083b0f">More...</a><br /></td></tr>
 <tr class="separator:a5dc80b38dc04d7608326b764ba083b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcd30ddc44ea43c1570c7116dc79a02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#aadcd30ddc44ea43c1570c7116dc79a02">getInvincible</a> ()</td></tr>
+<tr class="memdesc:aadcd30ddc44ea43c1570c7116dc79a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return invincible  <a href="#aadcd30ddc44ea43c1570c7116dc79a02">More...</a><br /></td></tr>
 <tr class="separator:aadcd30ddc44ea43c1570c7116dc79a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a821e4ad04f3372128a8e24a81e88bddf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a821e4ad04f3372128a8e24a81e88bddf">EnemyDead</a> ()</td></tr>
+<tr class="memdesc:a821e4ad04f3372128a8e24a81e88bddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the enemy is dead  <a href="#a821e4ad04f3372128a8e24a81e88bddf">More...</a><br /></td></tr>
 <tr class="separator:a821e4ad04f3372128a8e24a81e88bddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a736e4ef96b12d8e73a764180c881e010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a736e4ef96b12d8e73a764180c881e010">DamageEnemy</a> (int direction)</td></tr>
+<tr class="memdesc:a736e4ef96b12d8e73a764180c881e010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hurt the enemy, called by <a class="el" href="class_banana.html" title="Banana that Taekos uses as a weapon ">Banana</a> and <a class="el" href="class_pecking.html" title="Pecking script, allows Taekos to peck enemies ">Pecking</a> scripts  <a href="#a736e4ef96b12d8e73a764180c881e010">More...</a><br /></td></tr>
 <tr class="separator:a736e4ef96b12d8e73a764180c881e010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70936267a4c04ae45b6d25dacfdccaaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a70936267a4c04ae45b6d25dacfdccaaf">DamageEnemy</a> (int damage, int direction)</td></tr>
+<tr class="memdesc:a70936267a4c04ae45b6d25dacfdccaaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hurt the enemy and give it a specific damage number  <a href="#a70936267a4c04ae45b6d25dacfdccaaf">More...</a><br /></td></tr>
 <tr class="separator:a70936267a4c04ae45b6d25dacfdccaaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab0144d50a6b4ba36fb188c14a4bd90a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#ab0144d50a6b4ba36fb188c14a4bd90a7">invincible</a> = false</td></tr>
+<tr class="memdesc:ab0144d50a6b4ba36fb188c14a4bd90a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the enemy invincible or not.  <a href="#ab0144d50a6b4ba36fb188c14a4bd90a7">More...</a><br /></td></tr>
 <tr class="separator:ab0144d50a6b4ba36fb188c14a4bd90a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08761b4fc986392c48990ba3187efc0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a08761b4fc986392c48990ba3187efc0b">moveBack</a> = true</td></tr>
+<tr class="memdesc:a08761b4fc986392c48990ba3187efc0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the enemy knockback or not.  <a href="#a08761b4fc986392c48990ba3187efc0b">More...</a><br /></td></tr>
 <tr class="separator:a08761b4fc986392c48990ba3187efc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab036f706b1e88364ec7023e37a034884"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#ab036f706b1e88364ec7023e37a034884">enemyLife</a> = 3</td></tr>
+<tr class="memdesc:ab036f706b1e88364ec7023e37a034884"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many hits the enemy can take.  <a href="#ab036f706b1e88364ec7023e37a034884">More...</a><br /></td></tr>
 <tr class="separator:ab036f706b1e88364ec7023e37a034884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ef970bbcb1a4419894a4cda703067ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a9ef970bbcb1a4419894a4cda703067ac">enemyScore</a> = 100</td></tr>
+<tr class="memdesc:a9ef970bbcb1a4419894a4cda703067ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many points added to the score when the enemy is killed.  <a href="#a9ef970bbcb1a4419894a4cda703067ac">More...</a><br /></td></tr>
 <tr class="separator:a9ef970bbcb1a4419894a4cda703067ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
 <tr class="memitem:a7b8a932ee99a9d7faae4f5838e3b10df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_enemy_controller.html#a7dbab9bb5009324b376fb31e027c240c">ScoreHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a7b8a932ee99a9d7faae4f5838e3b10df">addScore</a></td></tr>
+<tr class="memdesc:a7b8a932ee99a9d7faae4f5838e3b10df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message sent to <a class="el" href="class_score_text_controller.html" title="The UI for the score in the top-right corner, The score increases when Taekos kills enemies ...">ScoreTextController</a> when an enemy is killed.  <a href="#a7b8a932ee99a9d7faae4f5838e3b10df">More...</a><br /></td></tr>
 <tr class="separator:a7b8a932ee99a9d7faae4f5838e3b10df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:af64c9a5242284f2b4794e8e471e60f4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#af64c9a5242284f2b4794e8e471e60f4c">Awake</a> ()</td></tr>
+<tr class="memdesc:af64c9a5242284f2b4794e8e471e60f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize values  <a href="#af64c9a5242284f2b4794e8e471e60f4c">More...</a><br /></td></tr>
 <tr class="separator:af64c9a5242284f2b4794e8e471e60f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb48dedbced7a36acf7da3b2e1be32dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#afb48dedbced7a36acf7da3b2e1be32dd">KillEnemy</a> ()</td></tr>
+<tr class="memdesc:afb48dedbced7a36acf7da3b2e1be32dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kill the enemy  <a href="#afb48dedbced7a36acf7da3b2e1be32dd">More...</a><br /></td></tr>
 <tr class="separator:afb48dedbced7a36acf7da3b2e1be32dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac49a6724c1fe16b58548123ffdd19372"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#ac49a6724c1fe16b58548123ffdd19372">HurtEnemy</a> (int direction)</td></tr>
+<tr class="memdesc:ac49a6724c1fe16b58548123ffdd19372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine for the hit state  <a href="#ac49a6724c1fe16b58548123ffdd19372">More...</a><br /></td></tr>
 <tr class="separator:ac49a6724c1fe16b58548123ffdd19372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a97b5764dd32218d88af384d988bb8cb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a97b5764dd32218d88af384d988bb8cb8">enemyHurt</a></td></tr>
+<tr class="memdesc:a97b5764dd32218d88af384d988bb8cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to true after being hit, gives the enemy temporary invincibility.  <a href="#a97b5764dd32218d88af384d988bb8cb8">More...</a><br /></td></tr>
 <tr class="separator:a97b5764dd32218d88af384d988bb8cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a074fded7aed25f3ee393659c2195d339"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a074fded7aed25f3ee393659c2195d339">enemyHurtFrames</a> = 10</td></tr>
+<tr class="memdesc:a074fded7aed25f3ee393659c2195d339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of the enemy hurt state.  <a href="#a074fded7aed25f3ee393659c2195d339">More...</a><br /></td></tr>
 <tr class="separator:a074fded7aed25f3ee393659c2195d339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a888abfb544542b7bf8e38492b85217b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_controller.html#a888abfb544542b7bf8e38492b85217b5">playerDamageValue</a> = 1</td></tr>
+<tr class="memdesc:a888abfb544542b7bf8e38492b85217b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many points the player lifebar loses.  <a href="#a888abfb544542b7bf8e38492b85217b5">More...</a><br /></td></tr>
 <tr class="separator:a888abfb544542b7bf8e38492b85217b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00004">4</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<div class="textblock"><p>The enemy controller, attached to all enemies, Determines how many points are added to the score after being killed, Start coroutines for getting hurt </p>
+<p>By Joshua Rand </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00012">12</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af64c9a5242284f2b4794e8e471e60f4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af64c9a5242284f2b4794e8e471e60f4c">&sect;&nbsp;</a></span>Awake()</h2>
@@ -154,7 +175,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00015">15</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Initialize values </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00026">26</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -174,7 +197,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00034">34</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Hurt the enemy, called by <a class="el" href="class_banana.html" title="Banana that Taekos uses as a weapon ">Banana</a> and <a class="el" href="class_pecking.html" title="Pecking script, allows Taekos to peck enemies ">Pecking</a> scripts </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00057">57</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -204,7 +229,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00052">52</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Hurt the enemy and give it a specific damage number </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00078">78</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -223,7 +250,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00029">29</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Return true if the enemy is dead </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00049">49</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -242,7 +271,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00024">24</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Return invincible </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00041">41</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -261,7 +292,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00020">20</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Return playerDamageValue </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00034">34</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -289,7 +322,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00074">74</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Coroutine for the hit state </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00106">106</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -316,7 +351,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00068">68</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Kill the enemy </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00097">97</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -359,7 +396,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00011">11</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Set to true after being hit, gives the enemy temporary invincibility. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00019">19</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -383,7 +422,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00012">12</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Duration of the enemy hurt state. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00020">20</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -399,7 +440,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00009">9</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>How many hits the enemy can take. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00017">17</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -415,7 +458,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00010">10</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>How many points added to the score when the enemy is killed. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00018">18</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -431,7 +476,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00007">7</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Make the enemy invincible or not. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00015">15</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -447,7 +494,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00008">8</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Give the enemy knockback or not. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00016">16</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -471,7 +520,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00013">13</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>How many points the player lifebar loses. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00021">21</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>
@@ -496,7 +547,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00006">6</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
+<p>Message sent to <a class="el" href="class_score_text_controller.html" title="The UI for the score in the top-right corner, The score increases when Taekos kills enemies ...">ScoreTextController</a> when an enemy is killed. </p>
+
+<p>Definition at line <a class="el" href="_enemy_controller_8cs_source.html#l00014">14</a> of file <a class="el" href="_enemy_controller_8cs_source.html">EnemyController.cs</a>.</p>
 
 </div>
 </div>

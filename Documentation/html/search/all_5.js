@@ -18,7 +18,7 @@ var searchData=
   ['feathers',['feathers',['../class_results_screen.html#a0ff3e3d0cc55c8e7a9a40e1940309341',1,'ResultsScreen.feathers()'],['../class_settings_1_1_results.html#ac93f509083ae106a56bbf066d92946ce',1,'Settings.Results.feathers()'],['../class_settings_1_1_results.html#a98618493a61682f415885622232cfc6b',1,'Settings.Results.Feathers()']]],
   ['feathershandler',['FeathersHandler',['../class_collect_items.html#ac8ccfbe4c64e098039e731d98f1d8fc6',1,'CollectItems']]],
   ['feathersnumber',['feathersNumber',['../class_results_screen.html#a0f73463bd0ef4ff0438a8d347bfb999d',1,'ResultsScreen']]],
-  ['fixedupdate',['FixedUpdate',['../class_banana.html#a3c3205e5e615e07407dc56fe46669d42',1,'Banana.FixedUpdate()'],['../class_controller.html#a4b9a94add2aecbbc6de05d6b57f2fa70',1,'Controller.FixedUpdate()'],['../class_rotate_platform.html#a3d05efd3d17be870270b106113d2847f',1,'RotatePlatform.FixedUpdate()']]],
+  ['fixedupdate',['FixedUpdate',['../class_banana.html#a3c3205e5e615e07407dc56fe46669d42',1,'Banana.FixedUpdate()'],['../class_controller.html#a4b9a94add2aecbbc6de05d6b57f2fa70',1,'Controller.FixedUpdate()']]],
   ['flip',['Flip',['../class_controller.html#a5b6c07731eefaf693f9bf1515d9c5ddf',1,'Controller']]],
   ['followplayer',['FollowPlayer',['../class_controller.html#a1d20964f4f5a9b289a314888ee76c7a6',1,'Controller.FollowPlayer()'],['../class_player_follow.html#a8e38a48791f4c093cac78209c5603b3b',1,'PlayerFollow.followPlayer()']]],
   ['frame1',['frame1',['../class_piranha.html#aed31151e4b52af3cf8e205751ec201cf',1,'Piranha']]],

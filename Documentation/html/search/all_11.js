@@ -1,12 +1,11 @@
 var searchData=
 [
   ['ratio',['ratio',['../class_player_follow.html#ad9e4315ecbbd1204c1183b465764b5d9',1,'PlayerFollow']]],
-  ['readme_2etxt',['Readme.txt',['../_readme_8txt.html',1,'']]],
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['rec',['rec',['../class_lifebar.html#a048b06789a21a4c697b27e78a4c11853',1,'Lifebar']]],
   ['redcolor',['redColor',['../class_lifebar.html#a0fb67e69dda2c33bb1750a88c6330069',1,'Lifebar']]],
   ['remainingtext',['remainingText',['../class_game_over_screen.html#aa8815c33bb601ea9e6f68fd39096ddf5',1,'GameOverScreen']]],
   ['requiredfeathers',['requiredFeathers',['../class_game_controller.html#a5f9e6748640eec29d4d8cca646b19fc0',1,'GameController']]],
-  ['respawntime',['respawnTime',['../class_coconut.html#ae349a26993e9eef6fee7388157d27e6f',1,'Coconut']]],
   ['results',['Results',['../class_settings_1_1_results.html',1,'Settings']]],
   ['resultsscreen',['ResultsScreen',['../class_results_screen.html',1,'']]],
   ['resultsscreen_2ecs',['ResultsScreen.cs',['../_results_screen_8cs.html',1,'']]],

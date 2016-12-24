@@ -68,6 +68,9 @@ $(function() {
 <div class="title">TitleScreen Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The title screen controller, Controls the main menu, options menu, and instructions menu  
+ <a href="class_title_screen.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TitleScreen:</div>
 <div class="dyncontent">
@@ -79,48 +82,71 @@ Inheritance diagram for TitleScreen:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a820ddc2b1b238953eac70f303975a05f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a820ddc2b1b238953eac70f303975a05f">QuitGame</a> ()</td></tr>
+<tr class="memdesc:a820ddc2b1b238953eac70f303975a05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the user clicks the Quit button to exit the game  <a href="#a820ddc2b1b238953eac70f303975a05f">More...</a><br /></td></tr>
+<tr class="separator:a820ddc2b1b238953eac70f303975a05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a492129300a96ae27a47b7b4d866d3f7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a492129300a96ae27a47b7b4d866d3f7d">goToInstructions</a> ()</td></tr>
+<tr class="memdesc:a492129300a96ae27a47b7b4d866d3f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the instructions menu button  <a href="#a492129300a96ae27a47b7b4d866d3f7d">More...</a><br /></td></tr>
 <tr class="separator:a492129300a96ae27a47b7b4d866d3f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fa2ad78806d692e26b5e702e0955ab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a0fa2ad78806d692e26b5e702e0955ab7">returnFromInstructions</a> ()</td></tr>
+<tr class="memdesc:a0fa2ad78806d692e26b5e702e0955ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the back button on the instructions menu button  <a href="#a0fa2ad78806d692e26b5e702e0955ab7">More...</a><br /></td></tr>
 <tr class="separator:a0fa2ad78806d692e26b5e702e0955ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4458d18d7e3967b6688b195351eb25af"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a4458d18d7e3967b6688b195351eb25af">LoadFirstLevel</a> ()</td></tr>
+<tr class="memdesc:a4458d18d7e3967b6688b195351eb25af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the start button  <a href="#a4458d18d7e3967b6688b195351eb25af">More...</a><br /></td></tr>
 <tr class="separator:a4458d18d7e3967b6688b195351eb25af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ea68a81838046c988029f971d59a3a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a0ea68a81838046c988029f971d59a3a5">ChangeMenu</a> (int setMenu)</td></tr>
+<tr class="memdesc:a0ea68a81838046c988029f971d59a3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the MoveMenu coroutine  <a href="#a0ea68a81838046c988029f971d59a3a5">More...</a><br /></td></tr>
 <tr class="separator:a0ea68a81838046c988029f971d59a3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6d114131d16e3f861c880509e0bc656"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#af6d114131d16e3f861c880509e0bc656">UpdateLifeCounter</a> (int addLife, bool playSound)</td></tr>
+<tr class="memdesc:af6d114131d16e3f861c880509e0bc656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the life counter UI  <a href="#af6d114131d16e3f861c880509e0bc656">More...</a><br /></td></tr>
 <tr class="separator:af6d114131d16e3f861c880509e0bc656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a08a8837b11e07c0fd5f3737131d2c2d1"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a08a8837b11e07c0fd5f3737131d2c2d1">cloudSprite</a></td></tr>
+<tr class="memdesc:a08a8837b11e07c0fd5f3737131d2c2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cloud prefab.  <a href="#a08a8837b11e07c0fd5f3737131d2c2d1">More...</a><br /></td></tr>
 <tr class="separator:a08a8837b11e07c0fd5f3737131d2c2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ad13b60595f5ab9c25e9e794c63e1c8"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a3ad13b60595f5ab9c25e9e794c63e1c8">mainMenu</a></td></tr>
+<tr class="memdesc:a3ad13b60595f5ab9c25e9e794c63e1c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main menu group.  <a href="#a3ad13b60595f5ab9c25e9e794c63e1c8">More...</a><br /></td></tr>
 <tr class="separator:a3ad13b60595f5ab9c25e9e794c63e1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a880438f138e718cb4aac81b1354994da"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a880438f138e718cb4aac81b1354994da">mainMenuButtons</a></td></tr>
+<tr class="memdesc:a880438f138e718cb4aac81b1354994da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main menu buttons group.  <a href="#a880438f138e718cb4aac81b1354994da">More...</a><br /></td></tr>
 <tr class="separator:a880438f138e718cb4aac81b1354994da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e6165eeb619d77e748c65b45da3d616"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a1e6165eeb619d77e748c65b45da3d616">optionsMenu</a></td></tr>
+<tr class="memdesc:a1e6165eeb619d77e748c65b45da3d616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options menu group.  <a href="#a1e6165eeb619d77e748c65b45da3d616">More...</a><br /></td></tr>
 <tr class="separator:a1e6165eeb619d77e748c65b45da3d616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad88f6f3b0d96c22c00adafddf51d090b"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ad88f6f3b0d96c22c00adafddf51d090b">optionsMenuButtons</a></td></tr>
+<tr class="memdesc:ad88f6f3b0d96c22c00adafddf51d090b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options menu buttons group.  <a href="#ad88f6f3b0d96c22c00adafddf51d090b">More...</a><br /></td></tr>
 <tr class="separator:ad88f6f3b0d96c22c00adafddf51d090b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb487dd75b92aad583024f26626499ee"><td class="memItemLeft" align="right" valign="top">SpriteRenderer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#afb487dd75b92aad583024f26626499ee">skyScreen</a></td></tr>
+<tr class="memdesc:afb487dd75b92aad583024f26626499ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The background sky, changes depending on the time of day.  <a href="#afb487dd75b92aad583024f26626499ee">More...</a><br /></td></tr>
 <tr class="separator:afb487dd75b92aad583024f26626499ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d12466163cb2e113d4f4b783e317a2e"><td class="memItemLeft" align="right" valign="top">Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a7d12466163cb2e113d4f4b783e317a2e">dayScreen</a></td></tr>
+<tr class="memdesc:a7d12466163cb2e113d4f4b783e317a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite for playing the game during the day.  <a href="#a7d12466163cb2e113d4f4b783e317a2e">More...</a><br /></td></tr>
 <tr class="separator:a7d12466163cb2e113d4f4b783e317a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0fab829960ca70008099b9fb28c01f8"><td class="memItemLeft" align="right" valign="top">Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ab0fab829960ca70008099b9fb28c01f8">nightScreen</a></td></tr>
+<tr class="memdesc:ab0fab829960ca70008099b9fb28c01f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite for playing the game during the night.  <a href="#ab0fab829960ca70008099b9fb28c01f8">More...</a><br /></td></tr>
 <tr class="separator:ab0fab829960ca70008099b9fb28c01f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a765a1055e3ced8b42d185cf1786c203b"><td class="memItemLeft" align="right" valign="top">RectTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a765a1055e3ced8b42d185cf1786c203b">InstructionsMenu</a></td></tr>
+<tr class="memdesc:a765a1055e3ced8b42d185cf1786c203b"><td class="mdescLeft">&#160;</td><td class="mdescRight">RectTransform for moving the instructions menu in and out of the screen.  <a href="#a765a1055e3ced8b42d185cf1786c203b">More...</a><br /></td></tr>
 <tr class="separator:a765a1055e3ced8b42d185cf1786c203b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a073d9fc0798eb2fbea8c9cd1ec52116f"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a073d9fc0798eb2fbea8c9cd1ec52116f">screenFade</a></td></tr>
+<tr class="memdesc:a073d9fc0798eb2fbea8c9cd1ec52116f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A large, rectangular black sprite for fading the screen in and out.  <a href="#a073d9fc0798eb2fbea8c9cd1ec52116f">More...</a><br /></td></tr>
 <tr class="separator:a073d9fc0798eb2fbea8c9cd1ec52116f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980a29e57f0629e123117c9d7b516416"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a980a29e57f0629e123117c9d7b516416">blinkingButton</a></td></tr>
+<tr class="memdesc:a980a29e57f0629e123117c9d7b516416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Behind the start button, becomes visible when the player clicks "Start".  <a href="#a980a29e57f0629e123117c9d7b516416">More...</a><br /></td></tr>
 <tr class="separator:a980a29e57f0629e123117c9d7b516416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5f1a113e975cee48d8c27d0d536eaab"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ad5f1a113e975cee48d8c27d0d536eaab">lifeCounter</a></td></tr>
+<tr class="memdesc:ad5f1a113e975cee48d8c27d0d536eaab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number sprite for the number of lives in the options menu.  <a href="#ad5f1a113e975cee48d8c27d0d536eaab">More...</a><br /></td></tr>
 <tr class="separator:ad5f1a113e975cee48d8c27d0d536eaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed0055462c19e3c68db5e2420e8858be"><td class="memItemLeft" align="right" valign="top">Sprite []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#aed0055462c19e3c68db5e2420e8858be">lifeNumbers</a></td></tr>
+<tr class="memdesc:aed0055462c19e3c68db5e2420e8858be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number sprites, 0-9.  <a href="#aed0055462c19e3c68db5e2420e8858be">More...</a><br /></td></tr>
 <tr class="separator:aed0055462c19e3c68db5e2420e8858be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7971b30e62882e78879b3c8a30083659"><td class="memItemLeft" align="right" valign="top">Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a7971b30e62882e78879b3c8a30083659">blink1</a></td></tr>
+<tr class="memdesc:a7971b30e62882e78879b3c8a30083659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blinking sprite 1.  <a href="#a7971b30e62882e78879b3c8a30083659">More...</a><br /></td></tr>
 <tr class="separator:a7971b30e62882e78879b3c8a30083659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7323ea639405f67deb5502b7cf21bc11"><td class="memItemLeft" align="right" valign="top">Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a7323ea639405f67deb5502b7cf21bc11">blink2</a></td></tr>
+<tr class="memdesc:a7323ea639405f67deb5502b7cf21bc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blinking sprite 2.  <a href="#a7323ea639405f67deb5502b7cf21bc11">More...</a><br /></td></tr>
 <tr class="separator:a7323ea639405f67deb5502b7cf21bc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac35e0c0023b6be5251f112c63ba411fa"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ac35e0c0023b6be5251f112c63ba411fa">startButton</a></td></tr>
 <tr class="separator:ac35e0c0023b6be5251f112c63ba411fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,44 +157,61 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a388d6b42fbedea9ade342fcc1b99b959"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a388d6b42fbedea9ade342fcc1b99b959">InstructionsBackButton</a></td></tr>
 <tr class="separator:a388d6b42fbedea9ade342fcc1b99b959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97300aa02daf127fa7afcf1b445392aa"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a97300aa02daf127fa7afcf1b445392aa">cloudSpawn</a></td></tr>
+<tr class="memdesc:a97300aa02daf127fa7afcf1b445392aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawning position for the clouds.  <a href="#a97300aa02daf127fa7afcf1b445392aa">More...</a><br /></td></tr>
 <tr class="separator:a97300aa02daf127fa7afcf1b445392aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43318a12611b8f9d51e54d4a90a1d21c"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a43318a12611b8f9d51e54d4a90a1d21c">top</a></td></tr>
+<tr class="memdesc:a43318a12611b8f9d51e54d4a90a1d21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top of the cloud spawning area.  <a href="#a43318a12611b8f9d51e54d4a90a1d21c">More...</a><br /></td></tr>
 <tr class="separator:a43318a12611b8f9d51e54d4a90a1d21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347df07f129cdddaf7d44f21507e5636"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a347df07f129cdddaf7d44f21507e5636">bottom</a></td></tr>
+<tr class="memdesc:a347df07f129cdddaf7d44f21507e5636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bottom of the cloud spawning area.  <a href="#a347df07f129cdddaf7d44f21507e5636">More...</a><br /></td></tr>
 <tr class="separator:a347df07f129cdddaf7d44f21507e5636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e92a8303baa404f644a2ff917e68517"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a4e92a8303baa404f644a2ff917e68517">fadeTime</a> = 45</td></tr>
+<tr class="memdesc:a4e92a8303baa404f644a2ff917e68517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time in frames to fade the screen out to the first level.  <a href="#a4e92a8303baa404f644a2ff917e68517">More...</a><br /></td></tr>
 <tr class="separator:a4e92a8303baa404f644a2ff917e68517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a6540648a42e10d3b7274967294a6c9cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a6540648a42e10d3b7274967294a6c9cb">Awake</a> ()</td></tr>
+<tr class="memdesc:a6540648a42e10d3b7274967294a6c9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the main menu values to the values in the <a class="el" href="class_settings.html" title="Global game settings: Number of starting lives, continues, music and sound volume, Declared static so the values stay the same when changing scenes ">Settings</a> static class  <a href="#a6540648a42e10d3b7274967294a6c9cb">More...</a><br /></td></tr>
 <tr class="separator:a6540648a42e10d3b7274967294a6c9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a998f718493f2b3d0436d70a4d30e3eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a998f718493f2b3d0436d70a4d30e3eac">Start</a> ()</td></tr>
+<tr class="memdesc:a998f718493f2b3d0436d70a4d30e3eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the game in the main menu  <a href="#a998f718493f2b3d0436d70a4d30e3eac">More...</a><br /></td></tr>
 <tr class="separator:a998f718493f2b3d0436d70a4d30e3eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b9db35f6a0932392d1fb0c34f0ce163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a8b9db35f6a0932392d1fb0c34f0ce163">OnEnable</a> ()</td></tr>
+<tr class="memdesc:a8b9db35f6a0932392d1fb0c34f0ce163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to events, when the left and right life buttons are clicked  <a href="#a8b9db35f6a0932392d1fb0c34f0ce163">More...</a><br /></td></tr>
 <tr class="separator:a8b9db35f6a0932392d1fb0c34f0ce163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0560b24aa81513b35c04ebd87d109dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ad0560b24aa81513b35c04ebd87d109dd">OnDisable</a> ()</td></tr>
+<tr class="memdesc:ad0560b24aa81513b35c04ebd87d109dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe to events  <a href="#ad0560b24aa81513b35c04ebd87d109dd">More...</a><br /></td></tr>
 <tr class="separator:ad0560b24aa81513b35c04ebd87d109dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d463edf31b61709666a6fb301ee80f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a9d463edf31b61709666a6fb301ee80f1">Update</a> ()</td></tr>
+<tr class="memdesc:a9d463edf31b61709666a6fb301ee80f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read input from the keyboard to navigate the menu  <a href="#a9d463edf31b61709666a6fb301ee80f1">More...</a><br /></td></tr>
 <tr class="separator:a9d463edf31b61709666a6fb301ee80f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f6a6dc18ad4970a2ac59c23ffc9c53"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ac6f6a6dc18ad4970a2ac59c23ffc9c53">Run</a> ()</td></tr>
+<tr class="memdesc:ac6f6a6dc18ad4970a2ac59c23ffc9c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the clouds  <a href="#ac6f6a6dc18ad4970a2ac59c23ffc9c53">More...</a><br /></td></tr>
 <tr class="separator:ac6f6a6dc18ad4970a2ac59c23ffc9c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ef040936165d69a13cecaec973bb979"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a5ef040936165d69a13cecaec973bb979">MoveMenu</a> ()</td></tr>
+<tr class="memdesc:a5ef040936165d69a13cecaec973bb979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the screen like a transition when changing menus  <a href="#a5ef040936165d69a13cecaec973bb979">More...</a><br /></td></tr>
 <tr class="separator:a5ef040936165d69a13cecaec973bb979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af74edc9646b6e1013e2879666bb94833"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#af74edc9646b6e1013e2879666bb94833">SetMenuActive</a> (bool mainMenuActive, bool optionsMenuActive)</td></tr>
+<tr class="memdesc:af74edc9646b6e1013e2879666bb94833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the currently active menu and disable all inactive menus  <a href="#af74edc9646b6e1013e2879666bb94833">More...</a><br /></td></tr>
 <tr class="separator:af74edc9646b6e1013e2879666bb94833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7cfbde7352528bf88254d0410877748b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a7cfbde7352528bf88254d0410877748b">startingNumberOfLives</a></td></tr>
+<tr class="memdesc:a7cfbde7352528bf88254d0410877748b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <a class="el" href="class_settings.html#af71cb91534d9c0bc4ef727617b2d814b">Settings.numberOfLives</a>.  <a href="#a7cfbde7352528bf88254d0410877748b">More...</a><br /></td></tr>
 <tr class="separator:a7cfbde7352528bf88254d0410877748b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362355edf5c6598dc3074cddbe3b9dcb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a362355edf5c6598dc3074cddbe3b9dcb">startingNumberOfContinues</a></td></tr>
+<tr class="memdesc:a362355edf5c6598dc3074cddbe3b9dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <a class="el" href="class_settings.html#aafcc4e5e8e12959c139dca0fe71c796b">Settings.numberOfContinues</a>.  <a href="#a362355edf5c6598dc3074cddbe3b9dcb">More...</a><br /></td></tr>
 <tr class="separator:a362355edf5c6598dc3074cddbe3b9dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26422160b45e38d18f53aa2675525f9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a26422160b45e38d18f53aa2675525f9e">musicVolume</a></td></tr>
+<tr class="memdesc:a26422160b45e38d18f53aa2675525f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <a class="el" href="class_settings.html#ac47015b8c46b10d428e144bda1e479ec">Settings.MusicVolume</a>.  <a href="#a26422160b45e38d18f53aa2675525f9e">More...</a><br /></td></tr>
 <tr class="separator:a26422160b45e38d18f53aa2675525f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a5ce556e04cf170db250f13d4bc7d76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a7a5ce556e04cf170db250f13d4bc7d76">soundVolume</a></td></tr>
+<tr class="memdesc:a7a5ce556e04cf170db250f13d4bc7d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to <a class="el" href="class_settings.html#a84ebbea0cb49ea1bac809ea9fb133e7b">Settings.SoundVolume</a>.  <a href="#a7a5ce556e04cf170db250f13d4bc7d76">More...</a><br /></td></tr>
 <tr class="separator:a7a5ce556e04cf170db250f13d4bc7d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ef27bc840b0e29e77d1d5611c671e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ae4ef27bc840b0e29e77d1d5611c671e4">menu</a></td></tr>
+<tr class="memdesc:ae4ef27bc840b0e29e77d1d5611c671e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the currently active menu, 0 = Main menu, 1 = Options menu.  <a href="#ae4ef27bc840b0e29e77d1d5611c671e4">More...</a><br /></td></tr>
 <tr class="separator:ae4ef27bc840b0e29e77d1d5611c671e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac23aa4aa6a126694555faedc796dbb59"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#ac23aa4aa6a126694555faedc796dbb59">gameStartSound</a></td></tr>
 <tr class="separator:ac23aa4aa6a126694555faedc796dbb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,29 +220,38 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a804062f3d51a9da0d35023edc28cc412"><td class="memItemLeft" align="right" valign="top">SpriteRenderer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a804062f3d51a9da0d35023edc28cc412">spriteRenderer</a></td></tr>
 <tr class="separator:a804062f3d51a9da0d35023edc28cc412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f04be7272e2c5d9cd73cade16054938"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a1f04be7272e2c5d9cd73cade16054938">onMainMenu</a></td></tr>
+<tr class="memdesc:a1f04be7272e2c5d9cd73cade16054938"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if currently on the main menu.  <a href="#a1f04be7272e2c5d9cd73cade16054938">More...</a><br /></td></tr>
 <tr class="separator:a1f04be7272e2c5d9cd73cade16054938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76739d970121fe051541af9386847688"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a76739d970121fe051541af9386847688">onOptionsMenu</a></td></tr>
+<tr class="memdesc:a76739d970121fe051541af9386847688"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if currently on the options menu.  <a href="#a76739d970121fe051541af9386847688">More...</a><br /></td></tr>
 <tr class="separator:a76739d970121fe051541af9386847688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afca5f38fde9ad55f1eca274f5688d29c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#afca5f38fde9ad55f1eca274f5688d29c">dayTime</a></td></tr>
+<tr class="memdesc:afca5f38fde9ad55f1eca274f5688d29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether it is currently day or night.  <a href="#afca5f38fde9ad55f1eca274f5688d29c">More...</a><br /></td></tr>
 <tr class="separator:afca5f38fde9ad55f1eca274f5688d29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec309eb132d92dd8ac0ca882fbf9dac0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#aec309eb132d92dd8ac0ca882fbf9dac0">buttonClicked</a></td></tr>
-<tr class="separator:aec309eb132d92dd8ac0ca882fbf9dac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a933fcfa9a87811b20ddaa6a59bfa34a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a933fcfa9a87811b20ddaa6a59bfa34a6">onInstructions</a></td></tr>
+<tr class="memdesc:a933fcfa9a87811b20ddaa6a59bfa34a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if currently on the instructions menu.  <a href="#a933fcfa9a87811b20ddaa6a59bfa34a6">More...</a><br /></td></tr>
 <tr class="separator:a933fcfa9a87811b20ddaa6a59bfa34a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adecd4d357b088274f05b6d27782b49ae"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#adecd4d357b088274f05b6d27782b49ae">dMenuX</a> = 53f</td></tr>
+<tr class="memdesc:adecd4d357b088274f05b6d27782b49ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The speed to move the screen when the user changes the menu.  <a href="#adecd4d357b088274f05b6d27782b49ae">More...</a><br /></td></tr>
 <tr class="separator:adecd4d357b088274f05b6d27782b49ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63133dd39402e23b8db3fbbb7a15686a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a63133dd39402e23b8db3fbbb7a15686a">menuDistance</a> = 800</td></tr>
+<tr class="memdesc:a63133dd39402e23b8db3fbbb7a15686a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total distance to move the screen when changing menus.  <a href="#a63133dd39402e23b8db3fbbb7a15686a">More...</a><br /></td></tr>
 <tr class="separator:a63133dd39402e23b8db3fbbb7a15686a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ae064f9727f69530ede2b2c899be6e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a77ae064f9727f69530ede2b2c899be6e">MENU_MAIN</a> = 0</td></tr>
+<tr class="memdesc:a77ae064f9727f69530ede2b2c899be6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main menu index.  <a href="#a77ae064f9727f69530ede2b2c899be6e">More...</a><br /></td></tr>
 <tr class="separator:a77ae064f9727f69530ede2b2c899be6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3058534862c3ceaf10320160ff9e98ae"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a3058534862c3ceaf10320160ff9e98ae">MENU_OPTIONS</a> = 1</td></tr>
+<tr class="memdesc:a3058534862c3ceaf10320160ff9e98ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The options menu index.  <a href="#a3058534862c3ceaf10320160ff9e98ae">More...</a><br /></td></tr>
 <tr class="separator:a3058534862c3ceaf10320160ff9e98ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a288ba85ea83838a3d6c2596685173326"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_title_screen.html#a288ba85ea83838a3d6c2596685173326">instructionsPos</a></td></tr>
+<tr class="memdesc:a288ba85ea83838a3d6c2596685173326"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position for the instructions menu.  <a href="#a288ba85ea83838a3d6c2596685173326">More...</a><br /></td></tr>
 <tr class="separator:a288ba85ea83838a3d6c2596685173326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00005">5</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<div class="textblock"><p>The title screen controller, Controls the main menu, options menu, and instructions menu </p>
+<p>By Joshua Rand </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00013">13</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6540648a42e10d3b7274967294a6c9cb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6540648a42e10d3b7274967294a6c9cb">&sect;&nbsp;</a></span>Awake()</h2>
@@ -224,7 +276,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00049">49</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Set the main menu values to the values in the <a class="el" href="class_settings.html" title="Global game settings: Number of starting lives, continues, music and sound volume, Declared static so the values stay the same when changing scenes ">Settings</a> static class </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00060">60</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -244,7 +298,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00272">272</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Call the MoveMenu coroutine </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00323">323</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -263,7 +319,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00153">153</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Called by the instructions menu button </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00188">188</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -282,7 +340,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00181">181</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Called by the start button </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00223">223</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -309,7 +370,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00213">213</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Move the screen like a transition when changing menus </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00258">258</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -336,7 +399,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00084">84</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Unsubscribe to events </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00103">103</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -363,7 +428,30 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00078">78</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Subscribe to events, when the left and right life buttons are clicked </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00094">94</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+
+</div>
+</div>
+<a id="a820ddc2b1b238953eac70f303975a05f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820ddc2b1b238953eac70f303975a05f">&sect;&nbsp;</a></span>QuitGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TitleScreen.QuitGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>When the user clicks the Quit button to exit the game </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00180">180</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -382,7 +470,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00167">167</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Called by the back button on the instructions menu button </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00205">205</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -409,7 +499,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00122">122</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Create the clouds </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00146">146</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -447,7 +539,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00256">256</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Enable the currently active menu and disable all inactive menus </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00304">304</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -474,7 +568,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00062">62</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Start the game in the main menu </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00075">75</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -501,7 +597,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00091">91</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Read input from the keyboard to navigate the menu </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00112">112</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -531,7 +629,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00279">279</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Update the life counter UI </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00333">333</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -548,7 +648,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00024">24</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00032">32</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -564,7 +664,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00020">20</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Blinking sprite 1. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00028">28</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -580,7 +682,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00021">21</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Blinking sprite 2. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00029">29</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -596,7 +700,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00017">17</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Behind the start button, becomes visible when the player clicks "Start". </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00025">25</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -612,31 +718,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00028">28</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Bottom of the cloud spawning area. </p>
 
-</div>
-</div>
-<a id="aec309eb132d92dd8ac0ca882fbf9dac0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec309eb132d92dd8ac0ca882fbf9dac0">&sect;&nbsp;</a></span>buttonClicked</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TitleScreen.buttonClicked</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00041">41</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00036">36</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -660,7 +744,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00036">36</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00044">44</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -676,7 +760,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00026">26</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Spawning position for the clouds. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00034">34</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -692,7 +778,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00007">7</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Cloud prefab. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00015">15</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -708,7 +796,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00013">13</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Sprite for playing the game during the day. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00021">21</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -732,7 +822,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00040">40</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Whether it is currently day or night. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00048">48</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -756,7 +848,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00043">43</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>The speed to move the screen when the user changes the menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00051">51</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -772,7 +866,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00029">29</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Time in frames to fade the screen out to the first level. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00037">37</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -796,7 +892,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00035">35</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00043">43</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -812,7 +908,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00025">25</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00033">33</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -828,7 +924,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00015">15</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>RectTransform for moving the instructions menu in and out of the screen. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00023">23</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -852,7 +950,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00047">47</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>The position for the instructions menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00055">55</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -868,7 +968,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00018">18</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Number sprite for the number of lives in the options menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00026">26</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -884,7 +986,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00019">19</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Number sprites, 0-9. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00027">27</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -900,7 +1004,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00008">8</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Main menu group. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00016">16</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -916,7 +1022,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00009">9</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Main menu buttons group. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00017">17</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -940,7 +1048,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00034">34</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Index of the currently active menu, 0 = Main menu, 1 = Options menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00042">42</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -964,7 +1074,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00045">45</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>The main menu index. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00053">53</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -988,7 +1100,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00046">46</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>The options menu index. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00054">54</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1012,7 +1126,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00044">44</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>The total distance to move the screen when changing menus. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00052">52</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1152,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00032">32</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Set to <a class="el" href="class_settings.html#ac47015b8c46b10d428e144bda1e479ec">Settings.MusicVolume</a>. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00040">40</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1052,7 +1170,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00014">14</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Sprite for playing the game during the night. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00022">22</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1196,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00042">42</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>True if currently on the instructions menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00050">50</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1100,7 +1222,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00038">38</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>True if currently on the main menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00046">46</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1124,7 +1248,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00039">39</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>True if currently on the options menu. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00047">47</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1140,7 +1266,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00023">23</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00031">31</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1156,7 +1282,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00010">10</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Options menu group. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00018">18</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1300,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00011">11</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Options menu buttons group. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00019">19</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1188,7 +1318,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00016">16</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>A large, rectangular black sprite for fading the screen in and out. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00024">24</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1204,7 +1336,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00012">12</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>The background sky, changes depending on the time of day. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00020">20</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1228,7 +1362,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00033">33</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Set to <a class="el" href="class_settings.html#a84ebbea0cb49ea1bac809ea9fb133e7b">Settings.SoundVolume</a>. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00041">41</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1252,7 +1388,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00037">37</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00045">45</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1404,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00022">22</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00030">30</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1292,7 +1428,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00031">31</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Set to <a class="el" href="class_settings.html#aafcc4e5e8e12959c139dca0fe71c796b">Settings.numberOfContinues</a>. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00039">39</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1316,7 +1454,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00030">30</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Set to <a class="el" href="class_settings.html#af71cb91534d9c0bc4ef727617b2d814b">Settings.numberOfLives</a>. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00038">38</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -1332,7 +1472,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00027">27</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
+<p>Top of the cloud spawning area. </p>
+
+<p>Definition at line <a class="el" href="_title_screen_8cs_source.html#l00035">35</a> of file <a class="el" href="_title_screen_8cs_source.html">TitleScreen.cs</a>.</p>
 
 </div>
 </div>

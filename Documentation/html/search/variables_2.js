@@ -13,6 +13,7 @@ var searchData=
   ['cloudspawn',['cloudSpawn',['../class_title_screen.html#a97300aa02daf127fa7afcf1b445392aa',1,'TitleScreen']]],
   ['cloudsprite',['cloudSprite',['../class_title_screen.html#a08a8837b11e07c0fd5f3737131d2c2d1',1,'TitleScreen']]],
   ['colliders',['colliders',['../class_controller.html#aa72bbd921b4c2094224ddc3190119e05',1,'Controller']]],
+  ['continueclick',['continueClick',['../class_game_over_screen.html#ae21a090eb1826ccb54881a1134872428',1,'GameOverScreen']]],
   ['control',['control',['../class_controller.html#a12c7e7a37c62b0c5a8cddb1359a31262',1,'Controller']]],
   ['controller',['controller',['../class_collect_items.html#aee63015ffbb1863273e4e1b93b7eec76',1,'CollectItems.controller()'],['../class_pecking.html#a3369034cd0740768b7bc3feabdf22b5b',1,'Pecking.controller()']]]
 ];

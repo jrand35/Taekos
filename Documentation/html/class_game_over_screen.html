@@ -68,6 +68,9 @@ $(function() {
 <div class="title">GameOverScreen Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The Game Over screen that appears when Taekos loses all lives  
+ <a href="class_game_over_screen.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GameOverScreen:</div>
 <div class="dyncontent">
@@ -80,38 +83,53 @@ Inheritance diagram for GameOverScreen:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a21d48388ec70a784a20640b38043facb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a21d48388ec70a784a20640b38043facb">Continue</a> ()</td></tr>
+<tr class="memdesc:a21d48388ec70a784a20640b38043facb"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the player clicks Continue, turn off the buttons and call FadeOut coroutine  <a href="#a21d48388ec70a784a20640b38043facb">More...</a><br /></td></tr>
 <tr class="separator:a21d48388ec70a784a20640b38043facb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ee902516aa71541be284bcf3515b09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a22ee902516aa71541be284bcf3515b09">Quit</a> ()</td></tr>
+<tr class="memdesc:a22ee902516aa71541be284bcf3515b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quit the game and return to the title screen  <a href="#a22ee902516aa71541be284bcf3515b09">More...</a><br /></td></tr>
 <tr class="separator:a22ee902516aa71541be284bcf3515b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ae21a090eb1826ccb54881a1134872428"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#ae21a090eb1826ccb54881a1134872428">continueClick</a></td></tr>
+<tr class="memdesc:ae21a090eb1826ccb54881a1134872428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sound to play when clicking the Continue button.  <a href="#ae21a090eb1826ccb54881a1134872428">More...</a><br /></td></tr>
+<tr class="separator:ae21a090eb1826ccb54881a1134872428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99316557629350be5bb3e09412a1a521"><td class="memItemLeft" align="right" valign="top">Graphic []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a99316557629350be5bb3e09412a1a521">fadingObjects</a></td></tr>
+<tr class="memdesc:a99316557629350be5bb3e09412a1a521"><td class="mdescLeft">&#160;</td><td class="mdescRight">The continue button, quit button, and remaining continues counter.  <a href="#a99316557629350be5bb3e09412a1a521">More...</a><br /></td></tr>
 <tr class="separator:a99316557629350be5bb3e09412a1a521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a822cc4f08d9445b93291919310146f"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a9a822cc4f08d9445b93291919310146f">gameOverImage</a></td></tr>
+<tr class="memdesc:a9a822cc4f08d9445b93291919310146f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Game Over UI text.  <a href="#a9a822cc4f08d9445b93291919310146f">More...</a><br /></td></tr>
 <tr class="separator:a9a822cc4f08d9445b93291919310146f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adda2aa240664033baea7b7dc9f8ee565"><td class="memItemLeft" align="right" valign="top">Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#adda2aa240664033baea7b7dc9f8ee565">fadeImage</a></td></tr>
+<tr class="memdesc:adda2aa240664033baea7b7dc9f8ee565"><td class="mdescLeft">&#160;</td><td class="mdescRight">A black rectangle for the background.  <a href="#adda2aa240664033baea7b7dc9f8ee565">More...</a><br /></td></tr>
 <tr class="separator:adda2aa240664033baea7b7dc9f8ee565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8815c33bb601ea9e6f68fd39096ddf5"><td class="memItemLeft" align="right" valign="top">Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#aa8815c33bb601ea9e6f68fd39096ddf5">remainingText</a></td></tr>
+<tr class="memdesc:aa8815c33bb601ea9e6f68fd39096ddf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the remaining number of continues.  <a href="#aa8815c33bb601ea9e6f68fd39096ddf5">More...</a><br /></td></tr>
 <tr class="separator:aa8815c33bb601ea9e6f68fd39096ddf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a6ab44a8059d850bb8a0b8ef4468adf7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a6ab44a8059d850bb8a0b8ef4468adf7e">Start</a> ()</td></tr>
+<tr class="memdesc:a6ab44a8059d850bb8a0b8ef4468adf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the number of remaining continues and start the Run coroutine  <a href="#a6ab44a8059d850bb8a0b8ef4468adf7e">More...</a><br /></td></tr>
 <tr class="separator:a6ab44a8059d850bb8a0b8ef4468adf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3289ba237b92da7e0fd8258386f9950d"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a3289ba237b92da7e0fd8258386f9950d">Run</a> ()</td></tr>
+<tr class="memdesc:a3289ba237b92da7e0fd8258386f9950d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fade in the Game Over text, then display the buttons and Continues counter  <a href="#a3289ba237b92da7e0fd8258386f9950d">More...</a><br /></td></tr>
 <tr class="separator:a3289ba237b92da7e0fd8258386f9950d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad936fe1b8cf7e99ee7401806ee159f4d"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#ad936fe1b8cf7e99ee7401806ee159f4d">FadeOut</a> ()</td></tr>
+<tr class="memdesc:ad936fe1b8cf7e99ee7401806ee159f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the player clicks "Continue" then fade the screen out before loading the main level, Called by Continue coroutine  <a href="#ad936fe1b8cf7e99ee7401806ee159f4d">More...</a><br /></td></tr>
 <tr class="separator:ad936fe1b8cf7e99ee7401806ee159f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5eb9bbc768c6e7bb6bbacbaf9d5760c4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_over_screen.html#a5eb9bbc768c6e7bb6bbacbaf9d5760c4">delay</a> = 4f</td></tr>
+<tr class="memdesc:a5eb9bbc768c6e7bb6bbacbaf9d5760c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay in seconds before returning to the title screen, if there are no continues left.  <a href="#a5eb9bbc768c6e7bb6bbacbaf9d5760c4">More...</a><br /></td></tr>
 <tr class="separator:a5eb9bbc768c6e7bb6bbacbaf9d5760c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00005">5</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<div class="textblock"><p>The Game Over screen that appears when Taekos loses all lives </p>
+<p>By Joshua Rand </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00012">12</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a21d48388ec70a784a20640b38043facb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21d48388ec70a784a20640b38043facb">&sect;&nbsp;</a></span>Continue()</h2>
@@ -128,7 +146,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00067">67</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>When the player clicks Continue, turn off the buttons and call FadeOut coroutine </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00086">86</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -155,7 +175,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00056">56</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>If the player clicks "Continue" then fade the screen out before loading the main level, Called by Continue coroutine </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00072">72</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -174,7 +196,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00080">80</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>Quit the game and return to the title screen </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00101">101</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -201,7 +225,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00026">26</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>Fade in the Game Over text, then display the buttons and Continues counter </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00038">38</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -228,11 +254,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00014">14</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>Display the number of remaining continues and start the Run coroutine </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00023">23</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae21a090eb1826ccb54881a1134872428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21a090eb1826ccb54881a1134872428">&sect;&nbsp;</a></span>continueClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioSource GameOverScreen.continueClick</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sound to play when clicking the Continue button. </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00013">13</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+
+</div>
+</div>
 <a id="a5eb9bbc768c6e7bb6bbacbaf9d5760c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5eb9bbc768c6e7bb6bbacbaf9d5760c4">&sect;&nbsp;</a></span>delay</h2>
 
@@ -253,7 +299,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00011">11</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>Delay in seconds before returning to the title screen, if there are no continues left. </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00018">18</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -269,7 +317,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00009">9</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>A black rectangle for the background. </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00016">16</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -285,7 +335,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00007">7</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>The continue button, quit button, and remaining continues counter. </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00014">14</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -301,7 +353,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00008">8</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>The Game Over UI text. </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00015">15</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>
@@ -317,7 +371,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00010">10</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
+<p>Displays the remaining number of continues. </p>
+
+<p>Definition at line <a class="el" href="_game_over_screen_8cs_source.html#l00017">17</a> of file <a class="el" href="_game_over_screen_8cs_source.html">GameOverScreen.cs</a>.</p>
 
 </div>
 </div>

@@ -69,6 +69,9 @@ $(function() {
 <div class="title">Controller Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Taekos's character controller, Handles walking, jumping, attacking, etc.  
+ <a href="class_controller.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Controller:</div>
 <div class="dyncontent">
@@ -91,142 +94,203 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8028d6a98e5b2017680506f5b7027cc1"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8028d6a98e5b2017680506f5b7027cc1">LifebarHandler</a> (int health, int lives, int effect)</td></tr>
 <tr class="separator:a8028d6a98e5b2017680506f5b7027cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf518b11a9686e1c5a7663b8e850ca02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aaf518b11a9686e1c5a7663b8e850ca02">getFacing</a> ()</td></tr>
+<tr class="memdesc:aaf518b11a9686e1c5a7663b8e850ca02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return facing  <a href="#aaf518b11a9686e1c5a7663b8e850ca02">More...</a><br /></td></tr>
 <tr class="separator:aaf518b11a9686e1c5a7663b8e850ca02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704e6390766f82eee54c9ebaa42767da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a704e6390766f82eee54c9ebaa42767da">HurtPlayer</a> (int damage)</td></tr>
+<tr class="memdesc:a704e6390766f82eee54c9ebaa42767da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by enemies when they collide with Taekos  <a href="#a704e6390766f82eee54c9ebaa42767da">More...</a><br /></td></tr>
 <tr class="separator:a704e6390766f82eee54c9ebaa42767da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f447110fdfb3f940ba05975595fc41"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a14f447110fdfb3f940ba05975595fc41">MultiplyJumpSpeed</a> (float scale, float duration)</td></tr>
+<tr class="memdesc:a14f447110fdfb3f940ba05975595fc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">When Taekos collects a powerup, increase his jump height  <a href="#a14f447110fdfb3f940ba05975595fc41">More...</a><br /></td></tr>
 <tr class="separator:a14f447110fdfb3f940ba05975595fc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3c7f591d2657fd938c5d79a6b75cd648"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a3c7f591d2657fd938c5d79a6b75cd648">top</a></td></tr>
+<tr class="memdesc:a3c7f591d2657fd938c5d79a6b75cd648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top collision detection.  <a href="#a3c7f591d2657fd938c5d79a6b75cd648">More...</a><br /></td></tr>
 <tr class="separator:a3c7f591d2657fd938c5d79a6b75cd648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa820e0b06c3d3ee1605d700ff73ebf5"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#afa820e0b06c3d3ee1605d700ff73ebf5">front</a></td></tr>
+<tr class="memdesc:afa820e0b06c3d3ee1605d700ff73ebf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front collision detection.  <a href="#afa820e0b06c3d3ee1605d700ff73ebf5">More...</a><br /></td></tr>
 <tr class="separator:afa820e0b06c3d3ee1605d700ff73ebf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6da5209a80c99c5db932803d9443e17"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af6da5209a80c99c5db932803d9443e17">back</a></td></tr>
+<tr class="memdesc:af6da5209a80c99c5db932803d9443e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Back collision detection.  <a href="#af6da5209a80c99c5db932803d9443e17">More...</a><br /></td></tr>
 <tr class="separator:af6da5209a80c99c5db932803d9443e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99a8ded3d6885ef78a144f0e9e39d783"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a99a8ded3d6885ef78a144f0e9e39d783">groundCheck</a></td></tr>
+<tr class="memdesc:a99a8ded3d6885ef78a144f0e9e39d783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Taekos is on the ground.  <a href="#a99a8ded3d6885ef78a144f0e9e39d783">More...</a><br /></td></tr>
 <tr class="separator:a99a8ded3d6885ef78a144f0e9e39d783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31826041292b75ec7534eef203946024"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a31826041292b75ec7534eef203946024">wallCheck</a></td></tr>
+<tr class="memdesc:a31826041292b75ec7534eef203946024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if Taekos is in front of a wall.  <a href="#a31826041292b75ec7534eef203946024">More...</a><br /></td></tr>
 <tr class="separator:a31826041292b75ec7534eef203946024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad472907861ce7403fb445aca186c931b"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad472907861ce7403fb445aca186c931b">backWallCheck</a></td></tr>
+<tr class="memdesc:ad472907861ce7403fb445aca186c931b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a wall is behind Taekos.  <a href="#ad472907861ce7403fb445aca186c931b">More...</a><br /></td></tr>
 <tr class="separator:ad472907861ce7403fb445aca186c931b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1608b18406e67ff159940275e2e5340"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa1608b18406e67ff159940275e2e5340">bananaThrowPos</a></td></tr>
+<tr class="memdesc:aa1608b18406e67ff159940275e2e5340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position to generate a banana from.  <a href="#aa1608b18406e67ff159940275e2e5340">More...</a><br /></td></tr>
 <tr class="separator:aa1608b18406e67ff159940275e2e5340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a467da756b4352bfe256d269dbd823711"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a467da756b4352bfe256d269dbd823711">banana</a></td></tr>
+<tr class="memdesc:a467da756b4352bfe256d269dbd823711"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_banana.html" title="Banana that Taekos uses as a weapon ">Banana</a> weapon prefab.  <a href="#a467da756b4352bfe256d269dbd823711">More...</a><br /></td></tr>
 <tr class="separator:a467da756b4352bfe256d269dbd823711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed0b22dbff6a5aba99a5435a6245cc7a"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aed0b22dbff6a5aba99a5435a6245cc7a">jumpSound</a></td></tr>
+<tr class="memdesc:aed0b22dbff6a5aba99a5435a6245cc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jumping sound effect.  <a href="#aed0b22dbff6a5aba99a5435a6245cc7a">More...</a><br /></td></tr>
 <tr class="separator:aed0b22dbff6a5aba99a5435a6245cc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a595ec952d5581a5381fd43e25419ff6f"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a595ec952d5581a5381fd43e25419ff6f">hurtSound</a></td></tr>
+<tr class="memdesc:a595ec952d5581a5381fd43e25419ff6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hurt sound effect.  <a href="#a595ec952d5581a5381fd43e25419ff6f">More...</a><br /></td></tr>
 <tr class="separator:a595ec952d5581a5381fd43e25419ff6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd6d9a3749945ac4549c37a1144e86fd"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#abd6d9a3749945ac4549c37a1144e86fd">peckBoxPrefab</a></td></tr>
+<tr class="memdesc:abd6d9a3749945ac4549c37a1144e86fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a hitbox for hurting enemies.  <a href="#abd6d9a3749945ac4549c37a1144e86fd">More...</a><br /></td></tr>
 <tr class="separator:abd6d9a3749945ac4549c37a1144e86fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1988fb1bc2b8b3ad22906c811e3091"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8e1988fb1bc2b8b3ad22906c811e3091">trail</a></td></tr>
+<tr class="memdesc:a8e1988fb1bc2b8b3ad22906c811e3091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trail prefab for after getting a powerup (not used in final build)  <a href="#a8e1988fb1bc2b8b3ad22906c811e3091">More...</a><br /></td></tr>
 <tr class="separator:a8e1988fb1bc2b8b3ad22906c811e3091"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe2689187f3cd3d00c81db5e5eb5f643"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#afe2689187f3cd3d00c81db5e5eb5f643">checkpointSound</a></td></tr>
+<tr class="memdesc:afe2689187f3cd3d00c81db5e5eb5f643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sound effect for getting a checkpoint.  <a href="#afe2689187f3cd3d00c81db5e5eb5f643">More...</a><br /></td></tr>
 <tr class="separator:afe2689187f3cd3d00c81db5e5eb5f643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a971bf04f3fc15624aaa46f608b83a2"><td class="memItemLeft" align="right" valign="top">AudioSource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a2a971bf04f3fc15624aaa46f608b83a2">peckHitSound</a></td></tr>
+<tr class="memdesc:a2a971bf04f3fc15624aaa46f608b83a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sound effect for pecking an enemy.  <a href="#a2a971bf04f3fc15624aaa46f608b83a2">More...</a><br /></td></tr>
 <tr class="separator:a2a971bf04f3fc15624aaa46f608b83a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ebf1a42164d2a21685454f220086f23"><td class="memItemLeft" align="right" valign="top">LayerMask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a5ebf1a42164d2a21685454f220086f23">whatIsGround</a></td></tr>
+<tr class="memdesc:a5ebf1a42164d2a21685454f220086f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground layer mask.  <a href="#a5ebf1a42164d2a21685454f220086f23">More...</a><br /></td></tr>
 <tr class="separator:a5ebf1a42164d2a21685454f220086f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0e61d6326028117e9d7ea358db650ba"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae0e61d6326028117e9d7ea358db650ba">characterHeight</a></td></tr>
+<tr class="memdesc:ae0e61d6326028117e9d7ea358db650ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">How tall Taekos is.  <a href="#ae0e61d6326028117e9d7ea358db650ba">More...</a><br /></td></tr>
 <tr class="separator:ae0e61d6326028117e9d7ea358db650ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a639ac99367e685a8635cbf106344a0f1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a639ac99367e685a8635cbf106344a0f1">jumpHeightCoefficient</a> = 0.3f</td></tr>
+<tr class="memdesc:a639ac99367e685a8635cbf106344a0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">To increase the jump height slightly when running.  <a href="#a639ac99367e685a8635cbf106344a0f1">More...</a><br /></td></tr>
 <tr class="separator:a639ac99367e685a8635cbf106344a0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
 <tr class="memitem:a1d20964f4f5a9b289a314888ee76c7a6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_controller.html#a668c91702441f1a7de4404681b493f92">ControllerEventHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1d20964f4f5a9b289a314888ee76c7a6">FollowPlayer</a></td></tr>
+<tr class="memdesc:a1d20964f4f5a9b289a314888ee76c7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the camera to follow Taekos.  <a href="#a1d20964f4f5a9b289a314888ee76c7a6">More...</a><br /></td></tr>
 <tr class="separator:a1d20964f4f5a9b289a314888ee76c7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b6025dd77106466dd59a93c4905cb41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_controller.html#aa44cb6880fff64d4b69ef8e23fb242ca">GetCurrentLivesHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1b6025dd77106466dd59a93c4905cb41">getCurrentLives</a></td></tr>
+<tr class="memdesc:a1b6025dd77106466dd59a93c4905cb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the current number of lives.  <a href="#a1b6025dd77106466dd59a93c4905cb41">More...</a><br /></td></tr>
 <tr class="separator:a1b6025dd77106466dd59a93c4905cb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c650010d9c3dc0a53b6e9f4d5555a27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_controller.html#a77cd476e53b12c2b79b726dc4398df77">GetGameOverHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1c650010d9c3dc0a53b6e9f4d5555a27">getGameOver</a></td></tr>
+<tr class="memdesc:a1c650010d9c3dc0a53b6e9f4d5555a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether or not the game is over.  <a href="#a1c650010d9c3dc0a53b6e9f4d5555a27">More...</a><br /></td></tr>
 <tr class="separator:a1c650010d9c3dc0a53b6e9f4d5555a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dfcab67a556279ff93c8545800d64a9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_controller.html#a074fec79e5351ce7fb676c34763e2ff6">AddLivesHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8dfcab67a556279ff93c8545800d64a9">AddLives</a></td></tr>
+<tr class="memdesc:a8dfcab67a556279ff93c8545800d64a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add or subtract a life.  <a href="#a8dfcab67a556279ff93c8545800d64a9">More...</a><br /></td></tr>
 <tr class="separator:a8dfcab67a556279ff93c8545800d64a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb4740d0af1efb954e269f14fff7879d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_controller.html#a8028d6a98e5b2017680506f5b7027cc1">LifebarHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#acb4740d0af1efb954e269f14fff7879d">UpdateLifebar</a></td></tr>
+<tr class="memdesc:acb4740d0af1efb954e269f14fff7879d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the lifebar.  <a href="#acb4740d0af1efb954e269f14fff7879d">More...</a><br /></td></tr>
 <tr class="separator:acb4740d0af1efb954e269f14fff7879d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a10c97dc1d6873934f368144b08e9b03a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a10c97dc1d6873934f368144b08e9b03a">HoldingLeft</a> ()</td></tr>
+<tr class="memdesc:a10c97dc1d6873934f368144b08e9b03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the player holds left  <a href="#a10c97dc1d6873934f368144b08e9b03a">More...</a><br /></td></tr>
 <tr class="separator:a10c97dc1d6873934f368144b08e9b03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84d3210f3d7d6d1aa22bff1191626474"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a84d3210f3d7d6d1aa22bff1191626474">HoldingRight</a> ()</td></tr>
+<tr class="memdesc:a84d3210f3d7d6d1aa22bff1191626474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the player holds right  <a href="#a84d3210f3d7d6d1aa22bff1191626474">More...</a><br /></td></tr>
 <tr class="separator:a84d3210f3d7d6d1aa22bff1191626474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15152a3fd9609674a48d66c268b2fb56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a15152a3fd9609674a48d66c268b2fb56">PressJump</a> ()</td></tr>
+<tr class="memdesc:a15152a3fd9609674a48d66c268b2fb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the player presses the jump button  <a href="#a15152a3fd9609674a48d66c268b2fb56">More...</a><br /></td></tr>
 <tr class="separator:a15152a3fd9609674a48d66c268b2fb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a790bb170046c20aa0ac415e29e23a1b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a790bb170046c20aa0ac415e29e23a1b8">HoldJump</a> ()</td></tr>
+<tr class="memdesc:a790bb170046c20aa0ac415e29e23a1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the player holds the jump button  <a href="#a790bb170046c20aa0ac415e29e23a1b8">More...</a><br /></td></tr>
 <tr class="separator:a790bb170046c20aa0ac415e29e23a1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a465187e7f1ff22386058a902e28694b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a465187e7f1ff22386058a902e28694b0">PressPeck</a> ()</td></tr>
+<tr class="memdesc:a465187e7f1ff22386058a902e28694b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the player presses the peck button  <a href="#a465187e7f1ff22386058a902e28694b0">More...</a><br /></td></tr>
 <tr class="separator:a465187e7f1ff22386058a902e28694b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae70385249d262a57cf1725934d05ed67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae70385249d262a57cf1725934d05ed67">PressBanana</a> ()</td></tr>
+<tr class="memdesc:ae70385249d262a57cf1725934d05ed67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the player presses the banana throw button  <a href="#ae70385249d262a57cf1725934d05ed67">More...</a><br /></td></tr>
 <tr class="separator:ae70385249d262a57cf1725934d05ed67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0733e6b62ae40c3b1bea566e57f3e506"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0733e6b62ae40c3b1bea566e57f3e506">Awake</a> ()</td></tr>
+<tr class="memdesc:a0733e6b62ae40c3b1bea566e57f3e506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize variables  <a href="#a0733e6b62ae40c3b1bea566e57f3e506">More...</a><br /></td></tr>
 <tr class="separator:a0733e6b62ae40c3b1bea566e57f3e506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb12a39f5c5a570c3f1df5b04304fa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9cb12a39f5c5a570c3f1df5b04304fa0">OnEnable</a> ()</td></tr>
+<tr class="memdesc:a9cb12a39f5c5a570c3f1df5b04304fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to events  <a href="#a9cb12a39f5c5a570c3f1df5b04304fa0">More...</a><br /></td></tr>
 <tr class="separator:a9cb12a39f5c5a570c3f1df5b04304fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87426e92e78876d494d4d44e45a93acb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a87426e92e78876d494d4d44e45a93acb">OnDisable</a> ()</td></tr>
+<tr class="memdesc:a87426e92e78876d494d4d44e45a93acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe to events  <a href="#a87426e92e78876d494d4d44e45a93acb">More...</a><br /></td></tr>
 <tr class="separator:a87426e92e78876d494d4d44e45a93acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb3af298c368aea3203c2c0401f92eb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#afb3af298c368aea3203c2c0401f92eb5">Start</a> ()</td></tr>
+<tr class="memdesc:afb3af298c368aea3203c2c0401f92eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize more variables  <a href="#afb3af298c368aea3203c2c0401f92eb5">More...</a><br /></td></tr>
 <tr class="separator:afb3af298c368aea3203c2c0401f92eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b9a94add2aecbbc6de05d6b57f2fa70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a4b9a94add2aecbbc6de05d6b57f2fa70">FixedUpdate</a> ()</td></tr>
+<tr class="memdesc:a4b9a94add2aecbbc6de05d6b57f2fa70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player physics  <a href="#a4b9a94add2aecbbc6de05d6b57f2fa70">More...</a><br /></td></tr>
 <tr class="separator:a4b9a94add2aecbbc6de05d6b57f2fa70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad53a2769ea9976e490711085fa0d8155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad53a2769ea9976e490711085fa0d8155">Update</a> ()</td></tr>
+<tr class="memdesc:ad53a2769ea9976e490711085fa0d8155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throwing a banana and updating the animator  <a href="#ad53a2769ea9976e490711085fa0d8155">More...</a><br /></td></tr>
 <tr class="separator:ad53a2769ea9976e490711085fa0d8155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b6c07731eefaf693f9bf1515d9c5ddf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a5b6c07731eefaf693f9bf1515d9c5ddf">Flip</a> ()</td></tr>
+<tr class="memdesc:a5b6c07731eefaf693f9bf1515d9c5ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows Taekos to turn around  <a href="#a5b6c07731eefaf693f9bf1515d9c5ddf">More...</a><br /></td></tr>
 <tr class="separator:a5b6c07731eefaf693f9bf1515d9c5ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa19f3594fe54cc0e47fa1c73f2a4d8ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa19f3594fe54cc0e47fa1c73f2a4d8ca">UpdateMovement</a> ()</td></tr>
+<tr class="memdesc:aa19f3594fe54cc0e47fa1c73f2a4d8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in FixedUpdate to update Taekos's velocity  <a href="#aa19f3594fe54cc0e47fa1c73f2a4d8ca">More...</a><br /></td></tr>
 <tr class="separator:aa19f3594fe54cc0e47fa1c73f2a4d8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa64619b549299442fd28a066e49800c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa64619b549299442fd28a066e49800c6">UpdateCheckpoint</a> (Vector3 checkpointPos, int index)</td></tr>
+<tr class="memdesc:aa64619b549299442fd28a066e49800c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the current checkpoint index  <a href="#aa64619b549299442fd28a066e49800c6">More...</a><br /></td></tr>
 <tr class="separator:aa64619b549299442fd28a066e49800c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad31ac75c66448bbf0cfda8a0ce88a454"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad31ac75c66448bbf0cfda8a0ce88a454">AddBanana</a> (int add)</td></tr>
+<tr class="memdesc:ad31ac75c66448bbf0cfda8a0ce88a454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep track of the number of bananas  <a href="#ad31ac75c66448bbf0cfda8a0ce88a454">More...</a><br /></td></tr>
 <tr class="separator:ad31ac75c66448bbf0cfda8a0ce88a454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84aedf30e3eb2867c666512dce94baf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a84aedf30e3eb2867c666512dce94baf8">AddHealth</a> (int addHealth)</td></tr>
+<tr class="memdesc:a84aedf30e3eb2867c666512dce94baf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">When picking up a mango  <a href="#a84aedf30e3eb2867c666512dce94baf8">More...</a><br /></td></tr>
 <tr class="separator:a84aedf30e3eb2867c666512dce94baf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cd2ba58f79898dc1c530ba6fd8d538e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1cd2ba58f79898dc1c530ba6fd8d538e">KillPlayer</a> ()</td></tr>
+<tr class="memdesc:a1cd2ba58f79898dc1c530ba6fd8d538e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when Taekos collides with a death boundary  <a href="#a1cd2ba58f79898dc1c530ba6fd8d538e">More...</a><br /></td></tr>
 <tr class="separator:a1cd2ba58f79898dc1c530ba6fd8d538e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14445ff7606196b1ac67d73fa5932b03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a14445ff7606196b1ac67d73fa5932b03">ResurrectCharacter</a> ()</td></tr>
+<tr class="memdesc:a14445ff7606196b1ac67d73fa5932b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">When Taekos respawns after being killed  <a href="#a14445ff7606196b1ac67d73fa5932b03">More...</a><br /></td></tr>
 <tr class="separator:a14445ff7606196b1ac67d73fa5932b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9239f3c48978c1ca9bc4b6f1feabd66d"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9239f3c48978c1ca9bc4b6f1feabd66d">WaitToResurrectPlayer</a> ()</td></tr>
+<tr class="memdesc:a9239f3c48978c1ca9bc4b6f1feabd66d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay after Taekos dies to resurrect  <a href="#a9239f3c48978c1ca9bc4b6f1feabd66d">More...</a><br /></td></tr>
 <tr class="separator:a9239f3c48978c1ca9bc4b6f1feabd66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e889ec6ef1edc858ff23f8967334b1"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a30e889ec6ef1edc858ff23f8967334b1">Trail</a> ()</td></tr>
+<tr class="memdesc:a30e889ec6ef1edc858ff23f8967334b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a trail when Taekos has a powerup  <a href="#a30e889ec6ef1edc858ff23f8967334b1">More...</a><br /></td></tr>
 <tr class="separator:a30e889ec6ef1edc858ff23f8967334b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1beda51ef4e8faebe227aa9584b582d6"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1beda51ef4e8faebe227aa9584b582d6">Peck</a> ()</td></tr>
+<tr class="memdesc:a1beda51ef4e8faebe227aa9584b582d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peck attack Coroutine, <a class="el" href="class_pecking.html" title="Pecking script, allows Taekos to peck enemies ">Pecking</a> stops when clinging to a wall  <a href="#a1beda51ef4e8faebe227aa9584b582d6">More...</a><br /></td></tr>
 <tr class="separator:a1beda51ef4e8faebe227aa9584b582d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a367cbaa0c48ec6404a80dc08049138a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a367cbaa0c48ec6404a80dc08049138a4">StartPeck</a> ()</td></tr>
+<tr class="memdesc:a367cbaa0c48ec6404a80dc08049138a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peck attack  <a href="#a367cbaa0c48ec6404a80dc08049138a4">More...</a><br /></td></tr>
 <tr class="separator:a367cbaa0c48ec6404a80dc08049138a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80b1f56ae45e1ba2798b0d5c1b884f7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a80b1f56ae45e1ba2798b0d5c1b884f7c">StopPeck</a> ()</td></tr>
+<tr class="memdesc:a80b1f56ae45e1ba2798b0d5c1b884f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop pecking, destroy the hit box  <a href="#a80b1f56ae45e1ba2798b0d5c1b884f7c">More...</a><br /></td></tr>
 <tr class="separator:a80b1f56ae45e1ba2798b0d5c1b884f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf274ee1df59733fa7aa4600d3660bb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aaf274ee1df59733fa7aa4600d3660bb1">PlayPeckSound</a> ()</td></tr>
+<tr class="memdesc:aaf274ee1df59733fa7aa4600d3660bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play the pecking sound  <a href="#aaf274ee1df59733fa7aa4600d3660bb1">More...</a><br /></td></tr>
 <tr class="separator:aaf274ee1df59733fa7aa4600d3660bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38c426dab9a8edb16813b6bf071b4195"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a38c426dab9a8edb16813b6bf071b4195">HurtAnimation</a> ()</td></tr>
+<tr class="memdesc:a38c426dab9a8edb16813b6bf071b4195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play the hurt animation  <a href="#a38c426dab9a8edb16813b6bf071b4195">More...</a><br /></td></tr>
 <tr class="separator:a38c426dab9a8edb16813b6bf071b4195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef009c2d38c0aa38729e6e4d33aee28e"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aef009c2d38c0aa38729e6e4d33aee28e">Invincible</a> ()</td></tr>
+<tr class="memdesc:aef009c2d38c0aa38729e6e4d33aee28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Become invincible after getting hurt or respawning  <a href="#aef009c2d38c0aa38729e6e4d33aee28e">More...</a><br /></td></tr>
 <tr class="separator:aef009c2d38c0aa38729e6e4d33aee28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae870fdd81a4cc7fdd074a4a303b378f7"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae870fdd81a4cc7fdd074a4a303b378f7">touchingWallObject</a></td></tr>
+<tr class="memdesc:ae870fdd81a4cc7fdd074a4a303b378f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wall detection in front.  <a href="#ae870fdd81a4cc7fdd074a4a303b378f7">More...</a><br /></td></tr>
 <tr class="separator:ae870fdd81a4cc7fdd074a4a303b378f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2aea83dd1bf44f0e79f52e8462c1dc"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a2a2aea83dd1bf44f0e79f52e8462c1dc">backTouchingWallObject</a></td></tr>
+<tr class="memdesc:a2a2aea83dd1bf44f0e79f52e8462c1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wall detection from behind.  <a href="#a2a2aea83dd1bf44f0e79f52e8462c1dc">More...</a><br /></td></tr>
 <tr class="separator:a2a2aea83dd1bf44f0e79f52e8462c1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3623422270a2c0731d6ac87778bdbc2e"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a3623422270a2c0731d6ac87778bdbc2e">groundedObject</a></td></tr>
+<tr class="memdesc:a3623422270a2c0731d6ac87778bdbc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground detection.  <a href="#a3623422270a2c0731d6ac87778bdbc2e">More...</a><br /></td></tr>
 <tr class="separator:a3623422270a2c0731d6ac87778bdbc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5edd6b147beaca27f0bab296679a5abf"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a5edd6b147beaca27f0bab296679a5abf">peckBox</a></td></tr>
+<tr class="memdesc:a5edd6b147beaca27f0bab296679a5abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peck Box GameObject.  <a href="#a5edd6b147beaca27f0bab296679a5abf">More...</a><br /></td></tr>
 <tr class="separator:a5edd6b147beaca27f0bab296679a5abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db40a8a0f56d89f262229c783d7b315"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9db40a8a0f56d89f262229c783d7b315">bananaThrowSpeed</a> = 22f</td></tr>
 <tr class="separator:a9db40a8a0f56d89f262229c783d7b315"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6c89930bccda1e615e118ee801f6811"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac6c89930bccda1e615e118ee801f6811">maxHSpeed</a> = 11f</td></tr>
+<tr class="memdesc:ac6c89930bccda1e615e118ee801f6811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum running speed.  <a href="#ac6c89930bccda1e615e118ee801f6811">More...</a><br /></td></tr>
 <tr class="separator:ac6c89930bccda1e615e118ee801f6811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26873888fe652db678e18362f692c6e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a26873888fe652db678e18362f692c6e2">normalGravity</a> = 2f</td></tr>
+<tr class="memdesc:a26873888fe652db678e18362f692c6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gravity for normal conditions //1.5f.  <a href="#a26873888fe652db678e18362f692c6e2">More...</a><br /></td></tr>
 <tr class="separator:a26873888fe652db678e18362f692c6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af123b6dd4c31689902c82bef469ad512"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af123b6dd4c31689902c82bef469ad512">fallingGravity</a> = 1f</td></tr>
+<tr class="memdesc:af123b6dd4c31689902c82bef469ad512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gravity for Taekos's death animation.  <a href="#af123b6dd4c31689902c82bef469ad512">More...</a><br /></td></tr>
 <tr class="separator:af123b6dd4c31689902c82bef469ad512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7e1042572ab8dc4298a77110327dad5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af7e1042572ab8dc4298a77110327dad5">glideSpeed</a></td></tr>
 <tr class="separator:af7e1042572ab8dc4298a77110327dad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae720b2e0db45109390906791a6804389"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae720b2e0db45109390906791a6804389">hVelocity</a></td></tr>
+<tr class="memdesc:ae720b2e0db45109390906791a6804389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current horizontal velocity.  <a href="#ae720b2e0db45109390906791a6804389">More...</a><br /></td></tr>
 <tr class="separator:ae720b2e0db45109390906791a6804389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4ca2dc851e78e995cfffe205a161625"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad4ca2dc851e78e995cfffe205a161625">hAccel</a> = 1f</td></tr>
+<tr class="memdesc:ad4ca2dc851e78e995cfffe205a161625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run/walk acceleration.  <a href="#ad4ca2dc851e78e995cfffe205a161625">More...</a><br /></td></tr>
 <tr class="separator:ad4ca2dc851e78e995cfffe205a161625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3400a5b485db433a24e5d5316b4209c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af3400a5b485db433a24e5d5316b4209c">startingGlideSpeed</a> = -1.5f</td></tr>
 <tr class="separator:af3400a5b485db433a24e5d5316b4209c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,6 +299,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aab16984f68aaf008f9b8a41ec2d731ad"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aab16984f68aaf008f9b8a41ec2d731ad">startingJumpSpeed</a> = 25f</td></tr>
 <tr class="separator:aab16984f68aaf008f9b8a41ec2d731ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d98867764f01520b4da8b83d5533a3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a89d98867764f01520b4da8b83d5533a3">jumpSpeed</a></td></tr>
+<tr class="memdesc:a89d98867764f01520b4da8b83d5533a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current jump speed //15f, 22.5f.  <a href="#a89d98867764f01520b4da8b83d5533a3">More...</a><br /></td></tr>
 <tr class="separator:a89d98867764f01520b4da8b83d5533a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cd29610eba81c9d6c6e7bb558f02f6b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a9cd29610eba81c9d6c6e7bb558f02f6b">wallJumpSpeed</a> = 7</td></tr>
 <tr class="separator:a9cd29610eba81c9d6c6e7bb558f02f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,20 +324,25 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7cea95da11918037feac3562f2709906"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7cea95da11918037feac3562f2709906">resurrectDelay</a> = 2.5f</td></tr>
 <tr class="separator:a7cea95da11918037feac3562f2709906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7287e927d3be2c725b7dab1c6233d0f8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7287e927d3be2c725b7dab1c6233d0f8">killSpin</a> = 5f</td></tr>
+<tr class="memdesc:a7287e927d3be2c725b7dab1c6233d0f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Was originally going to have Taekos spin when after he died.  <a href="#a7287e927d3be2c725b7dab1c6233d0f8">More...</a><br /></td></tr>
 <tr class="separator:a7287e927d3be2c725b7dab1c6233d0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa72bbd921b4c2094224ddc3190119e05"><td class="memItemLeft" align="right" valign="top">Collider2D []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa72bbd921b4c2094224ddc3190119e05">colliders</a></td></tr>
 <tr class="separator:aa72bbd921b4c2094224ddc3190119e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd6d0b7f05b77f26fe414f58ff640c61"><td class="memItemLeft" align="right" valign="top">CircleCollider2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#abd6d0b7f05b77f26fe414f58ff640c61">circleCollider</a></td></tr>
 <tr class="separator:abd6d0b7f05b77f26fe414f58ff640c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a805faff4d24192b9f36ffb1e6ba3b053"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a805faff4d24192b9f36ffb1e6ba3b053">bananaCount</a></td></tr>
+<tr class="memdesc:a805faff4d24192b9f36ffb1e6ba3b053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bananas currently active, Taekos can only throw one when this is at 0.  <a href="#a805faff4d24192b9f36ffb1e6ba3b053">More...</a><br /></td></tr>
 <tr class="separator:a805faff4d24192b9f36ffb1e6ba3b053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c49e58f7239897519cffaddf69aaf5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a09c49e58f7239897519cffaddf69aaf5">peckFrames</a> = 3</td></tr>
 <tr class="separator:a09c49e58f7239897519cffaddf69aaf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8729ff5d149e377856ec564d53ff8625"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8729ff5d149e377856ec564d53ff8625">maxPlayerLife</a> = 4</td></tr>
+<tr class="memdesc:a8729ff5d149e377856ec564d53ff8625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of hits Taekos can take.  <a href="#a8729ff5d149e377856ec564d53ff8625">More...</a><br /></td></tr>
 <tr class="separator:a8729ff5d149e377856ec564d53ff8625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1b278f1b90426314d3fcbc8965cd94f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa1b278f1b90426314d3fcbc8965cd94f">playerLife</a></td></tr>
+<tr class="memdesc:aa1b278f1b90426314d3fcbc8965cd94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Curren number of hits Taekos has left.  <a href="#aa1b278f1b90426314d3fcbc8965cd94f">More...</a><br /></td></tr>
 <tr class="separator:aa1b278f1b90426314d3fcbc8965cd94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1780de13d38e70327631e3997c70444"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa1780de13d38e70327631e3997c70444">facing</a> = 1</td></tr>
+<tr class="memdesc:aa1780de13d38e70327631e3997c70444"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 for right, -1 for left  <a href="#aa1780de13d38e70327631e3997c70444">More...</a><br /></td></tr>
 <tr class="separator:aa1780de13d38e70327631e3997c70444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec06d911cf45033e085f45e888df69c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8ec06d911cf45033e085f45e888df69c">invincibleFrames</a> = 120</td></tr>
 <tr class="separator:a8ec06d911cf45033e085f45e888df69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,12 +351,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6fb53ed946be2bf2b9be6c4a5e8585b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a6fb53ed946be2bf2b9be6c4a5e8585b9">isDead</a></td></tr>
 <tr class="separator:a6fb53ed946be2bf2b9be6c4a5e8585b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17ba39e5995df20d1dca736847ee7f9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a17ba39e5995df20d1dca736847ee7f9b">playerKilled</a></td></tr>
+<tr class="memdesc:a17ba39e5995df20d1dca736847ee7f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">So that <a class="el" href="class_controller.html#a1cd2ba58f79898dc1c530ba6fd8d538e" title="Called when Taekos collides with a death boundary ">KillPlayer()</a> is called only once.  <a href="#a17ba39e5995df20d1dca736847ee7f9b">More...</a><br /></td></tr>
 <tr class="separator:a17ba39e5995df20d1dca736847ee7f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90a2c84bcae47acc7b93852052eb338a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a90a2c84bcae47acc7b93852052eb338a">isHurt</a></td></tr>
 <tr class="separator:a90a2c84bcae47acc7b93852052eb338a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af934659a8dc4b932353c6b719a14d127"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af934659a8dc4b932353c6b719a14d127">isInvincible</a></td></tr>
 <tr class="separator:af934659a8dc4b932353c6b719a14d127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12c7e7a37c62b0c5a8cddb1359a31262"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a12c7e7a37c62b0c5a8cddb1359a31262">control</a></td></tr>
+<tr class="memdesc:a12c7e7a37c62b0c5a8cddb1359a31262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow Taekos to be controlled by the player.  <a href="#a12c7e7a37c62b0c5a8cddb1359a31262">More...</a><br /></td></tr>
 <tr class="separator:a12c7e7a37c62b0c5a8cddb1359a31262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9d82d729bcbd24a3b604def0235789e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad9d82d729bcbd24a3b604def0235789e">grounded</a></td></tr>
 <tr class="separator:ad9d82d729bcbd24a3b604def0235789e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,8 +384,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a2f20b8c53170b7d530d76715e4e342ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00008">8</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<div class="textblock"><p>Taekos's character controller, Handles walking, jumping, attacking, etc. </p>
+<p>By Joshua Rand </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00012">12</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad31ac75c66448bbf0cfda8a0ce88a454"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad31ac75c66448bbf0cfda8a0ce88a454">&sect;&nbsp;</a></span>AddBanana()</h2>
@@ -339,7 +413,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00478">478</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Keep track of the number of bananas </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00533">533</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -367,7 +443,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00483">483</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>When picking up a mango </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addHealth</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00542">542</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -412,7 +496,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00121">121</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Initialize variables </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00147">147</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -457,7 +543,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00177">177</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Player physics </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00214">214</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -484,7 +572,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00415">415</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Allows Taekos to turn around </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00461">461</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -520,7 +610,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00410">410</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Return facing </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00453">453</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -564,7 +656,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00091">91</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when the player holds left </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00098">98</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -591,7 +685,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00096">96</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when the player holds right </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00106">106</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -618,7 +714,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00106">106</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when the player holds the jump button </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00122">122</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -645,7 +743,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00633">633</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Play the hurt animation </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00726">726</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -665,7 +765,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00497">497</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called by enemies when they collide with Taekos </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00559">559</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -692,7 +794,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00641">641</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Become invincible after getting hurt or respawning </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00737">737</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -719,7 +823,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00523">523</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when Taekos collides with a death boundary </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00588">588</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -783,7 +889,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00578">578</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>When Taekos collects a powerup, increase his jump height </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00653">653</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -810,7 +918,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00138">138</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Unsubscribe to events </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00170">170</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -837,7 +947,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00129">129</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Subscribe to events </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00158">158</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -864,7 +976,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00600">600</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Peck attack Coroutine, <a class="el" href="class_pecking.html" title="Pecking script, allows Taekos to peck enemies ">Pecking</a> stops when clinging to a wall </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00681">681</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -891,7 +1005,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00628">628</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Play the pecking sound </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00718">718</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -918,7 +1034,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00116">116</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when the player presses the banana throw button </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00139">139</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -945,7 +1064,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00101">101</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when the player presses the jump button </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00114">114</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -972,7 +1093,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00111">111</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called when the player presses the peck button </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00130">130</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -999,7 +1122,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00554">554</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>When Taekos respawns after being killed </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00622">622</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1151,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00147">147</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Initialize more variables </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00182">182</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1053,7 +1180,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00609">609</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Peck attack </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00693">693</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1080,7 +1209,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00618">618</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Stop pecking, destroy the hit box </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00705">705</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1107,7 +1238,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00584">584</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Display a trail when Taekos has a powerup </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00662">662</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1267,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00337">337</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Throwing a banana and updating the animator </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00377">377</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1307,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00468">468</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Update the current checkpoint index </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00520">520</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1199,7 +1336,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00427">427</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Called in FixedUpdate to update Taekos's velocity </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00476">476</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1226,7 +1365,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00572">572</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Delay after Taekos dies to resurrect </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00644">644</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1393,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00089">89</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00093">93</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1267,7 +1409,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00023">23</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Back collision detection. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00027">27</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1291,7 +1435,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00082">82</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00086">86</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1315,7 +1459,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00039">39</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Wall detection from behind. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00043">43</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1331,7 +1477,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00026">26</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Check if a wall is behind Taekos. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00030">30</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1495,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00028">28</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p><a class="el" href="class_banana.html" title="Banana that Taekos uses as a weapon ">Banana</a> weapon prefab. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00032">32</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1371,7 +1521,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00067">67</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Number of bananas currently active, Taekos can only throw one when this is at 0. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00071">71</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1387,7 +1539,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00027">27</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Position to generate a banana from. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00031">31</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1411,7 +1565,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00042">42</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00046">46</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1427,7 +1581,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00036">36</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>How tall Taekos is. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00040">40</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1451,7 +1607,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00073">73</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00077">77</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1467,7 +1623,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00033">33</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Sound effect for getting a checkpoint. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00037">37</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1491,7 +1649,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00066">66</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00070">70</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1515,7 +1673,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00065">65</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00069">69</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1539,7 +1697,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00078">78</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Allow Taekos to be controlled by the player. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00082">82</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1563,7 +1723,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00050">50</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00054">54</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1587,7 +1747,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00071">71</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>1 for right, -1 for left </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00075">75</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1611,7 +1773,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00045">45</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Gravity for Taekos's death animation. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00049">49</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1627,7 +1791,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00022">22</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Front collision detection. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00026">26</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1651,7 +1817,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00046">46</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00050">50</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1675,7 +1841,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00080">80</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00084">84</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1691,7 +1857,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00024">24</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Check if Taekos is on the ground. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00028">28</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1715,7 +1883,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00079">79</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00083">83</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1739,7 +1907,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00040">40</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Ground detection. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00044">44</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1763,7 +1933,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00055">55</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00059">59</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1787,7 +1957,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00048">48</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Run/walk acceleration. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00052">52</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1811,7 +1983,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00061">61</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00065">65</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1835,7 +2007,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00060">60</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00064">64</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1851,7 +2023,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00030">30</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Hurt sound effect. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00034">34</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1875,7 +2049,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00062">62</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00066">66</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1899,7 +2073,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00047">47</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Current horizontal velocity. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00051">51</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1923,7 +2099,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00072">72</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00076">76</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1947,7 +2123,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00074">74</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00078">78</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1971,7 +2147,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00076">76</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00080">80</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -1995,7 +2171,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00077">77</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00081">81</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2011,7 +2187,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00037">37</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>To increase the jump height slightly when running. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00041">41</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2027,7 +2205,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00029">29</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Jumping sound effect. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00033">33</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2051,7 +2231,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00052">52</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Current jump speed //15f, 22.5f. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00056">56</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2075,7 +2257,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00085">85</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00089">89</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2099,7 +2281,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00064">64</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Was originally going to have Taekos spin when after he died. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00068">68</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2123,7 +2307,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00058">58</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00062">62</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2147,7 +2331,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00043">43</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Maximum running speed. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00047">47</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2171,7 +2357,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00069">69</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Number of hits Taekos can take. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00073">73</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2195,7 +2383,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00057">57</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00061">61</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2219,7 +2407,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00044">44</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Gravity for normal conditions //1.5f. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00048">48</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2243,7 +2433,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00041">41</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Peck Box GameObject. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00045">45</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2259,7 +2451,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00031">31</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Create a hitbox for hurting enemies. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00035">35</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2283,7 +2477,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00068">68</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00072">72</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2299,7 +2493,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00034">34</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Sound effect for pecking an enemy. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00038">38</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2323,7 +2519,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00084">84</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00088">88</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2347,7 +2543,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00087">87</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00091">91</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2371,7 +2567,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00075">75</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>So that <a class="el" href="class_controller.html#a1cd2ba58f79898dc1c530ba6fd8d538e" title="Called when Taekos collides with a death boundary ">KillPlayer()</a> is called only once. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00079">79</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2395,7 +2593,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00070">70</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Curren number of hits Taekos has left. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00074">74</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2419,7 +2619,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00063">63</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00067">67</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2443,7 +2643,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00086">86</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00090">90</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2467,7 +2667,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00088">88</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00092">92</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2491,7 +2691,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00049">49</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00053">53</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2515,7 +2715,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00051">51</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00055">55</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2539,7 +2739,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00059">59</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00063">63</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2555,7 +2755,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00021">21</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Top collision detection. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00025">25</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2579,7 +2781,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00081">81</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00085">85</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2603,7 +2805,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00038">38</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Wall detection in front. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00042">42</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2619,7 +2823,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00032">32</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Trail prefab for after getting a powerup (not used in final build) </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00036">36</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2635,7 +2841,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00025">25</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Check if Taekos is in front of a wall. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00029">29</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2659,7 +2867,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00083">83</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00087">87</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2683,7 +2891,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00054">54</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00058">58</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2707,7 +2915,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00053">53</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00057">57</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2731,7 +2939,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00056">56</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00060">60</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2747,7 +2955,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00035">35</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Ground layer mask. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00039">39</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2772,7 +2982,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00018">18</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Add or subtract a life. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00022">22</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2796,7 +3008,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00012">12</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Tells the camera to follow Taekos. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00016">16</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2820,7 +3034,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00014">14</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Requests the current number of lives. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00018">18</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2844,7 +3060,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00016">16</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Checks whether or not the game is over. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00020">20</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>
@@ -2868,7 +3086,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00020">20</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
+<p>Update the lifebar. </p>
+
+<p>Definition at line <a class="el" href="_controller_8cs_source.html#l00024">24</a> of file <a class="el" href="_controller_8cs_source.html">Controller.cs</a>.</p>
 
 </div>
 </div>

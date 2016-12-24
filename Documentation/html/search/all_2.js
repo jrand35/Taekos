@@ -24,6 +24,7 @@ var searchData=
   ['completelevel',['completeLevel',['../class_hit_box.html#aca1423ee2851c3cfb94e8a5260cec663',1,'HitBox.completeLevel()'],['../class_game_controller.html#a4e658e311a656ea71df7a77ca275fbe5',1,'GameController.CompleteLevel()']]],
   ['completelevelhandler',['CompleteLevelHandler',['../class_hit_box.html#ae3ae97fe1ec9315c0d65ac2c63820b55',1,'HitBox']]],
   ['continue',['Continue',['../class_game_over_screen.html#a21d48388ec70a784a20640b38043facb',1,'GameOverScreen']]],
+  ['continueclick',['continueClick',['../class_game_over_screen.html#ae21a090eb1826ccb54881a1134872428',1,'GameOverScreen']]],
   ['control',['control',['../class_controller.html#a12c7e7a37c62b0c5a8cddb1359a31262',1,'Controller']]],
   ['controller',['Controller',['../class_controller.html',1,'Controller'],['../class_collect_items.html#aee63015ffbb1863273e4e1b93b7eec76',1,'CollectItems.controller()'],['../class_pecking.html#a3369034cd0740768b7bc3feabdf22b5b',1,'Pecking.controller()']]],
   ['controller_2ecs',['Controller.cs',['../_controller_8cs.html',1,'']]],

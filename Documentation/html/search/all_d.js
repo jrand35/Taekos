@@ -8,7 +8,7 @@ var searchData=
   ['number1',['number1',['../class_door.html#a2b5cd239ca663439aa9da2eed9565c15',1,'Door']]],
   ['number2',['number2',['../class_door.html#a3d248470f025854a590fd87909283e64',1,'Door']]],
   ['numberofcontinues',['numberOfContinues',['../class_settings.html#aafcc4e5e8e12959c139dca0fe71c796b',1,'Settings.numberOfContinues()'],['../class_settings.html#af9ce42d3b3f8370f623b92c288887f1b',1,'Settings.NumberOfContinues()']]],
-  ['numberoflives',['NumberOfLives',['../class_settings.html#a6f27cdec537cdcc3e47c11eb46c4e688',1,'Settings.NumberOfLives()'],['../class_settings.html#af71cb91534d9c0bc4ef727617b2d814b',1,'Settings.numberOfLives()']]],
+  ['numberoflives',['numberOfLives',['../class_settings.html#af71cb91534d9c0bc4ef727617b2d814b',1,'Settings.numberOfLives()'],['../class_settings.html#a6f27cdec537cdcc3e47c11eb46c4e688',1,'Settings.NumberOfLives()']]],
   ['numbers',['numbers',['../class_door.html#ae58ee8b728635f376d2c436236d9e5e7',1,'Door']]],
   ['numfeathers',['numFeathers',['../class_game_controller.html#a02be5706972bb0fa88d7187f1fe115f2',1,'GameController']]]
 ];
