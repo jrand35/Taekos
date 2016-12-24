@@ -1,12 +1,31 @@
 Taekos the Parrot
 ==========================
-	2D Platformer developed in Unity
+	2D Platformer
 	For GD325 - 2D Game Development
 	Programming by Joshua Rand
 	Artwork by Steven Ellis
-Keep calm and fly on!
+Developed in C# with Unity Game Engine
 
-Experience the natural beauty of a tropical world through the adventures of Taekos the Parrot as he battles Dr. Csieagle and his cybernetic forces while daring to rescue his girlfriend Carmen.
+Some scripts that use IEnumerator Coroutines:
+- EnemyController
+- Controller
+- Lifebar
+- ResultsScreen
+- TitleScreen
+- GameOverScreen
+- GameController
+- BonusPoints
+
+Some scripts that use delegates and events:
+- EnemyController
+- Controller
+- GameController
+- HitBox
+- CollectItems
+- Lifebar
+- PlayerFollow
+- ScoreTextController
+- TitleScreen
 
 Documentation:
 
