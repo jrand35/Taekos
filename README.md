@@ -4,7 +4,7 @@ Taekos the Parrot
 	For GD325 - 2D Game Development
 	Programming by Joshua Rand
 	Artwork by Steven Ellis
-Developed in C# with Unity Game Engine
+Developed in C# with Unity Game Engine v5.4.1f1
 
 Some scripts that use IEnumerator Coroutines:
 - EnemyController
@@ -26,6 +26,8 @@ Some scripts that use delegates and events:
 - PlayerFollow
 - ScoreTextController
 - TitleScreen
+
+Public static variables used in Settings script.
 
 Documentation:
 
