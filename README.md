@@ -40,6 +40,7 @@ X, Q
 
 Goal
 - Collect all of Carmen's golden feathers to unlock the exit door.
+
 Items
 - Mangos restore health
 - Throw bananas to attack any enemy
